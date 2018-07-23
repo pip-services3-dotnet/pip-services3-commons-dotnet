@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>PipServices.Commons</id>
+    <version>3.0.0</version>
+    <title>PipServices.Commons</title>
+    <authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur, Andrew Harrington</authors>
+    <projectUrl>https://github.com/pip-services/pip-services-commons-dotnet</projectUrl>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Portable abstractions and patterns for Pip.Services in .NET</description>
+    <releaseNotes>Release</releaseNotes>
+    <copyright>Conceptual Vision Consulting LLC. 2017-2018</copyright>
+    <tags>pip-services microservices framework</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Newtonsoft.Json" version="10.0.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="obj\PipServices.Commons.deps.json" target="lib\netstandard2.1" />
+    <file src="obj\PipServices.Commons.dll" target="lib\netstandard2.1" />
+    <file src="obj\PipServices.Commons.pdb" target="lib\netstandard2.1" />
+  </files>
+</package>
