@@ -1,5 +1,4 @@
-﻿using PipServices.Commons.Log;
-using Xunit;
+﻿using Xunit;
 
 namespace PipServices.Commons.Convert
 {

@@ -71,12 +71,12 @@ namespace PipServices.Commons.Test.Reflect
         {
             var obj = new TestClass();
             var names = ObjectReader.GetPropertyNames(obj);
-            Assert.Equal(2, names.Count);
+            Assert.Equal(3, names.Count);
             Assert.True(names.Contains("PublicField"));
             Assert.True(names.Contains("PublicProp"));
 
             var map = ObjectReader.GetProperties(obj);
-            Assert.Equal(2, map.Count);
+            Assert.Equal(3, map.Count);
             Assert.Equal("ABC", map["PublicField"]);
             Assert.NotNull(map["PublicProp"]);
         }

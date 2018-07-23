@@ -1,6 +1,6 @@
 ﻿using System;
 using PipServices.Commons.Data;
-using PipServices.Commons.Log;
+using PipServices.Commons.Convert;
 using Xunit;
 
 namespace PipServices.Commons.Test.Data

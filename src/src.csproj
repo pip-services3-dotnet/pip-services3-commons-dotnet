@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>PipServices.Commons</AssemblyName>
     <RootNamespace>PipServices.Commons</RootNamespace>
     <ApplicationIcon />
@@ -15,5 +15,8 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Data\Mapper\IObjectMapper.cs" />
   </ItemGroup>
 </Project>
