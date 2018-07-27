@@ -39,22 +39,6 @@ namespace PipServices.Commons.Data
             }
         }
 
-        public static ProjectionParams FromValue(object value)
-        {
-            if (value is ProjectionParams)
-            {
-                return (ProjectionParams)value;
-            }
-
-            var array = value != null ? AnyValueArray.FromValue(value) : new AnyValueArray();
-            return new ProjectionParams(array);
-        }
-
-        public static ProjectionParams FromValues(params string[] values)
-        {
-            return new ProjectionParams(Parse(values).ToArray());
-        }
-
         public override string ToString()
         {
             var builder = new StringBuilder();
@@ -70,20 +54,30 @@ namespace PipServices.Commons.Data
             return builder.ToString();
         }
 
-        private static List<string> Parse(string[] values)
+        public static ProjectionParams FromValue(object value)
         {
-            var result = new List<string>();
-            var prefix = string.Empty;
+            if (value is ProjectionParams)
+            {
+                return (ProjectionParams)value;
+            }
+
+            var array = value != null ? AnyValueArray.FromValue(value) : new AnyValueArray();
+            return new ProjectionParams(array);
+        }
+
+        public static ProjectionParams Parse(params string[] values)
+        {
+            var result = new ProjectionParams();
 
             foreach (var value in values)
             {
-                ParseValue(prefix, result, value.Trim());
+                ParseValue("", result, value);
             }
 
             return result;
         }
 
-        private static void ParseValue(string prefix, List<string> result, string value)
+        private static void ParseValue(string prefix, ProjectionParams result, string value)
         {
             if (!string.IsNullOrWhiteSpace(value))
             {
