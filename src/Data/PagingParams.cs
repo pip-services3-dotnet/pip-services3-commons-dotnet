@@ -57,8 +57,8 @@ namespace PipServices.Commons.Data
 
         public static PagingParams FromMap(AnyValueMap map)
         {
-            var skip = map.GetAsNullableInteger("skip");
-            var take = map.GetAsNullableInteger("take");
+            var skip = map.GetAsNullableLong("skip");
+            var take = map.GetAsNullableLong("take");
             var total = map.GetAsBooleanWithDefault("total", true);
             return new PagingParams(skip, take, total);
         }
