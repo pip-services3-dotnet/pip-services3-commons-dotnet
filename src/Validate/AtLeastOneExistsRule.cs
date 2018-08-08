@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace PipServices.Commons.Validate
 {
-    public class AtLeastOneExistRule : IValidationRule
+    public class AtLeastOneExistsRule : IValidationRule
     {
         private readonly string[] _properties;
 
-        public AtLeastOneExistRule(params string[] properties)
+        public AtLeastOneExistsRule(params string[] properties)
         {
             _properties = properties;
         }

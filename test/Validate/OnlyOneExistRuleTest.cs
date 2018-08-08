@@ -10,11 +10,11 @@ namespace PipServices.Commons.Test.Validate
         public void TestOnlyOneExistRule()
         {
             var obj = new TestObject();
-            var schema = new Schema().WithRule(new OnlyOneExistRule("MissingProperty", "StringProperty", "NullProperty"));
+            var schema = new Schema().WithRule(new OnlyOneExistsRule("MissingProperty", "StringProperty", "NullProperty"));
             var results = schema.Validate(obj);
             Assert.Equal(0, results.Count);
 
-            schema = new Schema().WithRule(new OnlyOneExistRule("StringProperty", "NullProperty", "intField"));
+            schema = new Schema().WithRule(new OnlyOneExistsRule("StringProperty", "NullProperty", "intField"));
             results = schema.Validate(obj);
             Assert.Equal(1, results.Count);
         }
