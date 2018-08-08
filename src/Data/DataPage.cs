@@ -14,10 +14,10 @@ namespace PipServices.Commons.Data
             Total = total;
         }
 
-        [DataMember]
+        [DataMember(Name = "total")]
         public long? Total { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "data")]
         public List<T> Data { get; set; }
     }
 }
