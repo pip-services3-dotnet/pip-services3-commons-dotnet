@@ -8,6 +8,9 @@ $testImage="$($component.registry)/$($component.name):$($component.version)-test
 if (Test-Path "obj") {
     Remove-Item -Recurse -Force -Path "obj"
 }
+if (Test-Path "dist") {
+    Remove-Item -Recurse -Force -Path "dist"
+}
 if (Test-Path "src/bin") {
     Remove-Item -Recurse -Force -Path "src/bin"
 }
