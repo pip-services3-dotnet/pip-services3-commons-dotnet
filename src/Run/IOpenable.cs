@@ -11,7 +11,7 @@ namespace PipServices.Commons.Run
         /// Checks if component is opened
         /// </summary>
         /// <returns><code>true</code> if component is opened and <false> otherwise.</returns>
-        bool IsOpened();
+        bool IsOpen();
 
         /// <summary>
         /// Opens component, establishes connections to services

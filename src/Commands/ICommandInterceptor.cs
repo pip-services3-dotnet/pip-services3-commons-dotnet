@@ -8,7 +8,7 @@ namespace PipServices.Commons.Commands
     /// <summary>
     /// Interface for stackable command intercepters
     /// </summary>
-    public interface ICommandIntercepter
+    public interface ICommandInterceptor
     {
         /// <summary>
         /// Gets the command name. Intercepter can modify the name if needed.

@@ -13,11 +13,11 @@ namespace PipServices.Commons.Run
         /// </summary>
         /// <param name="component">a component to be checked</param>
         /// <returns></returns>
-        public static bool IsOpenedOne(object component)
+        public static bool IsOpenOne(object component)
         {
             var openable = component as IOpenable;
             if (openable != null)
-			    return openable.IsOpened();
+			    return openable.IsOpen();
 		    else
 			    return true;
         }
@@ -27,13 +27,13 @@ namespace PipServices.Commons.Run
         /// </summary>
         /// <param name="components">a list of components to be checked</param>
         /// <returns></returns>
-        public static bool IsOpened(IEnumerable components)
+        public static bool IsOpen(IEnumerable components)
         {
             if (components == null) return true;
 
             var result = true;
             foreach (var component in components)
-                result = result && IsOpenedOne(component);
+                result = result && IsOpenOne(component);
 
             return result;
         }

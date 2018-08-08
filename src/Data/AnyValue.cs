@@ -28,7 +28,10 @@ namespace PipServices.Commons.Data
 
         public void SetAsObject(object value)
         {
-            Value = value;
+            if (value is AnyValue)
+                Value = ((AnyValue)value).Value;
+            else
+                Value = value;
         }
 
         public string GetAsNullableString()

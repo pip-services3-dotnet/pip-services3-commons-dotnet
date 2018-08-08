@@ -9,19 +9,16 @@ namespace PipServices.Commons.Random
         [Fact]
         public void TestNextDate()
         {
-            DateTime date;
-            date = RandomDateTime.NextDate(2015, 2016);
+            var date1 = new DateTime(2015, 1, 1);
+            var date2 = new DateTime(2016, 1, 1);
+            var date = RandomDateTime.NextDate(date1, date2);
             Assert.True(date.Year == 2015 || date.Year == 2016);
 
-            date = RandomDateTime.NextDate(0, 0);
-            Assert.True(date.Year >= DateTime.Now.Year - 10
-                && date.Year <= DateTime.Now.Year);
-
-            date = RandomDateTime.NextDate();
-            Assert.True(date.Year >= DateTime.Now.Year - 10
-                && date.Year <= DateTime.Now.Year);
+            date = RandomDateTime.NextDate(date2);
+            Assert.True(date >= new DateTime(2000, 1, 1) && date <= date2);
         }
 
+        [Fact]
         public void TestUpdateDateTime()
         {
             DateTime oldDate = new DateTime(2016, 10, 10, 0, 0, 0, 0, DateTimeKind.Utc);

@@ -11,7 +11,7 @@ namespace PipServices.Commons.Commands
     /// </summary>
     public class InterceptedCommand : ICommand
     {
-        private readonly ICommandIntercepter _intercepter;
+        private readonly ICommandInterceptor _intercepter;
         private readonly ICommand _next;
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace PipServices.Commons.Commands
         /// </summary>
         /// <param name="intercepter">Intercepter reference.</param>
         /// <param name="next">Next intercepter or command in the chain.</param>
-        public InterceptedCommand(ICommandIntercepter intercepter, ICommand next)
+        public InterceptedCommand(ICommandInterceptor intercepter, ICommand next)
         {
             _intercepter = intercepter;
             _next = next;

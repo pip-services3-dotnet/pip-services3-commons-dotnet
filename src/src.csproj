@@ -6,7 +6,7 @@
     <RootNamespace>PipServices.Commons</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2018</Copyright>
     <Description>Portable abstractions and patterns for Pip.Services in .NET</Description>

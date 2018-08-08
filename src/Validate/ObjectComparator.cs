@@ -14,13 +14,13 @@ namespace PipServices.Commons.Validate
             if (operation == "!=" || operation == "<>" || operation == "NE")
                 return AreNotEqual(value1, value2);
             if (operation == "<" || operation == "LT")
-                return Less(value1, value2);
+                return IsLess(value1, value2);
             if (operation == "<=" || operation == "LE")
-                return AreEqual(value1, value2) || Less(value1, value2);
+                return AreEqual(value1, value2) || IsLess(value1, value2);
             if (operation == ">" || operation == "GT")
-                return More(value1, value2);
+                return IsGreater(value1, value2);
             if (operation == ">=" || operation == "GE")
-                return AreEqual(value1, value2) || More(value1, value2);
+                return AreEqual(value1, value2) || IsGreater(value1, value2);
             if (operation == "LIKE")
                 return Match(value1, value2);
 
@@ -41,7 +41,7 @@ namespace PipServices.Commons.Validate
             return !AreEqual(value1, value2);
         }
 
-        public static bool Less(object value1, object value2)
+        public static bool IsLess(object value1, object value2)
         {
             var number1 = DoubleConverter.ToNullableDouble(value1);
             var number2 = DoubleConverter.ToNullableDouble(value2);
@@ -52,7 +52,7 @@ namespace PipServices.Commons.Validate
             return number1 < number2;
         }
 
-        public static bool More(object value1, object value2)
+        public static bool IsGreater(object value1, object value2)
         {
             var number1 = DoubleConverter.ToNullableDouble(value1);
             var number2 = DoubleConverter.ToNullableDouble(value2);

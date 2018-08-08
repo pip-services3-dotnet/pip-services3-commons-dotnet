@@ -17,7 +17,7 @@ namespace PipServices.Commons.Commands
         private List<IEvent> _events = new List<IEvent>();
         private readonly Dictionary<string, ICommand> _commandsByName = new Dictionary<string, ICommand>();
         private readonly Dictionary<string, IEvent> _eventsByName = new Dictionary<string, IEvent>();
-        private readonly List<ICommandIntercepter> _intercepters = new List<ICommandIntercepter>();
+        private readonly List<ICommandInterceptor> _intercepters = new List<ICommandInterceptor>();
 
         public CommandSet() { }
 
@@ -137,7 +137,7 @@ namespace PipServices.Commons.Commands
         /// Adds an intercepter to the command set.
         /// </summary>
         /// <param name="intercepter">The intercepter to add.</param>
-        public void AddInterceptor(ICommandIntercepter intercepter)
+        public void AddInterceptor(ICommandInterceptor intercepter)
         {
             _intercepters.Add(intercepter);
             RebuildAllCommandChains();
