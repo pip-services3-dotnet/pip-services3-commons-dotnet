@@ -11,11 +11,6 @@ if ($component.version -ne $version) {
     throw "Versions in component.json and src.csproj do not match"
 }
 
-# # Automatically login to server
-# if ($env:NPM_USER -ne $null -and $env:NPM_PASS -ne $null) {
-#     npm-cli-login
-# }
-
 # Build package
 dotnet build src/src.csproj -c Release
 dotnet pack src/src.csproj -c Release -o ../dist
