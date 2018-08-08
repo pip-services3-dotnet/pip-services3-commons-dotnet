@@ -3,6 +3,7 @@
 /.gitignore
 /.dockerignore
 /doc
+/dist
 /obj
 /Dockerfile*
 /docker-compose*.yml
