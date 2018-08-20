@@ -56,7 +56,7 @@ namespace PipServices.Commons.Data
 
                 var propertyValue = expandoObjectMap[propertyName];
                 var subPropertyName = projection.Substring(propertyName.Length + 1);
-                var subProjectionParams = ProjectionParams.Parse(subPropertyName);
+                var subProjectionParams = ProjectionParams.FromValues(subPropertyName);
 
                 if (propertyValue is ExpandoObject)
                 {

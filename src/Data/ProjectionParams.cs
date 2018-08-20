@@ -9,7 +9,9 @@ namespace PipServices.Commons.Data
     /// </summary>
     /// <seealso cref="System.Collections.Generic.List{System.String}" />
     public class ProjectionParams : List<string>
-    { 
+    {
+        private static char DefaultDelimiter = ',';
+
         public ProjectionParams()
         {
         }
@@ -39,6 +41,27 @@ namespace PipServices.Commons.Data
             }
         }
 
+        public static ProjectionParams FromValue(object value)
+        {
+            if (value is ProjectionParams)
+            {
+                return (ProjectionParams)value;
+            }
+
+            var array = value != null ? AnyValueArray.FromValue(value) : new AnyValueArray();
+            return new ProjectionParams(array);
+        }
+
+        public static ProjectionParams FromValues(params string[] values)
+        {
+            return FromValues(DefaultDelimiter, values);
+        }
+
+        public static ProjectionParams FromValues(char delimiter, params string[] values)
+        {
+            return new ProjectionParams(Parse(delimiter, values));
+        }
+
         public override string ToString()
         {
             var builder = new StringBuilder();
@@ -54,30 +77,20 @@ namespace PipServices.Commons.Data
             return builder.ToString();
         }
 
-        public static ProjectionParams FromValue(object value)
+        private static string[] Parse(char delimiter, string[] values)
         {
-            if (value is ProjectionParams)
-            {
-                return (ProjectionParams)value;
-            }
-
-            var array = value != null ? AnyValueArray.FromValue(value) : new AnyValueArray();
-            return new ProjectionParams(array);
-        }
-
-        public static ProjectionParams Parse(params string[] values)
-        {
-            var result = new ProjectionParams();
+            var result = new List<string>();
+            var prefix = string.Empty;
 
             foreach (var value in values)
             {
-                ParseValue("", result, value);
+                ParseValue(prefix, result, value.Trim(), delimiter);
             }
 
-            return result;
+            return result.ToArray();
         }
 
-        private static void ParseValue(string prefix, ProjectionParams result, string value)
+        private static void ParseValue(string prefix, List<string> result, string value, char delimiter)
         {
             if (!string.IsNullOrWhiteSpace(value))
             {
@@ -92,73 +105,75 @@ namespace PipServices.Commons.Data
             var breakCycleRequired = false;
             for (var index = 0; index < value.Length; index++)
             {
-                switch (value[index])
+                var valueChar = value[index];
+
+                if (valueChar.Equals('('))
                 {
-                    case '(':
-                        if (openBracket == 0)
+                    if (openBracket == 0)
+                    {
+                        openBracketIndex = index;
+                    }
+
+                    openBracket++;
+                }
+                else if (valueChar.Equals(')'))
+                {
+                    openBracket--;
+
+                    if (openBracket == 0)
+                    {
+                        closeBracketIndex = index;
+
+                        if (openBracketIndex >= 0 && closeBracketIndex > 0)
                         {
-                            openBracketIndex = index;
-                        }
+                            var previousPrefix = prefix;
 
-                        openBracket++;
-                        break;
-                    case ')':
-                        openBracket--;
-
-                        if (openBracket == 0)
-                        {
-                            closeBracketIndex = index;
-
-                            if (openBracketIndex >= 0 && closeBracketIndex > 0)
+                            if (!string.IsNullOrWhiteSpace(prefix))
                             {
-                                var previousPrefix = prefix;
-
-                                if (!string.IsNullOrWhiteSpace(prefix))
-                                {
-                                    prefix = $"{prefix}.{value.Substring(0, openBracketIndex)}";
-                                }
-                                else
-                                {
-                                    prefix = $"{value.Substring(0, openBracketIndex)}";
-                                }
-
-                                var subValue = value.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-                                ParseValue(prefix, result, subValue);
-
-                                subValue = value.Substring(closeBracketIndex + 1);
-                                ParseValue(previousPrefix, result, subValue);
-                                breakCycleRequired = true;
+                                prefix = $"{prefix}.{value.Substring(0, openBracketIndex)}";
                             }
-                        }
-                        break;
-                    case ',':
-                        if (openBracket == 0)
-                        {
-                            commaIndex = index;
-
-                            var subValue = value.Substring(0, commaIndex);
-
-                            if (!string.IsNullOrWhiteSpace(subValue))
+                            else
                             {
-                                if (!string.IsNullOrWhiteSpace(prefix))
-                                {
-                                    result.Add($"{prefix}.{subValue}");
-                                }
-                                else
-                                {
-                                    result.Add(subValue);
-                                }
+                                prefix = $"{value.Substring(0, openBracketIndex)}";
                             }
 
-                            subValue = value.Substring(commaIndex + 1);
+                            var subValue = value.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+                            ParseValue(prefix, result, subValue, delimiter);
 
-                            if (!string.IsNullOrWhiteSpace(subValue))
+                            subValue = value.Substring(closeBracketIndex + 1);
+                            ParseValue(previousPrefix, result, subValue, delimiter);
+                            breakCycleRequired = true;
+                        }
+                    }
+                }
+                else if (valueChar.Equals(delimiter))
+                {
+                    if (openBracket == 0)
+                    {
+                        commaIndex = index;
+
+                        var subValue = value.Substring(0, commaIndex);
+
+                        if (!string.IsNullOrWhiteSpace(subValue))
+                        {
+                            if (!string.IsNullOrWhiteSpace(prefix))
                             {
-                                ParseValue(prefix, result, subValue);
-                                breakCycleRequired = true;
+                                result.Add($"{prefix}.{subValue}");
+                            }
+                            else
+                            {
+                                result.Add(subValue);
                             }
                         }
-                        break;
+
+                        subValue = value.Substring(commaIndex + 1);
+
+                        if (!string.IsNullOrWhiteSpace(subValue))
+                        {
+                            ParseValue(prefix, result, subValue, delimiter);
+                            breakCycleRequired = true;
+                        }
+                    }
                 }
 
                 if (breakCycleRequired)

@@ -14,7 +14,7 @@ namespace PipServices.Commons.Test.Data
         {
             dynamic obj = CreateExpandoObject();
                 
-            var projectionParams = ProjectionParams.Parse("Id,Name");
+            var projectionParams = ProjectionParams.FromValues("Id,Name");
 
             dynamic result = projectionParams.FromObject(obj as ExpandoObject);
 
@@ -29,7 +29,7 @@ namespace PipServices.Commons.Test.Data
         {
             dynamic obj = CreateExpandoObject();
 
-            var projectionParams = ProjectionParams.Parse("Id,Description,Data(Id,Amount)");
+            var projectionParams = ProjectionParams.FromValues("Id,Description,Data(Id,Amount)");
 
             dynamic result = projectionParams.FromObject(obj as ExpandoObject);
 
@@ -47,7 +47,7 @@ namespace PipServices.Commons.Test.Data
         {
             dynamic obj = CreateExpandoObject();
 
-            var projectionParams = ProjectionParams.Parse("Id,Description,Data(Id,Amount),DataList(Memo)");
+            var projectionParams = ProjectionParams.FromValues("Id,Description,Data(Id,Amount),DataList(Memo)");
 
             dynamic result = projectionParams.FromObject(obj as ExpandoObject);
 
