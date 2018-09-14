@@ -7,20 +7,49 @@ using Newtonsoft.Json.Linq;
 namespace PipServices.Commons.Convert
 {
     /// <summary>
-    /// Converts objects to string.
+    /// Converts arbitrary values into strings using extended conversion rules:
+    /// - Numbers: are converted with '.' as decimal point
+    /// - DateTime: using ISO format
+    /// - Boolean: "true" for true and "false" for false
+    /// - Arrays: as comma-separated list
+    /// - Other objects: using toString() method
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var value1 = StringConverter.ToString(123.456); // Result: "123.456"
+    /// var value2 = StringConverter.ToString(true); // Result: "true"
+    /// var value3 = StringConverter.ToString(ZonedDateTime.now()); // Result: "2018-01-01T00:00:00.00"
+    /// var value4 = StringConverter.ToString(new int[]{1, 2, 3}); // Result: "1,2,3"
+    /// </code>
+    /// </example>
     public class StringConverter
     {
+        /// <summary>
+        /// Converts value into string or returns null when value is null.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <returns>string value or null when value is null.</returns>
         public static string ToNullableString(object value)
         {
             return ToStringWithDefault(value, null);
         }
 
+        /// <summary>
+        /// Converts value into string or returns "" when value is null.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <returns>string value or "" when value is null.</returns>
         public static string ToString(object value)
         {
             return ToStringWithDefault(value, null);
         }
 
+        /// <summary>
+        /// Converts value into string or returns default when value is null.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <param name="defaultValue">the default value</param>
+        /// <returns>string value or default when value is null.</returns>
         public static string ToStringWithDefault(object value, string defaultValue)
         {
             if (value is JValue)

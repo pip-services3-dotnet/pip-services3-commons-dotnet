@@ -4,8 +4,10 @@ using PipServices.Commons.Run;
 namespace PipServices.Commons.Commands
 {
     /// <summary>
-    /// Interface for command events.
+    /// An interface for Events, which are part of the Command design pattern. 
+    /// Events allows to send asynchronous notifications to multiple subscribed listeners.
     /// </summary>
+    /// See <see cref="IEventListener"/>
     public interface IEvent : INotifiable
     {
         /// <summary>
@@ -19,15 +21,15 @@ namespace PipServices.Commons.Commands
         List<IEventListener> Listeners { get; }
 
         /// <summary>
-        /// Adds a listener to receive notifications.
+        /// Adds a listener to receive notifications for this event.
         /// </summary>
-        /// <param name="listener">The listener to add.</param>
+        /// <param name="listener">the listener reference to add.</param>
         void AddListener(IEventListener listener);
 
         /// <summary>
-        /// Removes a listener from event notifications.
+        /// Removes a listener, so that it no longer receives notifications for this event.
         /// </summary>
-        /// <param name="listener">The listener to remove.</param>
+        /// <param name="listener">the listener reference to remove.</param>
         void RemoveListener(IEventListener listener);
     }
 }

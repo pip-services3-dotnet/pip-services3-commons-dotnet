@@ -11,15 +11,30 @@ namespace PipServices.Commons.Commands
     public delegate Task<object> ExecutableDelegate(string correlationId, Parameters args);
 
     /// <summary>
-    /// Represents a command that implements a command pattern.
+    /// Concrete implementation of ICommand interface. Command allows to call a method
+    /// or function using Command pattern.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var command = new Command("add", null, async(args) => {
+    /// var param1 = args.getAsFloat("param1");
+    /// var param2 = args.getAsFloat("param2");
+    /// return param1 + param2; });
+    /// var result = command.ExecuteAsync("123", Parameters.fromTuples(
+    /// "param1", 2,
+    /// "param2", 2 ));
+    /// Console.WriteLine(result.ToString()); 
+    /// // Console output: 4
+    /// </code>
+    /// </example>
+    /// See <see cref="ICommand"/>, <see cref="CommandSet"/>
     public class Command : ICommand
     {
         private readonly Schema _schema;
         private readonly ExecutableDelegate _function;
 
         /// <summary>
-        /// Command constructor
+        /// Creates a new command object and assigns it's parameters.
         /// </summary>
         /// <param name="name">Command name.</param>
         /// <param name="schema">Command schema.</param>
@@ -39,11 +54,14 @@ namespace PipServices.Commons.Commands
         public string Name { get; }
 
         /// <summary>
-        /// Executes the command given specific arguments as input.
+        /// Executes the command. Before execution is validates Parameters args using
+        /// the defined schema.The command execution intercepts exceptions raised
+        /// by the called function and calls them as an error.
         /// </summary>
         /// <param name="correlationId">Unique correlation/transaction id.</param>
         /// <param name="args">Command arguments.</param>
         /// <returns>Execution result.</returns>
+        /// See <see cref="Parameters"/>
         public async Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
             if (_schema != null)
@@ -58,8 +76,8 @@ namespace PipServices.Commons.Commands
             catch (Exception ex)
             {
                 throw new InvocationException(
-                    correlationId, 
-                    "EXEC_FAILED", 
+                    correlationId,
+                    "EXEC_FAILED",
                     "Execution " + Name + " failed: " + ex
                 )
                 .WithDetails("command", Name)
@@ -68,10 +86,11 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Performs validation of the command arguments.
+        /// Validates the command Parameters args before execution using the defined schema.
         /// </summary>
         /// <param name="args">Command arguments.</param>
-        /// <returns>A list with validation results</returns>
+        /// <returns>a list of ValidationResults or an empty array (if no schema is set).</returns>
+        /// See <see cref="Parameters"/>, <see cref="ValidationResult"/>
         public IList<ValidationResult> Validate(Parameters args)
         {
             if (_schema != null)

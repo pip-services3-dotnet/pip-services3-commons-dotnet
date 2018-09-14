@@ -7,8 +7,14 @@ using System.Collections.Generic;
 namespace PipServices.Commons.Convert
 {
     /// <summary>
-    /// Converts objects to/from Json format.
+    /// Converts arbitrary values from and to JSON (JavaScript Object Notation) strings.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var value1 = JsonConverter.fromJson("{\"key\":123}"); // Result: { key: 123 }
+    /// var value2 = JsonConverter.ToMap({ key: 123}); // Result: "{\"key\":123}"
+    /// </code>
+    /// </example>
     public static class JsonConverter
     {
         private static JsonSerializerSettings JsonSettings = new JsonSerializerSettings
@@ -22,6 +28,11 @@ namespace PipServices.Commons.Convert
             }
         };
 
+        /// <summary>
+        /// Converts value into JSON string.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <returns> JSON string or null when value is null.</returns>
         public static string ToJson(object value)
         {
             if (value == null) return null;
@@ -32,18 +43,34 @@ namespace PipServices.Commons.Convert
             );
         }
 
+        /// <summary>
+        /// Converts value from JSON string
+        /// </summary>
+        /// <param name="value">the JSON string to convert.</param>
+        /// <returns>converted object value or null when value is null.</returns>
         public static object FromJson(string value)
         {
             if (value == null) return null;
             return JsonConvert.DeserializeObject(value);
         }
 
+        /// <summary>
+        /// Converts value from JSON string to T object
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">the JSON string to convert.</param>
+        /// <returns>converted object value or null when value is null.</returns>
         public static T FromJson<T>(string value)
         {
             if (value == null) return default(T);
             return JsonConvert.DeserializeObject<T>(value);
         }
 
+        /// <summary>
+        /// Converts JSON string into map object or returns null when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the JSON string to convert.</param>
+        /// <returns>Map object value or null when conversion is not supported.</returns>
         public static IDictionary<string, object> ToNullableMap(string value)
         {
             if (value == null) return null;
@@ -112,12 +139,23 @@ namespace PipServices.Commons.Convert
             }
         }
 
+        /// <summary>
+        /// Converts JSON string into map object or returns empty map when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the JSON string to convert.</param>
+        /// <returns>Map object value or empty map when conversion is not supported.</returns>
         public static IDictionary<string, object> ToMap(string value)
         {
             var result = ToNullableMap(value);
             return result ?? new Dictionary<string, object>();
         }
 
+        /// <summary>
+        /// Converts JSON string into map object or returns default map when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the JSON string to convert.</param>
+        /// <param name="defaultValue">the default value.</param>
+        /// <returns>Map object value or default map when conversion is not supported.</returns>
         public static IDictionary<string, object> ToMapWithDefault(string value, IDictionary<string, object> defaultValue)
         {
             var result = ToNullableMap(value);

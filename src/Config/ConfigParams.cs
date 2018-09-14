@@ -7,24 +7,36 @@ using PipServices.Commons.Reflect;
 namespace PipServices.Commons.Config
 {
     /// <summary>
-    /**
-     * Map with configuration parameters that use complex keys with dot notation and simple string values.
-     * 
-     * Example of values, stored in the configuration parameters:
-     * <ul>
-     * <li>Section-1.Subsection-1-1.Key-1-1-1=123</li>
-     * <li>Section-1.Subsection-1-2.Key-1-2-1="ABC"</li>
-     * <li>Section-2.Subsection-1.Key-2-1-1="2016-09-16T00:00:00.00Z"</li>
-     * </ul>
-     *  
-     * Configuration parameters support getting and adding sections from the map.
-     * 
-     * Also, configuration parameters may come in a form of parameterized string:
-     * Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z
-     * 
-     * All keys stored in the map are case-insensitive.
-     */
+    ///Contains a key-value map with configuration parameters.
+    /// All values stored as strings and can be serialized as JSON or string forms.
+    /// When retrieved the values can be automatically converted on read using GetAsXXX methods.
+    /// 
+    /// The keys are case-sensitive, so it is recommended to use consistent C-style as: "my_param"
+    /// 
+    /// Configuration parameters can be broken into sections and subsections using dot notation as:
+    /// "section1.subsection1.param1". Using GetSection method all parameters from specified section
+    /// can be extracted from a ConfigMap.
+    /// 
+    /// The ConfigParams supports serialization from/to plain strings as:
+    /// "key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"
+    /// ConfigParams are used to pass configurations to IConfigurable objects. 
+    /// They also serve as a basis for more concrete configurations such as ConnectionParams
+    /// or CredentialParams.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var config = ConfigParams.fromTuples( "section1.key1", "AAA",
+    /// "section1.key2", 123,
+    /// "section2.key1", true );
+    /// 
+    /// config.getAsString("section1.key1"); // Result: AAA
+    /// config.getAsInteger("section1.key1"); // Result: 0
+    /// 
+    /// var section1 = config.getSection("section1");
+    /// section1.ToString(); // Result: key1=AAA;key2=123
+    /// </code>
+    /// </example>
+    /// See <see cref="IConfigurable"/>, <see cref="StringValueMap"/>
     public class ConfigParams : StringValueMap
     {
         /// <summary>
@@ -34,9 +46,10 @@ namespace PipServices.Commons.Config
         { }
 
         /// <summary>
-        /// Creates an instance of ConfigParams.
+        /// Creates a new ConfigParams and fills it with values.
         /// </summary>
-        /// <param name="content">Existing map to copy keys/values from.</param>
+        /// <param name="content">(optional) an object to be converted into key-value pairs to initialize this config map.</param>
+        /// See <see cref="StringValueMap"/>
         public ConfigParams(IDictionary<string, string> content)
             : base(content)
         { }
@@ -69,6 +82,11 @@ namespace PipServices.Commons.Config
             return sections;
         }
 
+        /// <summary>
+        /// Gets parameters from specific section stored in this ConfigMap. The section name is removed from parameter keys.
+        /// </summary>
+        /// <param name="section">name of the section to retrieve configuration parameters from.</param>
+        /// <returns>all configuration parameters that belong to the section named 'section'.</returns>
         public ConfigParams GetSection(string section)
         {
             var result = new ConfigParams();
@@ -92,6 +110,11 @@ namespace PipServices.Commons.Config
             return string.IsNullOrWhiteSpace(name) || name.StartsWith("#") || name.StartsWith("!");
         }
 
+        /// <summary>
+        /// Adds parameters into this ConfigParams under specified section. Keys for the new parameters are appended with section dot prefix.
+        /// </summary>
+        /// <param name="section">name of the section where add new parameters</param>
+        /// <param name="sectionParams">new parameters to be added.</param>        
         public void AddSection(string section, ConfigParams sectionParams)
         {
             // "Shadow" section names starts with # or !
@@ -115,19 +138,36 @@ namespace PipServices.Commons.Config
             }
         }
 
+        /// <summary>
+        /// Overrides parameters with new values from specified ConfigParams and returns a new ConfigParams object.
+        /// </summary>
+        /// <param name="configParams">ConfigMap with parameters to override the current values.</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="ConfigParams.SetDefaults(ConfigParams)"/>
         public ConfigParams Override(ConfigParams configParams)
         {
             var map = FromMaps(this, configParams);
             return new ConfigParams(map);
         }
 
-
+        /// <summary>
+        /// Set default values from specified ConfigParams and returns a new ConfigParams object.
+        /// </summary>
+        /// <param name="defaultConfigParams">ConfigMap with default parameter values.</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="ConfigParams.Override(ConfigParams)"/>
         public ConfigParams SetDefaults(ConfigParams defaultConfigParams)
         {
             var map = FromMaps(defaultConfigParams, this);
             return new ConfigParams(map);
         }
 
+        /// <summary>
+        /// Creates a new ConfigParams object filled with key-value pairs from specified object.
+        /// </summary>
+        /// <param name="value">an object with key-value pairs used to initialize a new ConfigParams.</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="RecursiveObjectReader.GetProperties(object)"/>
         public new static ConfigParams FromValue(object value)
         {
             var map = RecursiveObjectReader.GetProperties(value);
@@ -136,18 +176,39 @@ namespace PipServices.Commons.Config
             return result;
         }
 
+        /// <summary>
+        /// Creates a new ConfigParams object filled with provided key-value pairs called tuples.
+        /// Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs
+        /// </summary>
+        /// <param name="tuples">the tuples to fill a new ConfigParams object.</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="StringValueMap.FromTuples(object[])"/>
         public new static ConfigParams FromTuples(params object[] tuples)
         {
             var map = StringValueMap.FromTuples(tuples);
             return new ConfigParams(map);
         }
 
+        /// <summary>
+        /// Creates a new ConfigParams object filled with key-value pairs serialized as a string.
+        /// </summary>
+        /// <param name="line">a string with serialized key-value pairs as
+        /// "key1=value1;key2=value2;..." 
+        /// Example: "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="StringValueMap.FromString(string)"/>
         public new static ConfigParams FromString(string line)
         {
             var map = StringValueMap.FromString(line);
             return new ConfigParams(map);
         }
 
+        /// <summary>
+        /// Merges two or more ConfigParams into one. The following ConfigParams override previously defined parameters.
+        /// </summary>
+        /// <param name="configs">a list of ConfigParams objects to be merged.</param>
+        /// <returns>a new ConfigParams object.</returns>
+        /// See <see cref="StringValueMap.FromMaps(IDictionary{string, string}[])"/>
         public static ConfigParams MergeConfigs(params IDictionary<string, string>[] configs)
         {
             var map = FromMaps(configs);

@@ -8,9 +8,37 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Commands
 {
     /// <summary>
-    /// Handles command registration and execution.
-    /// Enables interceptors to control or modify command behavior.
+    /// Contains a set of commands and events supported by a ICommandable object.
+    /// The CommandSet supports command interceptors to extend and the command call chain.
+    /// CommandSets can be used as alternative commandable interface to a business object.
+    /// It can be used to auto generate multiple external services for the business object
+    /// without writing much code.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// public class MyDataCommandSet: CommandSet 
+    /// {
+    ///     private IMyDataController _controller;
+    /// 
+    ///     public MyDataCommandSet(IMyDataController controller)  // Any data controller interface
+    ///     {
+    ///         base();
+    ///         this._controller = controller;
+    ///         this.addCommand(this.MakeGetMyDataCommand()); }
+    ///     
+    ///         private ICommand MakeGetMyDataCommand() 
+    ///         {
+    ///             return new Command(
+    ///             'get_mydata', 
+    ///             null,
+    ///             async(correlationId, args)=> {
+    ///                 String param = args.getAsString('param');
+    ///                 return this._controller.getMyData(correlationId, param);  });
+    ///         }
+    /// }
+    /// </code>
+    /// </example>
+    /// See <see cref="ICommandable"/>, <see cref="Command"/>, <see cref="Event"/>
     public class CommandSet
     {
         private List<ICommand> _commands = new List<ICommand>();
@@ -19,29 +47,37 @@ namespace PipServices.Commons.Commands
         private readonly Dictionary<string, IEvent> _eventsByName = new Dictionary<string, IEvent>();
         private readonly List<ICommandInterceptor> _intercepters = new List<ICommandInterceptor>();
 
+        /// <summary>
+        /// Creates an empty CommandSet object.
+        /// </summary>
         public CommandSet() { }
 
         /// <summary>
-        /// Gets all supported commands.
+        /// Gets all commands registered in this command set.
         /// </summary>
+        /// <returns>a list of commands.</returns>
+        /// See <see cref="ICommand"/>
         public List<ICommand> Commands
         {
             get { return _commands; }
         }
 
         /// <summary>
-        /// Gets all supported events.
+        /// Gets all events registred in this command set.
         /// </summary>
+        /// <returns>a list of events.</returns>
+        /// See <see cref="IEvent"/>
         private List<IEvent> Events
         {
             get { return _events; }
         }
 
         /// <summary>
-        /// Finds a specific command by its name.
+        /// Searches for a command by its name.
         /// </summary>
         /// <param name="command">The command name.</param>
         /// <returns>A command with the given name.</returns>
+        /// See <see cref="ICommand"/>
         public ICommand FindCommand(string command)
         {
             ICommand value;
@@ -50,10 +86,11 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Finds a specific event by its name.
+        /// Searches for an event by its name in this command set.
         /// </summary>
-        /// <param name="ev">The event name.</param>
+        /// <param name="ev">the name of the event to search for.</param>
         /// <returns>An event with the given name.</returns>
+        /// See <see cref="IEvent"/>
         public IEvent FindEvent(string ev)
         {
             IEvent value;
@@ -80,9 +117,10 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds a command to the command set.
+        /// Adds a ICommand command to this command set.
         /// </summary>
         /// <param name="command">The command to add.</param>
+        /// See <see cref="ICommand"/>
         public void AddCommand(ICommand command)
         {
             Commands.Add(command);
@@ -90,9 +128,10 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds commands to the command set.
+        /// Adds multiple ICommand commands to this command set.
         /// </summary>
         /// <param name="commands">The commands to add.</param>
+        /// See <see cref="ICommand"/>
         public void AddCommands(IEnumerable<ICommand> commands)
         {
             foreach (var command in commands)
@@ -100,9 +139,10 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds an event to the command set.
+        /// Adds an IEvent event to this command set.
         /// </summary>
         /// <param name="ev">The event to add.</param>
+        /// See <see cref="IEvent"/>
         public void AddEvent(IEvent ev)
         {
             _events.Add(ev);
@@ -110,9 +150,10 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds events to the command set.
+        /// Adds multiple IEvent events to this command set.
         /// </summary>
         /// <param name="events">The events to add.</param>
+        /// See <see cref="IEvent"/>
         public void AddEvents(IEnumerable<IEvent> events)
         {
             foreach (var ev in events)
@@ -120,7 +161,8 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds command from another command set to this set.
+        /// Adds all of the commands and events from specified CommandSet command set
+        /// into this one.
         /// </summary>
         /// <param name="commandSet">The commands set to add.</param>
         public void AddCommandSet(CommandSet commandSet)
@@ -134,9 +176,10 @@ namespace PipServices.Commons.Commands
 
 
         /// <summary>
-        /// Adds an intercepter to the command set.
+        /// Adds a ICommandInterceptor command interceptor to this command set.
         /// </summary>
         /// <param name="intercepter">The intercepter to add.</param>
+        /// See <see cref="ICommandInterceptor"/>
         public void AddInterceptor(ICommandInterceptor intercepter)
         {
             _intercepters.Add(intercepter);
@@ -144,12 +187,14 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Executes a command by its name with specified arguments.
+        /// Executes a ICommand command specificed by its name.
         /// </summary>
         /// <param name="correlationId">Unique correlation/transaction id.</param>
         /// <param name="command">Command name.</param>
         /// <param name="args">Command arguments.</param>
+        /// <exception cref="ValidationException"> when execution fails for validation reason.</exception>
         /// <returns>Execution result.</returns>
+        /// See <see cref="ICommand"/>, <see cref="Parameters"/>
         public Task<object> ExecuteAsync(string correlationId, string command, Parameters args)
         {
             var cref = FindCommand(command);
@@ -173,11 +218,16 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Validates command arguments.
+        /// Validates Parameters args for command specified by its name using defined
+        /// schema.If validation schema is not defined than the methods returns no
+        /// errors.It returns validation error if the command is not found.
         /// </summary>
-        /// <param name="command">Command name.</param>
-        /// <param name="args">Command arguments.</param>
-        /// <returns>A list of validation errors or an empty list if the arguments are valid.</returns>
+        /// <param name="command">the name of the command for which the 'args' must be validated.</param>
+        /// <param name="args">the parameters (arguments) to validate.</param>
+        /// <returns>a list of ValidationResults. If no command is found by the given
+        /// name, then the returned array of ValidationResults will contain a
+        /// single entry, whose type will be ValidationResultType.Error.</returns>
+        /// See <see cref="Command"/>, <see cref="Parameters"/>, <see cref="ValidationResult"/>
         public IList<ValidationResult> Validate(string command, Parameters args)
         {
             var cref = FindCommand(command);
@@ -197,7 +247,7 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Adds listener to all events.
+        /// Adds a IEventListener listener to receive notifications on fired events.
         /// </summary>
         /// <param name="listener">The listener to add.</param>
         public void AddListener(IEventListener listener)
@@ -209,7 +259,7 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Removes a listener from all events.
+        /// Removes previosly added IEventListener listener.
         /// </summary>
         /// <param name="listener">The listener to remove.</param>
         public void RemoveListener(IEventListener listener)
@@ -221,11 +271,11 @@ namespace PipServices.Commons.Commands
         }
 
         /// <summary>
-        /// Notifies all listeners about the event.
+        /// Fires event specified by its name and notifies all registered IEventListener listeners
         /// </summary>
-        /// <param name="ev">Event name.</param>
-        /// <param name="correlationId">Correlation/transaction id.</param>
-        /// <param name="value">Event arguments/value.</param>
+        /// <param name="correlationId">optional transaction id to trace calls across components.</param>
+        /// <param name="ev">the name of the event that is to be fired.</param>
+        /// <param name="value">the event arguments (parameters).</param>
         public async Task NotifyAsync(string correlationId, string ev, Parameters value)
         {
             var e = FindEvent(ev);

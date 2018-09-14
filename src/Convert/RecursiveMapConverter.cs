@@ -9,7 +9,22 @@ using System.Runtime.Serialization;
 
 namespace PipServices.Commons.Convert
 {
-    public class RecursiveMapConverter
+    /// <summary>
+    /// Converts arbitrary values into map objects using extended conversion rules.
+    /// This class is similar to MapConverter, but is recursively converts all values
+    /// stored in objects and arrays.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var value1 = RecursiveMapConverted.ToNullableMap("ABC"); // Result: null
+    /// var value2 = RecursiveMapConverted.ToNullableMap({ key: 123 }); // Result: { key: 123 }
+    /// var result = new List<Object>();
+    /// result.Add(1); 
+    /// result.Add(new int[]{2, 3});
+    /// var value3 = RecursiveMapConverted.ToNullableMap(result); // Result: { "0": 1, { "0": 2, "1": 3 } }
+    /// </code>
+    /// </example>
+public class RecursiveMapConverter
     {
         private static IDictionary<string, object> ObjectToMap(object value)
         {
@@ -187,17 +202,33 @@ namespace PipServices.Commons.Convert
             return ObjectToMap(value);
         }
 
+        /// <summary>
+        /// Converts value into map object or returns null when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <returns>map object or null when conversion is not supported.</returns>
         public static IDictionary<string, object> ToNullableMap(object value)
         {
             return ValueToMap(value) as IDictionary<string, object>;
         }
 
+        /// <summary>
+        /// Converts value into map object or returns empty map when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <returns>map object or empty map when conversion is not supported.</returns>
         public static IDictionary<string, object> ToMap(object value)
         {
             var result = ToNullableMap(value);
             return result ?? new Dictionary<string, object>();
         }
 
+        /// <summary>
+        /// Converts value into map object or returns default map when conversion is not possible.
+        /// </summary>
+        /// <param name="value">the value to convert</param>
+        /// <param name="defaultValue">the default value</param>
+        /// <returns>map object or default map when conversion is not supported.</returns>
         public static IDictionary<string, object> ToMapWithDefault(object value, Dictionary<string, object> defaultValue)
         {
             var result = ToNullableMap(value);

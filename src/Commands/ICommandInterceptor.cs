@@ -6,31 +6,45 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Commands
 {
     /// <summary>
-    /// Interface for stackable command intercepters
+    /// An interface for stackable command interceptors, which can extend
+    /// and modify the command call chain.
+    /// 
+    /// This mechanism can be used for authentication, logging, and other functions.
     /// </summary>
+    /// See <see cref="ICommand"/>, <see cref="InterceptedCommand"/>
     public interface ICommandInterceptor
     {
         /// <summary>
-        /// Gets the command name. Intercepter can modify the name if needed.
+        /// Gets the name of the wrapped command.
+        /// 
+        /// The interceptor can use this method to override the command name.
+        /// Otherwise it shall just delegate the call to the wrapped command.
         /// </summary>
-        /// <param name="command">The intercepted command.</param>
-        /// <returns>Command name.</returns>
+        /// <param name="command">the next command in the call chain.</param>
+        /// <returns>the name of the wrapped command.</returns>
         string GetName(ICommand command);
 
         /// <summary>
-        /// Executes the command given specific arguments as input.
+        /// Executes the wrapped command with specified arguments.
+        /// 
+        /// The interceptor can use this method to intercept and alter the command
+        /// execution.Otherwise it shall just delete the call to the wrapped command.
         /// </summary>
-        /// <param name="correlationId">Unique correlation/transaction id.</param>
-        /// <param name="command">Intercepted command.</param>
-        /// <param name="args">Map with command arguments.</param>
-        /// <returns></returns>
+        /// <param name="correlationId">optional transaction id to trace calls across components.</param>
+        /// <param name="command">the next command in the call chain that is to be executed.</param>
+        /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
+        /// <returns>execution result.</returns>
+        /// See <see cref="Parameters"/>
         Task<object> ExecuteAsync(string correlationId, ICommand command, Parameters args);
 
         /// <summary>
-        /// Performs validation of the command arguments.
+        /// Validates arguments of the wrapped command before its execution.
+        /// 
+        /// The interceptor can use this method to intercept and alter validation of the
+        /// command arguments.Otherwise it shall just delegate the call to the wrapped command.
         /// </summary>
-        /// <param name="command">Intercepted command.</param>
-        /// <param name="args">Command arguments.</param>
+        /// <param name="command">the next command in the call chain to be validated against.</param>
+        /// <param name="args">the parameters (arguments) to validate.</param>
         /// <returns>A list of errors or an empty list if validation was successful.</returns>
         List<ValidationResult> Validate(ICommand command, Parameters args);
     }

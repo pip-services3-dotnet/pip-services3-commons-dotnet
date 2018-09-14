@@ -5,20 +5,23 @@ using PipServices.Commons.Validate;
 namespace PipServices.Commons.Commands
 {
     /// <summary>
-    /// Interface for commands that execute functional operations.
+    /// An interface for Commands, which are part of the Command design pattern. 
+    /// Each command wraps a method or function and allows to call them in uniform and safe manner.
     /// </summary>
+    /// See <see cref="Command"/>, <see cref="IExecutable"/>, <see cref="ICommandInterceptor"/>, <see cref="InterceptedCommand"/>
     public interface ICommand : IExecutable
     {
         /// <summary>
-        /// Gets the name of the command.
+        /// Gets the command name.
         /// </summary>
         string Name { get; }
 
         /// <summary>
-        /// Performs validation of the command arguments.
+        /// Validates command arguments before execution using defined schema.
         /// </summary>
-        /// <param name="args">Command arguments.</param>
+        /// <param name="args">the parameters (arguments) to validate.</param>
         /// <returns>List of errors or empty list if validation was successful.</returns>
+        /// See <see cref="Parameters"/>, <see cref="ValidationResult"/>
         IList<ValidationResult> Validate(Parameters args);
     }
 }

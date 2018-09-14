@@ -1,5 +1,9 @@
 ﻿namespace PipServices.Commons.Convert
 {
+    /// <summary>
+    /// Codes for the data types that can be converted using TypeConverter.
+    /// </summary>
+    /// See <see cref="TypeConverter"/>
     public enum TypeCode
     {
         Unknown,

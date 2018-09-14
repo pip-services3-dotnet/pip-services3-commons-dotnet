@@ -7,51 +7,84 @@ using PipServices.Commons.Validate;
 namespace PipServices.Commons.Commands
 {
     /// <summary>
-    /// Interceptor wrapper to turn it into a stackable command.
+    /// Implements a ICommand command wrapped by an interceptor.
+    /// It allows to build command call chains.The interceptor can alter execution
+    /// and delegate calls to a next command, which can be intercepted or concrete.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// public class CommandLogger: ICommandInterceptor
+    /// {
+    ///     public String getName(ICommand command) 
+    ///     {
+    ///         return command.getName();
+    ///     }
+    ///     
+    ///     public Task<object> ExecuteAsync(String correlationId, ICommand command, Parameters args) 
+    ///     {
+    ///         Console.WriteLine("Executed command " + command.getName());
+    ///         return command.ExecuteAsync(correlationId, args); 
+    ///     }
+    ///     
+    ///     private IList<ValidationResult> validate(ICommand command, Parameters args) 
+    ///     {
+    ///         return command.validate(args);
+    ///     }
+    /// }
+    /// var logger = new CommandLogger();
+    /// var loggedCommand = new InterceptedCommand(logger, command);
+    /// // Each called command will output: Executed command <command name>
+    /// </code>
+    /// </example>
+    /// See <see cref="ICommand"/>, <see cref="ICommandInterceptor"/>
     public class InterceptedCommand : ICommand
     {
-        private readonly ICommandInterceptor _intercepter;
+        private readonly ICommandInterceptor _interceptor;
         private readonly ICommand _next;
 
         /// <summary>
-        /// Creates an instance of intercepted command.
+        /// Creates a new InterceptedCommand, which serves as a link in an execution
+        /// chain.Contains information about the interceptor that is being used and the
+        /// next command in the chain.
         /// </summary>
-        /// <param name="intercepter">Intercepter reference.</param>
+        /// <param name="interceptor">the interceptor that is intercepting the command.</param>
         /// <param name="next">Next intercepter or command in the chain.</param>
-        public InterceptedCommand(ICommandInterceptor intercepter, ICommand next)
+        public InterceptedCommand(ICommandInterceptor interceptor, ICommand next)
         {
-            _intercepter = intercepter;
+            _interceptor = interceptor;
             _next = next;
         }
 
         /// <summary>
         /// Gets the command name.
         /// </summary>
+        /// <returns>the name of the command that is being intercepted.</returns>
         public string Name
         {
-            get { return _intercepter.GetName(_next); }
+            get { return _interceptor.GetName(_next); }
         }
 
         /// <summary>
-        /// Executes the command given specific arguments as input.
+        /// Executes the next command in the execution chain using the given Parameters parameters(arguments).
         /// </summary>
-        /// <param name="correlationId">Unique correlation/transaction id.</param>
-        /// <param name="args">Command arguments.</param>
+        /// <param name="correlationId">unique transaction id to trace calls across components.</param>
+        /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
         /// <returns>Execution result.</returns>
+        /// See <see cref="Parameters"/>
         public Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
-            return _intercepter.ExecuteAsync(correlationId, _next, args);
+            return _interceptor.ExecuteAsync(correlationId, _next, args);
         }
 
         /// <summary>
-        /// Performs validation of the command arguments.
+        /// Validates the Parameters args that are to be passed to the command that is next in the execution chain.
         /// </summary>
-        /// <param name="args">Command arguments.</param>
+        /// <param name="args">the parameters (arguments) to validate for the next command.</param>
         /// <returns>A list of errors or an empty list if validation was successful.</returns>
+        /// See <see cref="Parameters"/>, <see cref="ValidationResult"/>
         public IList<ValidationResult> Validate(Parameters args)
         {
-            return _intercepter.Validate(_next, args);
+            return _interceptor.Validate(_next, args);
         }
     }
 }

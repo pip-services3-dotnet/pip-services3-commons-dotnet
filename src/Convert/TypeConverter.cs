@@ -7,8 +7,17 @@ using System.Reflection;
 namespace PipServices.Commons.Convert
 {
     /// <summary>
-    /// Generic type converter.
+    /// Converts arbitrary values into objects specific by TypeCodes. 
+    /// For each TypeCode this class calls corresponding converter 
+    /// which applies extended conversion rules to convert the values.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var value1 = TypeConverter.toType(TypeCode.Integer, "123.456"); // Result: 123
+    /// var value2 = TypeConverter.toType(TypeCode.DateTime, 123); // Result: DateTime(123)
+    /// var value3 = TypeConverter.toType(TypeCode.Boolean, "F"); // Result: false
+    /// </code>
+    /// </example>
     public static class TypeConverter
     {
         public static bool IsPrimitiveType(object obj)
@@ -20,12 +29,17 @@ namespace PipServices.Commons.Convert
 
         public static bool IsPrimitiveType(Type type)
         {
-            return type == typeof(string) || type == typeof(int) || type == typeof(long) || type == typeof(decimal) 
-                || type == typeof(char) || type == typeof(decimal) || type == typeof(bool) || type == typeof(byte) 
-                || type == typeof(double) || type == typeof(float) || type == typeof(sbyte) || type == typeof(short) 
+            return type == typeof(string) || type == typeof(int) || type == typeof(long) || type == typeof(decimal)
+                || type == typeof(char) || type == typeof(decimal) || type == typeof(bool) || type == typeof(byte)
+                || type == typeof(double) || type == typeof(float) || type == typeof(sbyte) || type == typeof(short)
                 || type == typeof(uint) || type == typeof(ulong) || type == typeof(ushort);
         }
 
+        /// <summary>
+        /// Gets TypeCode for specific type.
+        /// </summary>
+        /// <param name="type">the Class type for the data type.</param>
+        /// <returns>the TypeCode that corresponds to the passed object's type.</returns>
         public static TypeCode ToTypeCode(Type type)
         {
             if (type == null)
@@ -61,7 +75,7 @@ namespace PipServices.Commons.Convert
             if (type == typeof(TimeSpan))
                 return TypeCode.Duration;
 
-            if (type.GetTypeInfo().GetInterface(nameof(IDictionary)) != null 
+            if (type.GetTypeInfo().GetInterface(nameof(IDictionary)) != null
                 || type.GetTypeInfo().GetInterfaces().Contains(typeof(IDictionary<,>)))
                 return TypeCode.Map;
 
@@ -72,6 +86,11 @@ namespace PipServices.Commons.Convert
             return TypeCode.Object;
         }
 
+        /// <summary>
+        /// Gets TypeCode for specific value.
+        /// </summary>
+        /// <param name="value">value whose TypeCode is to be resolved.</param>
+        /// <returns>the TypeCode that corresponds to the passed object's type.</returns>
         public static TypeCode ToTypeCode(object value)
         {
             if (value == null)
@@ -80,6 +99,15 @@ namespace PipServices.Commons.Convert
             return ToTypeCode(value.GetType());
         }
 
+        /// <summary>
+        /// Converts value into an object type specified by Type Code or returns null
+        /// when conversion is not possible.
+        /// </summary>
+        /// <typeparam name="T">the Class type for the data type.</typeparam>
+        /// <param name="value">the value to convert.</param>
+        /// <returns>object value of type corresponding to TypeCode, or null when
+        /// conversion is not supported.</returns>
+        /// See <see cref="TypeConverter.ToTypeCode(Type)"/>
         public static T? ToNullableType<T>(object value) where T : struct
         {
             if (value == null) return null;
@@ -118,11 +146,30 @@ namespace PipServices.Commons.Convert
             }
         }
 
+        /// <summary>
+        /// Converts value into an object type specified by Type Code 
+        /// or returns type default when conversion is not possible.
+        /// </summary>
+        /// <typeparam name="T">the Class type for the data type into which 'value' is to be converted.</typeparam>
+        /// <param name="value">the value to convert</param>
+        /// <returns>object value of type corresponding to TypeCode, or type default when
+        /// conversion is not supported.</returns>
+        /// See <see cref="ToTypeWithDefault{T}(object, T)"/>
         public static T ToType<T>(object value)
         {
             return ToTypeWithDefault(value, default(T));
         }
 
+        /// <summary>
+        /// Converts value into an object type specified by Type Code 
+        /// or returns default value when conversion is not possible.
+        /// </summary>
+        /// <typeparam name="T">the Class type for the data type into which 'value' is to be converted.</typeparam>
+        /// <param name="value">the value to convert.</param>
+        /// <param name="defaultValue">the default value to return if conversion is not possible
+        /// (returns null).</param>
+        /// <returns>object value of type corresponding to TypeCode, or default value when 
+        /// conversion is not supported</returns>
         public static T ToTypeWithDefault<T>(object value, T defaultValue)
         {
             if (value == null) return defaultValue;
@@ -163,6 +210,44 @@ namespace PipServices.Commons.Convert
             catch
             {
                 return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts a TypeCode into its string name.
+        /// </summary>
+        /// <param name="type">the TypeCode to convert into a string.</param>
+        /// <returns>the name of the TypeCode passed as a string value.</returns>
+        public static String ToString(TypeCode type)
+        {
+            switch (type)
+            {
+                case TypeCode.Unknown:
+                    return "unknown";
+                case TypeCode.String:
+                    return "string";
+                case TypeCode.Boolean:
+                    return "boolean";
+                case TypeCode.Integer:
+                    return "integer";
+                case TypeCode.Long:
+                    return "long";
+                case TypeCode.Float:
+                    return "float";
+                case TypeCode.Double:
+                    return "double";
+                case TypeCode.DateTime:
+                    return "datetime";
+                case TypeCode.Object:
+                    return "object";
+                case TypeCode.Enum:
+                    return "enum";
+                case TypeCode.Array:
+                    return "array";
+                case TypeCode.Map:
+                    return "map";
+                default:
+                    return "unknown";
             }
         }
 
