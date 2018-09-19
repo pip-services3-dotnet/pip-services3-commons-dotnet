@@ -7,6 +7,7 @@ var searchData=
   ['icommandable',['ICommandable',['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_commandable.html',1,'PipServices::Commons::Commands']]],
   ['icommandinterceptor',['ICommandInterceptor',['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_command_interceptor.html',1,'PipServices::Commons::Commands']]],
   ['iconfigurable',['IConfigurable',['../interface_pip_services_1_1_commons_1_1_config_1_1_i_configurable.html',1,'PipServices::Commons::Config']]],
+  ['id',['Id',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_identifiable.html#a5c381e8f6ba46aa4479b7d69fb08b7ec',1,'PipServices::Commons::Data::IIdentifiable']]],
   ['idgenerator',['IdGenerator',['../class_pip_services_1_1_commons_1_1_data_1_1_id_generator.html',1,'PipServices::Commons::Data']]],
   ['ievent',['IEvent',['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event.html',1,'PipServices::Commons::Commands']]],
   ['ieventlistener',['IEventListener',['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event_listener.html',1,'PipServices::Commons::Commands']]],

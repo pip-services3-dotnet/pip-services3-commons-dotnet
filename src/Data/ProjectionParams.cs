@@ -4,18 +4,40 @@ using System.Text;
 namespace PipServices.Commons.Data
 {
     /// <summary>
-    /// Projection parameters requried to retrieve custom resultsets from database. 
-    /// The format is "Field1, Field2, InnerObject(Field1, Field2)"
+    /// Defines projection parameters with list if fields to include into query results.
+    /// 
+    /// The parameters support two formats: dot format and nested format.
+    /// 
+    /// The dot format is the standard way to define included fields and subfields using
+    /// dot object notation: "field1,field2.field21,field2.field22.field221"
+    /// 
+    /// As alternative the nested format offers a more compact representation:
+    /// "field1,field2(field21,field22(field221))"
     /// </summary>
-    /// <seealso cref="System.Collections.Generic.List{System.String}" />
+    /// <example>
+    /// <code>
+    /// var filter = FilterParams.fromTuples("type", "Type1");
+    /// var paging = new PagingParams(0, 100);
+    /// var projection = ProjectionParams.fromString("field1,field2(field21,field22)")
+    /// 
+    /// myDataClient.GetDataByFilter(filter, paging, projection);
+    /// </code>
+    /// </example>
     public class ProjectionParams : List<string>
     {
         private static char DefaultDelimiter = ',';
 
+        /// <summary>
+        /// Creates a new instance of the projection parameters.
+        /// </summary>
         public ProjectionParams()
         {
         }
 
+        /// <summary>
+        /// Creates a new instance of the projection parameters and assigns its value.
+        /// </summary>
+        /// <param name="values">(optional) values to initialize this object.</param>
         public ProjectionParams(string[] values)
         {
             if (values != null)
@@ -24,6 +46,10 @@ namespace PipServices.Commons.Data
             }
         }
 
+        /// <summary>
+        /// Creates a new instance of the projection parameters and assigns its value.
+        /// </summary>
+        /// <param name="values">(optional) values to initialize this object.</param>
         public ProjectionParams(AnyValueArray array)
         {
             if (array == null)
@@ -41,6 +67,12 @@ namespace PipServices.Commons.Data
             }
         }
 
+        /// <summary>
+        /// Converts specified value into ProjectionParams.
+        /// </summary>
+        /// <param name="value">value to be converted</param>
+        /// <returns>a newly created ProjectionParams.</returns>
+        /// See <see cref="AnyValueArray.FromValue(object)"/>
         public static ProjectionParams FromValue(object value)
         {
             if (value is ProjectionParams)
@@ -52,16 +84,33 @@ namespace PipServices.Commons.Data
             return new ProjectionParams(array);
         }
 
+        /// <summary>
+        /// Parses comma-separated list of projection fields.
+        /// </summary>
+        /// <param name="values">one or more comma-separated lists of projection fields</param>
+        /// <returns>a newly created ProjectionParams.</returns>
         public static ProjectionParams FromValues(params string[] values)
         {
             return FromValues(DefaultDelimiter, values);
         }
 
+        /// <summary>
+        /// Parses comma-separated list of projection fields.
+        /// </summary>
+        /// <param name="delimiter">a certain type of delimiter</param>
+        /// <param name="values">one or more comma-separated lists of projection fields</param>
+        /// <returns>a newly created ProjectionParams.</returns>
         public static ProjectionParams FromValues(char delimiter, params string[] values)
         {
             return new ProjectionParams(Parse(delimiter, values));
         }
 
+        /// <summary>
+        /// Gets a string representation of the object.
+        /// The result is a comma-separated list of projection fields
+        /// "field1,field2.field21,field2.field22.field221"
+        /// </summary>
+        /// <returns>a string representation of the object.</returns>
         public override string ToString()
         {
             var builder = new StringBuilder();

@@ -4,6 +4,7 @@ var searchData=
   ['clear',['Clear',['../class_pip_services_1_1_commons_1_1_refer_1_1_references.html#aab62910bc076bbf19eeeeeca3a72f3f5',1,'PipServices::Commons::Refer::References']]],
   ['clearasync',['ClearAsync',['../class_pip_services_1_1_commons_1_1_run_1_1_cleaner.html#ae5c9ae843df4029969b0fb20dc4b6623',1,'PipServices::Commons::Run::Cleaner']]],
   ['clearoneasync',['ClearOneAsync',['../class_pip_services_1_1_commons_1_1_run_1_1_cleaner.html#a170d33725801181e1491bac253e1ab4c',1,'PipServices::Commons::Run::Cleaner']]],
+  ['clone',['Clone',['../class_pip_services_1_1_commons_1_1_data_1_1_any_value.html#a9d25d665169463b64a5589b36e707797',1,'PipServices.Commons.Data.AnyValue.Clone()'],['../class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html#a995a1f040d443c8fa62c524561cc68c6',1,'PipServices.Commons.Data.AnyValueArray.Clone()'],['../class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html#a3bd9df5177016bdaa0b1b6be23a302b6',1,'PipServices.Commons.Data.AnyValueMap.Clone()'],['../interface_pip_services_1_1_commons_1_1_data_1_1_i_cloneable.html#a3a4326a8d9baa72e0bbf74de6fce31a8',1,'PipServices.Commons.Data.ICloneable.Clone()'],['../class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html#aa3f7897db835a7397f52395a12b2a761',1,'PipServices.Commons.Data.StringValueMap.Clone()']]],
   ['closeasync',['CloseAsync',['../class_pip_services_1_1_commons_1_1_run_1_1_closer.html#a94e3227750abf1ae8f7b19c427a13874',1,'PipServices.Commons.Run.Closer.CloseAsync()'],['../interface_pip_services_1_1_commons_1_1_run_1_1_i_closable.html#af051ac3579640b0237128a7c977c8c46',1,'PipServices.Commons.Run.IClosable.CloseAsync()']]],
   ['closeoneasync',['CloseOneAsync',['../class_pip_services_1_1_commons_1_1_run_1_1_closer.html#a416825346cedd14785586d0867933592',1,'PipServices::Commons::Run::Closer']]],
   ['closer',['Closer',['../class_pip_services_1_1_commons_1_1_run_1_1_closer.html',1,'PipServices::Commons::Run']]],
@@ -16,5 +17,7 @@ var searchData=
   ['conflict',['Conflict',['../class_pip_services_1_1_commons_1_1_errors_1_1_error_category.html#a573ebe6bf8f21a979961bc735c1b02a0',1,'PipServices::Commons::Errors::ErrorCategory']]],
   ['conflictexception',['ConflictException',['../class_pip_services_1_1_commons_1_1_errors_1_1_conflict_exception.html',1,'PipServices::Commons::Errors']]],
   ['connectionexception',['ConnectionException',['../class_pip_services_1_1_commons_1_1_errors_1_1_connection_exception.html',1,'PipServices::Commons::Errors']]],
+  ['contains',['Contains',['../class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html#a40aba48e2958ae373e37157bdcf8d5d7',1,'PipServices::Commons::Data::AnyValueArray']]],
+  ['containsas_3c_20t_20_3e',['ContainsAs&lt; T &gt;',['../class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html#a205fe132530663dc4ea8ba1ee58b4efe',1,'PipServices::Commons::Data::AnyValueArray']]],
   ['createdtime',['CreatedTime',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_trackable.html#a6367d2903e905b89fbe310cb7b0a93d4',1,'PipServices::Commons::Data::ITrackable']]]
 ];

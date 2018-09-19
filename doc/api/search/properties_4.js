@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name',['Name',['../class_pip_services_1_1_commons_1_1_commands_1_1_event.html#ad8d7b51ca72589879c3938c56bff96ff',1,'PipServices.Commons.Commands.Event.Name()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html#acc5e4746b7aa231b657de1a6761e2867',1,'PipServices.Commons.Commands.ICommand.Name()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event.html#a9928c78139e83cc5f8f253925ad3707b',1,'PipServices.Commons.Commands.IEvent.Name()'],['../class_pip_services_1_1_commons_1_1_commands_1_1_intercepted_command.html#a5663e03f8d1ff184ef890ed526771942',1,'PipServices.Commons.Commands.InterceptedCommand.Name()'],['../interface_pip_services_1_1_commons_1_1_data_1_1_i_named.html#aa04bc0a2c0bc6888fa345a4e5cda8a29',1,'PipServices.Commons.Data.INamed.Name()']]]
+  ['id',['Id',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_identifiable.html#a5c381e8f6ba46aa4479b7d69fb08b7ec',1,'PipServices::Commons::Data::IIdentifiable']]],
+  ['isdeleted',['IsDeleted',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_trackable.html#a3cdaf06b9cc9c4ef0afc82c22f24e295',1,'PipServices::Commons::Data::ITrackable']]]
 ];

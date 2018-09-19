@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['name',['Name',['../class_pip_services_1_1_commons_1_1_commands_1_1_event.html#ad8d7b51ca72589879c3938c56bff96ff',1,'PipServices.Commons.Commands.Event.Name()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html#acc5e4746b7aa231b657de1a6761e2867',1,'PipServices.Commons.Commands.ICommand.Name()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event.html#a9928c78139e83cc5f8f253925ad3707b',1,'PipServices.Commons.Commands.IEvent.Name()'],['../class_pip_services_1_1_commons_1_1_commands_1_1_intercepted_command.html#a5663e03f8d1ff184ef890ed526771942',1,'PipServices.Commons.Commands.InterceptedCommand.Name()'],['../interface_pip_services_1_1_commons_1_1_data_1_1_i_named.html#aa04bc0a2c0bc6888fa345a4e5cda8a29',1,'PipServices.Commons.Data.INamed.Name()'],['../class_pip_services_1_1_commons_1_1_data_1_1_sort_field.html#a5d8b6c237924910cc7f57a3268b7335c',1,'PipServices.Commons.Data.SortField.Name()']]]
+];

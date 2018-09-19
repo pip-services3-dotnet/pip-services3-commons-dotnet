@@ -3,8 +3,24 @@ using System.Linq;
 
 namespace PipServices.Commons.Data
 {
+    /// <summary>
+    /// Defines a field name and order used to sort query results.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var filter = FilterParams.fromTuples("type", "Type1");
+    /// var paging = new PagingParams(0, 100);
+    /// var sorting = new SortingParams(new SortField("create_time", true));
+    /// 
+    /// myDataClient.GetDataByFilter(filter, paging, sorting);
+    /// </code>
+    /// </example>
     public class SortParams : List<SortField>
     {
+        /// <summary>
+        /// Creates a new instance and initializes it with specified sort fields.
+        /// </summary>
+        /// <param name="fields">a list of fields to sort by.</param>
         public SortParams(IEnumerable<SortField> fields = null)
         {
             if (fields != null)
@@ -13,6 +29,10 @@ namespace PipServices.Commons.Data
             }
         }
 
+        /// <summary>
+        /// Creates a new instance and initializes it with specified sort fields.
+        /// </summary>
+        /// <param name="array">a list of fields to sort by.</param>
         public SortParams(AnyValueArray array)
         {
             if (array == null)

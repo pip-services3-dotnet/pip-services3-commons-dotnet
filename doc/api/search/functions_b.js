@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['setdefaults',['SetDefaults',['../class_pip_services_1_1_commons_1_1_config_1_1_config_params.html#a256dcd17159581e4c55d825989792536',1,'PipServices::Commons::Config::ConfigParams']]],
-  ['setparameters',['SetParameters',['../interface_pip_services_1_1_commons_1_1_run_1_1_i_parameterized.html#a1d240c0e4cb7e5232cd2caaf92d5716c',1,'PipServices::Commons::Run::IParameterized']]],
-  ['setreferences',['SetReferences',['../class_pip_services_1_1_commons_1_1_refer_1_1_referencer.html#a27f69e945519ac5e0b8c5fa19c7457b4',1,'PipServices::Commons::Refer::Referencer']]],
-  ['setreferencesforone',['SetReferencesForOne',['../class_pip_services_1_1_commons_1_1_refer_1_1_referencer.html#a07e49f3c6f490c4025e8f56767ef75e6',1,'PipServices::Commons::Refer::Referencer']]]
+  ['remove',['Remove',['../interface_pip_services_1_1_commons_1_1_refer_1_1_i_references.html#a6276e4e1155a5a1949203461fd9fcfea',1,'PipServices.Commons.Refer.IReferences.Remove()'],['../class_pip_services_1_1_commons_1_1_refer_1_1_references.html#aaa64a8a4a54bc241d75ba471d6ec2d24',1,'PipServices.Commons.Refer.References.Remove()']]],
+  ['removeall',['RemoveAll',['../interface_pip_services_1_1_commons_1_1_refer_1_1_i_references.html#a46595458f11060e7a43b9eb8c7d78482',1,'PipServices.Commons.Refer.IReferences.RemoveAll()'],['../class_pip_services_1_1_commons_1_1_refer_1_1_references.html#a7a73cb374c46f144b48b9781233c7326',1,'PipServices.Commons.Refer.References.RemoveAll()']]],
+  ['removelistener',['RemoveListener',['../class_pip_services_1_1_commons_1_1_commands_1_1_command_set.html#a44169b5c493735d027a4bb3678f9bfae',1,'PipServices.Commons.Commands.CommandSet.RemoveListener()'],['../class_pip_services_1_1_commons_1_1_commands_1_1_event.html#a23647e568b425d119bac57f8819fce39',1,'PipServices.Commons.Commands.Event.RemoveListener()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event.html#a3f2ac47b95a0fe2139a1a74c960d2bc2',1,'PipServices.Commons.Commands.IEvent.RemoveListener()']]],
+  ['resolve',['Resolve',['../class_pip_services_1_1_commons_1_1_config_1_1_name_resolver.html#a3fb7b457fcbd8d84ff4896cdb04a6688',1,'PipServices.Commons.Config.NameResolver.Resolve()'],['../class_pip_services_1_1_commons_1_1_config_1_1_options_resolver.html#a79a210800c5e7f9250b551b3de4dd126',1,'PipServices.Commons.Config.OptionsResolver.Resolve()']]]
 ];

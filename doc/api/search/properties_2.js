@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isdeleted',['IsDeleted',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_trackable.html#a3cdaf06b9cc9c4ef0afc82c22f24e295',1,'PipServices::Commons::Data::ITrackable']]]
+  ['data',['Data',['../class_pip_services_1_1_commons_1_1_data_1_1_data_page.html#a651f50c23c4aded7676a3b88b3514d7b',1,'PipServices::Commons::Data::DataPage']]]
 ];

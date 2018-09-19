@@ -1,15 +1,40 @@
 ﻿namespace PipServices.Commons.Data
 {
     /// <summary>
-    /// Interface for versioned data object with optimistic concurrency resolution. 
-    /// The version can be any string with only requirement to be higher comparing the the previous version.
-    /// When generated automatically it represents a timestamp string.
+    /// Interface for data objects that can be versioned.
+    /// 
+    /// Versioning is often used as optimistic concurrency mechanism.
+    /// 
+    /// The version doesn't have to be a number, but it is recommended to use sequential
+    /// values to determine if one object has newer or older version than another one.
+    /// 
+    /// It is a common pattern to use the time of change as the object version.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// public class MyData: IStringIdentifiable, IVersioned 
+    /// {
+    ///     string id {get; set;}
+    ///     string field1;
+    ///     int field2;
+    ///     string version {get; set;}
+    ///     ...
+    /// }
+    /// public void updateData(string correlationId, MyData item) 
+    /// {
+    ///     ...
+    ///     
+    ///     if (item.Version < oldItem.Version) 
+    ///     {
+    ///         throw new ConcurrencyException(null, "VERSION_CONFLICT", "The change has older version stored value");
+    ///     }
+    ///     ...
+    /// }
+    /// </code>
+    /// </example>
     public interface IVersioned
     {
-        /// <summary>
-        /// Gets and sets the object version
-        /// </summary>
+        /** The object's version. */
         string Version { get; set; }
     }
 }
