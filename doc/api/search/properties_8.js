@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['take',['Take',['../class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#afee17ec4ac82bf700851462abe8078bb',1,'PipServices::Commons::Data::PagingParams']]],
-  ['total',['Total',['../class_pip_services_1_1_commons_1_1_data_1_1_data_page.html#aac99c345c60fd8ebbcab79f1bcfd9d63',1,'PipServices.Commons.Data.DataPage.Total()'],['../class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#a10b60dfadc0eb1278ef891dd8227cee7',1,'PipServices.Commons.Data.PagingParams.Total()']]]
+  ['skip',['Skip',['../class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#ada308748b2251c1d979f187d03ec3354',1,'PipServices::Commons::Data::PagingParams']]],
+  ['stacktrace',['StackTrace',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a03e1f1fc818b467b2878b8510a908b2d',1,'PipServices.Commons.Errors.ApplicationException.StackTrace()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#ab55dc6cc5e6a2b86c046c6a03adcee73',1,'PipServices.Commons.Errors.ErrorDescription.StackTrace()']]],
+  ['status',['Status',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a70772adbb855dd55849d345d86de91c1',1,'PipServices.Commons.Errors.ApplicationException.Status()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#a09caa9f1e790605702f8b98e825977a6',1,'PipServices.Commons.Errors.ErrorDescription.Status()']]]
 ];

@@ -7,5 +7,6 @@ var searchData=
   ['decimalconverter',['DecimalConverter',['../class_pip_services_1_1_commons_1_1_convert_1_1_decimal_converter.html',1,'PipServices::Commons::Convert']]],
   ['dependencyresolver',['DependencyResolver',['../class_pip_services_1_1_commons_1_1_refer_1_1_dependency_resolver.html',1,'PipServices::Commons::Refer']]],
   ['descriptor',['Descriptor',['../class_pip_services_1_1_commons_1_1_refer_1_1_descriptor.html',1,'PipServices::Commons::Refer']]],
+  ['details',['Details',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a972925fe66b826e05beba8e41f82f7e2',1,'PipServices.Commons.Errors.ApplicationException.Details()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#ae75d0989619d37ef53c4052bb0db832e',1,'PipServices.Commons.Errors.ErrorDescription.Details()']]],
   ['doubleconverter',['DoubleConverter',['../class_pip_services_1_1_commons_1_1_convert_1_1_double_converter.html',1,'PipServices::Commons::Convert']]]
 ];

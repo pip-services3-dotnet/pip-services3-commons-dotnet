@@ -1,7 +1,7 @@
 ﻿namespace PipServices.Commons.Errors
 {
     /// <summary>
-    /// Defines broad categories of application errors.
+    /// Defines standard error categories to application exceptions supported by PipServices toolkit.
     /// </summary>
     public class ErrorCategory
     {
@@ -27,8 +27,9 @@
         public const string InvalidState = "InvalidState";
 
         /// <summary>
-        /// Errors happened during connection to remote services. 
-        /// They can be related to misconfiguration, network issues or remote service itself.
+        /// Errors caused by remote calls timeouted and not returning results.
+        /// It allows to clearly separate communication related problems
+        /// from other application errors.
         /// </summary>
         public const string NoResponse = "NoResponse";
 

@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 namespace PipServices.Commons.Errors
 {
     /// <summary>
-    /// Class of errors due to improper user requests, such as missing or wrong parameters.
+    /// Errors due to improper user requests. 
+    /// 
+    /// For example: missing or incorrect parameters.
     /// </summary>
 #if CORE_NET
     [DataContract]
@@ -14,12 +16,21 @@ namespace PipServices.Commons.Errors
 #endif
     public class BadRequestException : ApplicationException
     {
+        /// <summary>
+        /// Creates an error instance with error message.
+        /// </summary>
+        /// <param name="message">a human-readable description of the error.</param>
         [JsonConstructor]
         public BadRequestException(string message)
             : base(message)
         {
         }
 
+        /// <summary>
+        /// Creates an error instance with bad request error category and assigns its values.
+        /// </summary>
+        /// <param name="innerException">an error object</param>
+        /// See <see cref="ErrorCategory.BadRequest"/>
         public BadRequestException(Exception innerException) 
             : base(ErrorCategory.BadRequest, null, null, null)
         {
@@ -27,6 +38,14 @@ namespace PipServices.Commons.Errors
             WithCause(innerException);
         }
 
+        /// <summary>
+        /// Creates an error instance and assigns its values.
+        /// </summary>
+        /// <param name="correlationId">(optional) a unique transaction id to trace execution through call chain.</param>
+        /// <param name="code">(optional) a unique error code. Default: "UNKNOWN"</param>
+        /// <param name="message">(optional) a human-readable description of the error.</param>
+        /// <param name="innerException">an error object</param>
+        /// See <see cref="ErrorCategory"/>
         public BadRequestException(string correlationId = null, string code = null, string message = null, Exception innerException = null) 
             : base(ErrorCategory.BadRequest, correlationId, code, message)
         {

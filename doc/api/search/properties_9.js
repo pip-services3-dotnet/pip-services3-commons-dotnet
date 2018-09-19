@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['value',['Value',['../class_pip_services_1_1_commons_1_1_data_1_1_any_value.html#a00c91f43340cdad1a639f3e2cb268ae2',1,'PipServices::Commons::Data::AnyValue']]],
-  ['version',['Version',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_versioned.html#a4b1f1dfe52c0c99f221c9c31f0f7cc73',1,'PipServices::Commons::Data::IVersioned']]]
+  ['take',['Take',['../class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#afee17ec4ac82bf700851462abe8078bb',1,'PipServices::Commons::Data::PagingParams']]],
+  ['total',['Total',['../class_pip_services_1_1_commons_1_1_data_1_1_data_page.html#aac99c345c60fd8ebbcab79f1bcfd9d63',1,'PipServices.Commons.Data.DataPage.Total()'],['../class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#a10b60dfadc0eb1278ef891dd8227cee7',1,'PipServices.Commons.Data.PagingParams.Total()']]],
+  ['type',['Type',['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#ae835846bbbf6451995a2ad21e8e95b6e',1,'PipServices::Commons::Errors::ErrorDescription']]]
 ];

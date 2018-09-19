@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['category',['Category',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a009474f2848c6b02b251578c2f507b1d',1,'PipServices.Commons.Errors.ApplicationException.Category()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#abf0510db0c8aa9c7f8201e04f4ddc6ab',1,'PipServices.Commons.Errors.ErrorDescription.Category()']]],
+  ['cause',['Cause',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a83602ecd614ba51c0c0964e93fb39830',1,'PipServices.Commons.Errors.ApplicationException.Cause()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#aa62d643e4438737d635220abae0adab0',1,'PipServices.Commons.Errors.ErrorDescription.Cause()']]],
+  ['code',['Code',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a7ccc8144bacabc4c55853be6b6315042',1,'PipServices.Commons.Errors.ApplicationException.Code()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#aa44af97f805059109106e74cd969db23',1,'PipServices.Commons.Errors.ErrorDescription.Code()']]],
   ['commands',['Commands',['../class_pip_services_1_1_commons_1_1_commands_1_1_command_set.html#a2775c4d35babd07cc581bc0bc02280b3',1,'PipServices::Commons::Commands::CommandSet']]],
+  ['correlationid',['CorrelationId',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a3cd1b99fe1cd3a1b0c3340db1c6d5ecc',1,'PipServices.Commons.Errors.ApplicationException.CorrelationId()'],['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#a6e1af4d0e53fb3cfed54b649ad08ed74',1,'PipServices.Commons.Errors.ErrorDescription.CorrelationId()']]],
   ['createdtime',['CreatedTime',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_trackable.html#a6367d2903e905b89fbe310cb7b0a93d4',1,'PipServices::Commons::Data::ITrackable']]]
 ];

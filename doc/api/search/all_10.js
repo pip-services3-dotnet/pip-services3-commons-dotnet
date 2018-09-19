@@ -35,6 +35,7 @@ var searchData=
   ['totype_3c_20t_20_3e',['ToType&lt; T &gt;',['../class_pip_services_1_1_commons_1_1_convert_1_1_type_converter.html#ac0007c6bef3cc30a8d6320bea493dc14',1,'PipServices::Commons::Convert::TypeConverter']]],
   ['totypecode',['ToTypeCode',['../class_pip_services_1_1_commons_1_1_convert_1_1_type_converter.html#a88665d24e4ee9b4d7307f8e1835ac812',1,'PipServices.Commons.Convert.TypeConverter.ToTypeCode(Type type)'],['../class_pip_services_1_1_commons_1_1_convert_1_1_type_converter.html#ac8e52aec682055b4e8279a32af11b001',1,'PipServices.Commons.Convert.TypeConverter.ToTypeCode(object value)']]],
   ['totypewithdefault_3c_20t_20_3e',['ToTypeWithDefault&lt; T &gt;',['../class_pip_services_1_1_commons_1_1_convert_1_1_type_converter.html#a29cadc08c492aee34f07fd13eb8705f6',1,'PipServices::Commons::Convert::TypeConverter']]],
+  ['type',['Type',['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#ae835846bbbf6451995a2ad21e8e95b6e',1,'PipServices::Commons::Errors::ErrorDescription']]],
   ['typecode',['TypeCode',['../namespace_pip_services_1_1_commons_1_1_convert.html#ab32f28e6804c8b6f5c794198e05012f1',1,'PipServices::Commons::Convert']]],
   ['typeconverter',['TypeConverter',['../class_pip_services_1_1_commons_1_1_convert_1_1_type_converter.html',1,'PipServices::Commons::Convert']]],
   ['typedescriptor',['TypeDescriptor',['../class_pip_services_1_1_commons_1_1_reflect_1_1_type_descriptor.html',1,'PipServices::Commons::Reflect']]],

@@ -2,8 +2,19 @@
 
 namespace PipServices.Commons.Errors
 {
+    /// <summary>
+    /// Factory to recreate exceptions from ErrorDescription values passed through the wire.
+    /// </summary>
+    /// See <see cref="ErrorDescription"/>, <see cref="ApplicationException"/>
     public static class ApplicationExceptionFactory
     {
+        /// <summary>
+        /// Recreates ApplicationException object from serialized ErrorDescription.
+        /// 
+        /// It tries to restore original exception type using type or error category fields.
+        /// </summary>
+        /// <param name="description">a serialized error description received as a result of remote call</param>
+        /// <returns>new ApplicationException object from serialized ErrorDescription.</returns>
         public static ApplicationException Create(ErrorDescription description)
         {
             if (description == null)
@@ -47,6 +58,7 @@ namespace PipServices.Commons.Errors
 
             return error;
         }
+
 
         public static Exception CreateOriginal(ErrorDescription description)
         {
