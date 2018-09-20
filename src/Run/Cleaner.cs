@@ -4,16 +4,19 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Helper class that cleans components
+    /// Helper class that cleans stored object state.
     /// </summary>
+    /// See <see cref="ICleanable"/>
     public class Cleaner
     {
         /// <summary>
-        /// Cleans component that implement ICleanable interface
+        /// Clears state of specific component.
+        /// To be cleaned state components must implement ICleanable interface. If they
+        /// don't the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="component">a component to be cleaned</param>
-        /// <returns></returns>
+        /// See <see cref="ICleanable"/>
         public static async Task ClearOneAsync(string correlationId, object component)
         {
             var cleanable = component as ICleanable;
@@ -22,11 +25,13 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Cleans components that implement ICleanable interface
+        /// Clears state of multiple components.
+        /// To be cleaned state components must implement ICleanable interface. If they
+        /// don't the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="components">a list of components to be cleaned</param>
-        /// <returns></returns>
+        /// See <see cref="ClearOneAsync(string, object)"/>, <see cref="ICleanable"/>
         public static async Task ClearAsync(string correlationId, IEnumerable components)
         {
             if (components == null) return;

@@ -4,16 +4,19 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Helper class that closes components
+    /// Helper class that closes previously opened components.
     /// </summary>
+    /// See <see cref="IClosable"/>
     public class Closer
     {
         /// <summary>
-        /// Closes component that implement ICloseable interface
+        /// Closes specific component.
+        /// To be closed components must implement ICloseable interface. If they don't
+        /// the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="component">a list of components to be closed</param>
-        /// <returns></returns>
+        /// See <see cref="IClosable"/>
         public static async Task CloseOneAsync(string correlationId, object component)
         {
             var closable = component as IClosable;
@@ -22,11 +25,13 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Closes components that implement ICloseable interface
+        /// Closes multiple components.
+        /// To be closed components must implement ICloseable interface. If they
+        /// don't the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="components">a list of components to be closed</param>
-        /// <returns></returns>
+        /// See <see cref="CloseOneAsync(string, object)"/>, <see cref="IClosable"/>
         public static async Task CloseAsync(string correlationId, IEnumerable components)
         {
             if (components == null) return;

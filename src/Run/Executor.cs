@@ -5,17 +5,21 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Helper class that triggers execution for components
+    /// Helper class that executes components.
     /// </summary>
+    /// See <see cref="IExecutable"/>
     public class Executor
     {
         /// <summary>
-        /// Triggers execution for component that implement IExecutable interface.
+        /// Executes specific component.
+        /// To be executed components must implement IExecutable interface. If they don't
+        /// the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="component">a component to be executed</param>
-        /// <param name="args">a set of parameters to pass to executed components</param>
+        /// <param name="args">execution arguments.</param>
         /// <returns>execution results</returns>
+        /// See <see cref="IExecutable"/>, <see cref="Parameters"/>
         public static async Task<object> ExecuteOneAsync(string correlationId, object component, Parameters args)
         {
             var executable = component as IExecutable;
@@ -25,12 +29,15 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Triggers execution for components that implement IExecutabl interfaces.
+        /// Executes multiple components.
+        /// To be executed components must implement IExecutable interface. If they don't
+        /// the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="components">a list of components to be executed</param>
-        /// <param name="args">a set of parameters to pass to executed components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="component">a component to be executed</param>
+        /// <param name="args">execution arguments.</param>
         /// <returns>execution results</returns>
+        /// See <see cref="ExecuteOneAsync(string, object, Parameters)"/>
         public static async Task<List<object>> ExecuteAsync(string correlationId, IEnumerable components, Parameters args)
         {
             var results = new List<object>();

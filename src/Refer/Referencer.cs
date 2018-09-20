@@ -3,15 +3,20 @@
 namespace PipServices.Commons.Refer
 {
     /// <summary>
-    /// Helper class that assigns references to components
+    /// Helper class that sets and unsets references to components.
     /// </summary>
+    /// See <see cref="IReferenceable"/>, <see cref="IUnreferenceable"/>
     public class Referencer
     {
         /// <summary>
-        /// Assigns references to a single components that implements IReferenceable interface
+        /// Sets references to specific component.
+        /// 
+        /// To set references components must implement IReferenceable interface. If they
+        /// don't the call to this method has no effect.
         /// </summary>
-        /// <param name="references">references to be assigned</param>
-        /// <param name="component">a component to assign references</param>
+        /// <param name="references">references to be set</param>
+        /// <param name="component">a component to set references to</param>
+        /// See <see cref="IReferenceable"/>
         public static void SetReferencesForOne(IReferences references, object component)
         {
             var referenceable = component as IReferenceable;
@@ -20,10 +25,14 @@ namespace PipServices.Commons.Refer
         }
 
         /// <summary>
-        /// Assigns references to components that implement IReferenceable interface
+        /// Sets references to multiple components.
+        /// 
+        /// To set references components must implement IReferenceable interface. If they
+        /// don't the call to this method has no effect.
         /// </summary>
-        /// <param name="references">references to be assigned</param>
-        /// <param name="components">a list of components to assign references</param>
+        /// <param name="references">references to be set</param>
+        /// <param name="components">a list of components to set references to</param>
+        /// See <see cref="IReferenceable"/>
         public static void SetReferences(IReferences references, IEnumerable components = null)
         {
             components = components ?? references.GetAll();
@@ -32,9 +41,13 @@ namespace PipServices.Commons.Refer
         }
 
         /// <summary>
-        /// Clears references for component that implement IUnreferenceable interface 
+        /// Unsets references in specific component.
+        /// 
+        /// To unset references components must implement IUnreferenceable interface. If
+        /// they don't the call to this method has no effect.
         /// </summary>
-        /// <param name="component">a components to clear references</param>
+        /// <param name="component">a components to unset references</param>
+        /// See <see cref="IUnreferenceable"/>
         public static void UnsetReferencesForOne(object component)
         {
             var unreferenceable = component as IUnreferenceable;
@@ -43,9 +56,11 @@ namespace PipServices.Commons.Refer
         }
 
         /// <summary>
-        /// Clears references for components that implement IUnreferenceable interface 
+        /// Unsets references in multiple components.
+        /// To unset references components must implement IUnreferenceable interface. If
+        /// they don't the call to this method has no effect.
         /// </summary>
-        /// <param name="components">a list of components to clear references</param>
+        /// <param name="components">a list of components to unset references</param>
         public static void UnsetReferences(IEnumerable components)
         {
             foreach (var component in components)
@@ -53,9 +68,11 @@ namespace PipServices.Commons.Refer
         }
 
         /// <summary>
-        /// Clears references for components that implement IUnreferenceable interface 
+        /// Unsets references in multiple components.
+        /// To unset references components must implement IUnreferenceable interface. If
+        /// they don't the call to this method has no effect.
         /// </summary>
-        /// <param name="references">a list of components to clear references</param>
+        /// <param name="components">a list of components to unset references</param>
         public static void UnsetReferences(IReferences references)
         {
             var components = references.GetAll();

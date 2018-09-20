@@ -7,8 +7,22 @@ using PipServices.Commons.Convert;
 
 namespace PipServices.Commons.Reflect
 {
+    /// <summary>
+    /// Helper class matches value types for equality.
+    /// This class has symmetric implementation across all languages supported
+    /// by Pip.Services toolkit and used to support dynamic data processing.
+    /// </summary>
+    /// See <see cref="Convert.TypeCode"/>
     public static class TypeMatcher
     {
+        /// <summary>
+        /// Matches expected type to a type of a value. The expected type can be 
+        /// specified by a type, type name or TypeCode.
+        /// </summary>
+        /// <param name="expectedType">an expected type to match.</param>
+        /// <param name="actualValue">a value to match its type to the expected one.</param>
+        /// <returns>true if types are matching and false if they don't.</returns>
+        /// See <see cref="MatchType(object, Type)"/>
         public static bool MatchValue(object expectedType, object actualValue)
         {
             if (expectedType == null)
@@ -19,6 +33,12 @@ namespace PipServices.Commons.Reflect
             return MatchType(expectedType, actualValue.GetType());
         }
 
+        /// <summary>
+        /// Matches expected type to a type of a value.
+        /// </summary>
+        /// <param name="expectedType">an expected type to match.</param>
+        /// <param name="actualValue">a value to match its type to the expected one.</param>
+        /// <returns>true if types are matching and false if they don't.</returns>
         public static bool MatchValueByName(string expectedType, object actualValue)
         {
             if (expectedType == null)
@@ -29,6 +49,14 @@ namespace PipServices.Commons.Reflect
             return MatchTypeByName(expectedType, actualValue.GetType());
         }
 
+        /// <summary>
+        /// Matches expected type to an actual type. The types can be specified as types,
+        /// type names or TypeCode.
+        /// </summary>
+        /// <param name="expectedType">an expected type to match.</param>
+        /// <param name="actualType">an actual type to match.</param>
+        /// <returns>true if types are matching and false if they don't.</returns>
+        /// See <see cref="MatchTypeByName(string, Type)"/>
         public static bool MatchType(object expectedType, Type actualType)
         {
             if (expectedType == null)
@@ -53,6 +81,12 @@ namespace PipServices.Commons.Reflect
             return false;
         }
 
+        /// <summary>
+        /// Matches expected type to an actual type.
+        /// </summary>
+        /// <param name="expectedType">an expected type name to match.</param>
+        /// <param name="actualType">an actual type to match defined by type code.</param>
+        /// <returns>true if types are matching and false if they don't.</returns>
         public static bool MatchTypeByName(string expectedType, Type actualType)
         {
             if (expectedType == null)

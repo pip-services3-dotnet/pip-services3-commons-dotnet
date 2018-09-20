@@ -4,6 +4,25 @@ using System.Reflection;
 
 namespace PipServices.Commons.Reflect
 {
+    /// <summary>
+    /// Helper class to perform property introspection and dynamic reading and writing.
+    /// 
+    /// This class has symmetric implementation across all languages supported 
+    /// by Pip.Services toolkit and used to support dynamic data processing.
+    /// 
+    /// Because all languages have different casing and case sensitivity rules,
+    /// this PropertyReflector treats all property names as case insensitive.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var myObj = new MyObject();
+    /// 
+    /// var properties = PropertyReflector.GetPropertyNames();
+    /// PropertyReflector.HasProperty(myObj, "myProperty");
+    /// var value = PropertyReflector.GetProperty(myObj, "myProperty");
+    /// PropertyReflector.SetProperty(myObj, "myProperty", 123);
+    /// </code>
+    /// </example>
     public class PropertyReflector
     {
         private static bool MatchField(FieldInfo field, string name)
@@ -29,6 +48,12 @@ namespace PipServices.Commons.Reflect
                 && !method.IsAbstract;
         }
 
+        /// <summary>
+        /// Checks if object has a property with specified name.
+        /// </summary>
+        /// <param name="obj">an object to introspect.</param>
+        /// <param name="name">a name of the property to check.</param>
+        /// <returns>true if the object has the property and false if it doesn't.</returns>
         public static bool HasProperty(object obj, string name)
         {
             if (obj == null)
@@ -55,6 +80,12 @@ namespace PipServices.Commons.Reflect
             return false;
         }
 
+        /// <summary>
+        /// Gets value of object property specified by its name.
+        /// </summary>
+        /// <param name="obj">an object to read property from.</param>
+        /// <param name="name">a name of the property to get.</param>
+        /// <returns>the property value or null if property doesn't exist or introspection failed.</returns>
         public static object GetProperty(object obj, string name)
         {
             if (obj == null)
@@ -95,6 +126,11 @@ namespace PipServices.Commons.Reflect
             return null;
         }
 
+        /// <summary>
+        /// Gets names of all properties implemented in specified object.
+        /// </summary>
+        /// <param name="obj">an objec to introspect.</param>
+        /// <returns>a list with property names.</returns>
         public static List<string> GetPropertyNames(object obj)
         {
             if (obj == null)
@@ -121,6 +157,11 @@ namespace PipServices.Commons.Reflect
             return properties;
         }
 
+        /// <summary>
+        /// Get values of all properties in specified object and returns them as a map.
+        /// </summary>
+        /// <param name="obj">an object to get properties from.</param>
+        /// <returns>a map, containing the names of the object's properties and their values.</returns>
         public static Dictionary<string, object> GetProperties(object obj)
         {
             var map = new Dictionary<string, object>();
@@ -158,6 +199,14 @@ namespace PipServices.Commons.Reflect
             return map;
         }
 
+        /// <summary>
+        /// Sets value of object property specified by its name.
+        /// If the property does not exist or introspection fails this method doesn't do
+        /// anything and doesn't any throw errors.
+        /// </summary>
+        /// <param name="obj">an object to write property to.</param>
+        /// <param name="name">a name of the property to set.</param>
+        /// <param name="value">a new value for the property to set.</param>
         public static void SetProperty(object obj, string name, object value)
         {
             if (obj == null)
@@ -201,6 +250,14 @@ namespace PipServices.Commons.Reflect
             }
         }
 
+        /// <summary>
+        /// Sets values of some (all) object properties.
+        /// If some properties do not exist or introspection fails they are just silently
+        /// skipped and no errors thrown.
+        /// </summary>
+        /// <param name="obj">an object to write properties to.</param>
+        /// <param name="values">a map, containing property names and their values.</param>
+        /// See <see cref="SetProperty(object, string, object)"/>
         public static void SetProperties(object obj, Dictionary<string, object> values)
         {
             if (values == null || values.Count == 0) return;

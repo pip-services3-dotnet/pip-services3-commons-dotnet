@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['withcause',['WithCause',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#ac2f432ec9d0ef9d4dbef0168c9557816',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withcode',['WithCode',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#aa219cd4996190a99944eca2a1bec3dbc',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withcorrelationid',['WithCorrelationId',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a61355a56d74e9c5d2779378f0cacf79d',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withdetails',['WithDetails',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a28a364f5436ee017d95068c1ec273d7c',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withstacktrace',['WithStackTrace',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a43c81f609bf71c011ce98ea24148ca62',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withstatus',['WithStatus',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#aa9eaf957701cca825a1254e45e7e4e26',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['wrap',['Wrap',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a7f551dd43c20dcbe7f97a77eadd54dea',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['wrapexception',['WrapException',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a1dc7534b7e2a7a2bdfe1aa60510f78d7',1,'PipServices::Commons::Errors::ApplicationException']]]
+  ['validate',['Validate',['../class_pip_services_1_1_commons_1_1_commands_1_1_command.html#a49c3274ebd9077e435e5d30ccc784948',1,'PipServices.Commons.Commands.Command.Validate()'],['../class_pip_services_1_1_commons_1_1_commands_1_1_command_set.html#accc673589b58b9c4088bfc9ede632559',1,'PipServices.Commons.Commands.CommandSet.Validate()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html#aa707025d25191523aca141720611e37e',1,'PipServices.Commons.Commands.ICommand.Validate()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_command_interceptor.html#a2ae5cf0b7d69cf232dfdd89dd07017e0',1,'PipServices.Commons.Commands.ICommandInterceptor.Validate()'],['../class_pip_services_1_1_commons_1_1_commands_1_1_intercepted_command.html#ab368d58d7cd56df8e06f3bd717b96baa',1,'PipServices.Commons.Commands.InterceptedCommand.Validate()']]],
+  ['validationexception',['ValidationException',['../class_pip_services_1_1_commons_1_1_validate_1_1_validation_exception.html',1,'PipServices::Commons::Validate']]],
+  ['validationresult',['ValidationResult',['../class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html',1,'PipServices::Commons::Validate']]],
+  ['value',['Value',['../class_pip_services_1_1_commons_1_1_data_1_1_any_value.html#a00c91f43340cdad1a639f3e2cb268ae2',1,'PipServices::Commons::Data::AnyValue']]],
+  ['valuecomparisonrule',['ValueComparisonRule',['../class_pip_services_1_1_commons_1_1_validate_1_1_value_comparison_rule.html',1,'PipServices::Commons::Validate']]],
+  ['verb',['Verb',['../class_pip_services_1_1_commons_1_1_random_1_1_random_text.html#a71eb7f222704da4ccfac960f73d1bc74',1,'PipServices::Commons::Random::RandomText']]],
+  ['version',['Version',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_versioned.html#a4b1f1dfe52c0c99f221c9c31f0f7cc73',1,'PipServices::Commons::Data::IVersioned']]]
 ];

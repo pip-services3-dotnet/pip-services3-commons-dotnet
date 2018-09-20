@@ -4,6 +4,14 @@ using PipServices.Commons.Convert;
 
 namespace PipServices.Commons.Reflect
 {
+    /// <summary>
+    /// Helper class to perform property introspection and dynamic writing.
+    /// 
+    /// It is similar to ObjectWriter but writes properties recursively 
+    /// through the entire object graph.Nested property names are defined
+    /// using dot notation as "object.subobject.property"
+    /// </summary>
+    /// See <see cref="PropertyReflector"/>, <see cref="ObjectWriter"/>
     public sealed class RecursiveObjectWriter
     {
         private static object CreateProperty(object obj, string[] names, int nameIndex)
@@ -39,6 +47,17 @@ namespace PipServices.Commons.Reflect
                 ObjectWriter.SetProperty(obj, names[nameIndex], value);
         }
 
+        /// <summary>
+        /// Recursively sets value of object and its subobjects property specified by its name.
+        /// 
+        /// The object can be a user defined object, map or array.The property name
+        /// correspondently must be object property, map key or array index.
+        /// If the property does not exist or introspection fails this method doesn't do
+        /// anything and doesn't any throw errors.
+        /// </summary>
+        /// <param name="obj">an object to write property to.</param>
+        /// <param name="name">a name of the property to set.</param>
+        /// <param name="value">a new value for the property to set.</param>
         public static void SetProperty(object obj, string name, object value)
         {
             if (obj == null || name == null) return;
@@ -50,6 +69,18 @@ namespace PipServices.Commons.Reflect
             PerformSetProperty(obj, names, 0, value);
         }
 
+        /// <summary>
+        /// Recursively sets values of some (all) object and its subobjects properties.
+        /// 
+        /// The object can be a user defined object, map or array.Property values
+        /// correspondently are object properties, map key-pairs or array elements with their indexes.
+        /// 
+        /// If some properties do not exist or introspection fails they are just silently
+        /// skipped and no errors thrown.
+        /// </summary>
+        /// <param name="obj">an object to write properties to.</param>
+        /// <param name="values">a map, containing property names and their values.</param>
+        /// See <see cref="SetProperty(object, string, object)"/>
         public static void SetProperties(object obj, IDictionary<string, object> values)
         {
             if (values == null || values.Count == 0) return;
@@ -58,6 +89,12 @@ namespace PipServices.Commons.Reflect
                 SetProperty(obj, entry.Key, entry.Value);
         }
 
+        /// <summary>
+        /// Copies content of one object to another object by recursively reading all
+        /// properties from source object and then recursively writing them to destination object.
+        /// </summary>
+        /// <param name="dest">a destination object to write properties to.</param>
+        /// <param name="src">a source object to read properties from</param>
         public static void CopyProperties(object dest, object src)
         {
             if (dest == null || src == null) return;

@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace PipServices.Commons.Refer
 {
     /// <summary>
-    /// Exception thrown when required component is not found in references
+    /// Error when required component dependency cannot be found.
     /// </summary>
 #if CORE_NET
     [DataContract]
@@ -14,23 +14,42 @@ namespace PipServices.Commons.Refer
 #endif
     public class ReferenceException : InternalException
     {
+        /// <summary>
+        /// Creates an error instance and assigns its values.
+        /// </summary>
         public ReferenceException()
             : this(null, null)
         {
         }
 
+        /// <summary>
+        /// Creates an error instance and assigns its values.
+        /// </summary>
+        /// <param name="locator">the locator to find reference to dependent component.</param>
         public ReferenceException(object locator)
             : base(null, "REF_ERROR", "Failed to obtain reference to " + locator)
         {
             WithDetails("locator", locator);
         }
 
+        /// <summary>
+        /// Creates an error instance and assigns its values.
+        /// </summary>
+        /// <param name="correlationId">(optional) a unique transaction id to trace execution
+        /// through call chain.</param>
+        /// <param name="locator">the locator to find reference to dependent component.</param>
         public ReferenceException(string correlationId, object locator)
             : base(correlationId, "REF_ERROR", "Failed to obtain reference to " + locator)
         {
             WithDetails("locator", locator);
         }
 
+        /// <summary>
+        /// Creates an error instance and assigns its values.
+        /// </summary>
+        /// <param name="correlationId">(optional) a unique transaction id to trace execution
+        /// through call chain.</param>
+        /// <param name="message">(optional) a human-readable description of the error.</param>
         public ReferenceException(string correlationId, string message)
             : base(correlationId, "REF_ERROR", message)
         { }

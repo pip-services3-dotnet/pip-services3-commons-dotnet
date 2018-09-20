@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['mapconverter',['MapConverter',['../class_pip_services_1_1_commons_1_1_convert_1_1_map_converter.html',1,'PipServices::Commons::Convert']]],
-  ['mapschema',['MapSchema',['../class_pip_services_1_1_commons_1_1_validate_1_1_map_schema.html',1,'PipServices::Commons::Validate']]],
-  ['mergeconfigs',['MergeConfigs',['../class_pip_services_1_1_commons_1_1_config_1_1_config_params.html#ab4cfb98bc514dc997d9562356886e336',1,'PipServices::Commons::Config::ConfigParams']]],
-  ['message',['Message',['../class_pip_services_1_1_commons_1_1_errors_1_1_error_description.html#a75db2178cd4473877b797767e7b1913e',1,'PipServices::Commons::Errors::ErrorDescription']]],
-  ['methodreflector',['MethodReflector',['../class_pip_services_1_1_commons_1_1_reflect_1_1_method_reflector.html',1,'PipServices::Commons::Reflect']]],
-  ['misconfiguration',['Misconfiguration',['../class_pip_services_1_1_commons_1_1_errors_1_1_error_category.html#a7f1a9a10fc360a207218ed051d99b222',1,'PipServices::Commons::Errors::ErrorCategory']]]
+  ['lastchangetime',['LastChangeTime',['../interface_pip_services_1_1_commons_1_1_data_1_1_i_trackable.html#a711801c4de0d8f7ac38cd79ae19889ac',1,'PipServices::Commons::Data::ITrackable']]],
+  ['listeners',['Listeners',['../class_pip_services_1_1_commons_1_1_commands_1_1_event.html#a0149c051c83eaf5024a7af0e85d28f3d',1,'PipServices.Commons.Commands.Event.Listeners()'],['../interface_pip_services_1_1_commons_1_1_commands_1_1_i_event.html#a9f246e9575b722fb16bdb36258078f74',1,'PipServices.Commons.Commands.IEvent.Listeners()']]],
+  ['locate',['Locate',['../class_pip_services_1_1_commons_1_1_refer_1_1_dependency_resolver.html#adac58037883afb8c4f07e155c3d5f970',1,'PipServices::Commons::Refer::DependencyResolver']]],
+  ['longconverter',['LongConverter',['../class_pip_services_1_1_commons_1_1_convert_1_1_long_converter.html',1,'PipServices::Commons::Convert']]]
 ];

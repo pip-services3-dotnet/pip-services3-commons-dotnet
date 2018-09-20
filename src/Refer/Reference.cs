@@ -2,11 +2,20 @@
 
 namespace PipServices.Commons.Refer
 {
+    /// <summary>
+    /// Contains a reference to a component and locator to find it.
+    /// It is used by References to store registered component references.
+    /// </summary>
     public class Reference
     {
         private object _locator;
         private object _component;
 
+        /// <summary>
+        /// Create a new instance of the reference object and assigns its values.
+        /// </summary>
+        /// <param name="locator">a locator to find the reference.</param>
+        /// <param name="component">a reference to component.</param>
         public Reference(object locator, object component)
         {
             //if (locator == null)
@@ -18,6 +27,14 @@ namespace PipServices.Commons.Refer
             _component = component;
         }
 
+        /// <summary>
+        /// Matches locator to this reference locator.
+        /// 
+        /// Descriptors are matched using equal method.All other locator types are
+        /// matched using direct comparison.
+        /// </summary>
+        /// <param name="locator">the locator to match.</param>
+        /// <returns>true if locators are matching and false it they don't.</returns>
         public bool Match(object locator)
         {
             if (_component.Equals(locator))
@@ -33,11 +50,19 @@ namespace PipServices.Commons.Refer
             return false;
         }
 
+        /// <summary>
+        /// Gets the stored component reference.
+        /// </summary>
+        /// <returns>the component's references.</returns>
         public object GetComponent()
         {
             return _component;
         }
 
+        /// <summary>
+        /// Gets the stored component locator.
+        /// </summary>
+        /// <returns>the component's locator.</returns>
         public object GetLocator()
         {
             return _locator;
