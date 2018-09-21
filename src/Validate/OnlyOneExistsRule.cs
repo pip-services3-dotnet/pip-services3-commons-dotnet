@@ -3,15 +3,39 @@ using System.Collections.Generic;
 
 namespace PipServices.Commons.Validate
 {
+    /// <summary>
+    /// Validation rule that check that at exactly one of the object properties is not null.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var schema = new Schema().WithRule(new OnlyOneExistsRule("field1", "field2"));
+    /// 
+    /// schema.Validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
+    /// schema.Validate({ field1: 1 });                  // Result: no errors
+    /// schema.Validate({ });                            // Result: only one of properties field1, field2 must exist
+    /// </code>
+    /// </example>
+    /// See <see cref="IValidationRule"/>
     public class OnlyOneExistsRule : IValidationRule
     {
         private readonly string[] _properties;
 
+        /// <summary>
+        /// Creates a new validation rule and sets its values
+        /// </summary>
+        /// <param name="properties">a list of property names where at only one property must exist</param>
         public OnlyOneExistsRule(params string[] properties)
         {
             _properties = properties;
         }
 
+        /// <summary>
+        /// Validates a given value against this rule.
+        /// </summary>
+        /// <param name="path">a dot notation path to the value.</param>
+        /// <param name="schema">a schema this rule is called from</param>
+        /// <param name="value">a value to be validated.</param>
+        /// <param name="results">a list with validation results to add new results.</param>
         public void Validate(string path, Schema schema, object value, List<ValidationResult> results)
         {
             var name = path ?? "value";

@@ -4,15 +4,20 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Helper class that opens a collection of components 
+    /// Helper class that opens components. 
     /// </summary>
+    /// See <see cref="IOpenable"/>
     public class Opener
     {
         /// <summary>
-        /// Checks if component that implement IOpenable interface is opened
+        /// Checks if specified component is opened.
+        /// 
+        /// To be checked components must implement IOpenable interface. If they don't
+        /// the call to this method returns true.
         /// </summary>
-        /// <param name="component">a component to be checked</param>
-        /// <returns></returns>
+        /// <param name="component">the component that is to be checked.</param>
+        /// <returns>true if component is opened and false otherwise.</returns>
+        /// See <see cref="IOpenable"/>
         public static bool IsOpenOne(object component)
         {
             var openable = component as IOpenable;
@@ -23,10 +28,14 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// if components that implement IOpenable interface are opened
+        /// Checks if all components are opened.
+        /// 
+        /// To be checked components must implement IOpenable interface. If they don't
+        /// the call to this method returns true.
         /// </summary>
-        /// <param name="components">a list of components to be checked</param>
-        /// <returns></returns>
+        /// <param name="components">a list of components that are to be checked.</param>
+        /// <returns>true if all components are opened and false if at least one component is closed.</returns>
+        /// See <see cref="IsOpenOne(object)"/>, <see cref="IOpenable"/>
         public static bool IsOpen(IEnumerable components)
         {
             if (components == null) return true;
@@ -39,10 +48,13 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Opens a component that implements IOpenable interface
+        /// Opens specific component.
+        /// 
+        /// To be opened components must implement IOpenable interface. If they don't the
+        /// call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="component">a components to be opened</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="component">the component that is to be opened.</param>
         public static async Task OpenOneAsync(string correlationId, object component)
         {
             var openable = component as IOpenable;
@@ -51,10 +63,13 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Opens component that implement IOpenable interface
+        /// Opens multiple component.
+        /// 
+        /// To be opened components must implement IOpenable interface. If they don't the
+        /// call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="components">a list of components to be opened</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="component">the list of components that is to be opened.</param>
         public static async Task OpenAsync(string correlationId, IEnumerable components)
         {
             if (components == null) return;

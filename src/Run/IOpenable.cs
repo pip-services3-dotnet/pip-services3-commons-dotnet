@@ -3,20 +3,57 @@
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Interface for components that require explicit opening
+    /// Interface for components that require explicit opening and closing.
+    /// 
+    /// For components that perform opening on demand consider using
+    /// ICloseable interface instead.
     /// </summary>
-    public interface IOpenable: IClosable
+    /// <example>
+    /// <code>
+    /// class MyPersistence: IOpenable 
+    /// {
+    ///     private object _client;
+    ///     ...
+    ///     public bool IsOpen()
+    ///     {
+    ///         return this._client != null;
+    ///     }
+    ///     
+    ///     public void Open(string correlationId)
+    ///     {
+    ///         if (this.isOpen())
+    ///         {
+    ///             return;
+    ///         }
+    ///         ...
+    ///     }
+    ///     
+    ///     public void Close(string correlationId)
+    ///     {
+    ///         if (this._client != null)
+    ///         {
+    ///             this._client.Close();
+    ///             this._client = null;
+    ///         }
+    ///     }
+    ///     
+    ///     ...
+    /// }
+    /// </code>
+    /// </example>
+    /// See <see cref="Opener"/>
+    public interface IOpenable : IClosable
     {
         /// <summary>
-        /// Checks if component is opened
+        /// Checks if the component is opened.
         /// </summary>
-        /// <returns><code>true</code> if component is opened and <false> otherwise.</returns>
+        /// <returns>true if the component has been opened and false otherwise.</returns>
         bool IsOpen();
 
         /// <summary>
-        /// Opens component, establishes connections to services
+        /// Opens the component.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         Task OpenAsync(string correlationId);
     }
 }

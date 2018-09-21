@@ -1,14 +1,14 @@
 ﻿namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Interface for components that require parameters
+    /// Interface for components that require execution parameters.
     /// </summary>
     public interface IParameterized
     {
         /// <summary>
-        /// Sets component configuration parameters
+        /// Sets execution parameters.
         /// </summary>
-        /// <param name="parameters">configuration parameters</param>
+        /// <param name="parameters">execution parameters.</param>
         void SetParameters(Parameters parameters);
     }
 }

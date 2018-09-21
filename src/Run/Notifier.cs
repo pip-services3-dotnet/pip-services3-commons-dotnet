@@ -4,16 +4,21 @@ using System.Threading.Tasks;
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Helper class that triggers notification for components
+    /// Helper class that notifies components.
     /// </summary>
+    /// See <see cref="INotifiable"/>
     public class Notifier
     {
         /// <summary>
-        /// Triggers notification for component that implement INotifiable interface.
+        /// Notifies specific component.
+        /// 
+        /// To be notiied components must implement INotifiable interface. If they don't
+        /// the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="component">a omponents to be notified</param>
-        /// <param name="args">a set of parameters to pass to notified components</param>
+        /// <param name="correlationId">optional) transaction id to trace execution through call chain.</param>
+        /// <param name="component">the component that is to be notified.</param>
+        /// <param name="args">notifiation arguments.</param>
+        /// See <see cref="INotifiable"/>
         public static async Task NotifyOneAsync(string correlationId, object component, Parameters args)
         {
                 var notifiable = component as INotifiable;
@@ -22,12 +27,14 @@ namespace PipServices.Commons.Run
         }
 
         /// <summary>
-        /// Triggers notification for components that implement INotifiable and IParamParam interfaces
-        /// and passes to IParamNotifiable them set of parameters.
+        /// Notifies multiple components.
+        /// 
+        /// To be notified components must implement INotifiable interface. If they don't
+        /// the call to this method has no effect.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="components">a list of components to be notified</param>
-        /// <param name="args">a set of parameters to pass to notified components</param>
+        /// <param name="correlationId">optional) transaction id to trace execution through call chain.</param>
+        /// <param name="component">the component that is to be notified.</param>
+        /// <param name="args">notifiation arguments.</param>
         public static async Task NotifyAsync(string correlationId, IEnumerable components, Parameters args)
         {
             if (components == null) return;

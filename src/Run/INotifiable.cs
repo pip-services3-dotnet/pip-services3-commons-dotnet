@@ -3,15 +3,32 @@
 namespace PipServices.Commons.Run
 {
     /// <summary>
-    /// Interface for components that support parameterized one-way notification
+    /// Interface for components that can be asynchronously notified.
+    /// The notification may include optional argument that describe the occured event.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// class MyComponent: INotifable 
+    /// {
+    ///     ...
+    ///     public void Notify(string correlationId, Parameters args)
+    ///     {
+    ///         Console.WriteLine("Occured event " + args.GetAsString("event"));
+    ///     }
+    /// }
+    /// 
+    /// var myComponent = new MyComponent();
+    /// myComponent.Notify("123", Parameters.FromTuples("event", "Test Event"));
+    /// </code>
+    /// </example>
+    /// See <see cref="Notifier"/>, <see cref="IExecutable"/>
     public interface INotifiable
     {
         /// <summary>
-        /// Executes a unit of work with given parameters
+        /// Notifies the component about occured event.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="args">a set of parameters for execution</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="args">notification arguments.</param>
         Task NotifyAsync(string correlationId, Parameters args);
     }
 }
