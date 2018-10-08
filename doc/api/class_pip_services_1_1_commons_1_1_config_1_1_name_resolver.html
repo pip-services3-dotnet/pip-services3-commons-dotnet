@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>A helper class that allows to extract component name from configuration parameters. The name can be defined in "id", "name" parameters or inside a component descriptor.  
+<p>A helper class that allows to extract component name from configuration parameters. The name can be defined in <code>"id"</code>, <code>"name"</code> parameters or inside a component descriptor.  
  <a href="class_pip_services_1_1_commons_1_1_config_1_1_name_resolver.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -93,8 +93,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a3fb7b457fcbd8d84ff4896cdb04a6688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A helper class that allows to extract component name from configuration parameters. The name can be defined in "id", "name" parameters or inside a component descriptor. </p>
-<div class="fragment"><div class="line">var config = ConfigParams.fromTuples( <span class="stringliteral">&quot;descriptor&quot;</span>, <span class="stringliteral">&quot;myservice:connector:aws:connector1:1.0&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;param1&quot;</span>, <span class="stringliteral">&quot;ABC&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;param2&quot;</span>, 123 );</div><div class="line"></div><div class="line">var name = NameResolver.resolve(config); <span class="comment">// Result: connector1</span></div></div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>A helper class that allows to extract component name from configuration parameters. The name can be defined in <code>"id"</code>, <code>"name"</code> parameters or inside a component descriptor. </p>
+<div class="fragment"><div class="line">var config = ConfigParams.FromTuples( <span class="stringliteral">&quot;descriptor&quot;</span>, <span class="stringliteral">&quot;myservice:connector:aws:connector1:1.0&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;param1&quot;</span>, <span class="stringliteral">&quot;ABC&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;param2&quot;</span>, 123 );</div><div class="line"></div><div class="line">var name = NameResolver.Resolve(config); <span class="comment">// Result: connector1</span></div></div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3fb7b457fcbd8d84ff4896cdb04a6688"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fb7b457fcbd8d84ff4896cdb04a6688">&#9670;&nbsp;</a></span>Resolve()</h2>
 

@@ -9,14 +9,14 @@ namespace PipServices.Commons.Data
     /// The parameters support two formats: dot format and nested format.
     /// 
     /// The dot format is the standard way to define included fields and subfields using
-    /// dot object notation: "field1,field2.field21,field2.field22.field221"
+    /// dot object notation: <c>"field1,field2.field21,field2.field22.field221"</c>
     /// 
     /// As alternative the nested format offers a more compact representation:
-    /// "field1,field2(field21,field22(field221))"
+    /// <c>"field1,field2(field21,field22(field221))"</c>
     /// </summary>
     /// <example>
     /// <code>
-    /// var filter = FilterParams.fromTuples("type", "Type1");
+    /// var filter = FilterParams.FromTuples("type", "Type1");
     /// var paging = new PagingParams(0, 100);
     /// var projection = ProjectionParams.fromString("field1,field2(field21,field22)")
     /// 

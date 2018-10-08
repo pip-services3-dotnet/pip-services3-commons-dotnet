@@ -194,7 +194,8 @@ namespace PipServices.Commons.Commands
         /// <param name="args">Command arguments.</param>
         /// <exception cref="ValidationException"> when execution fails for validation reason.</exception>
         /// <returns>Execution result.</returns>
-        /// See <see cref="ICommand"/>, <see cref="Parameters"/>
+        /// See <see cref="ICommand"/>,
+        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public Task<object> ExecuteAsync(string correlationId, string command, Parameters args)
         {
             var cref = FindCommand(command);
@@ -227,7 +228,9 @@ namespace PipServices.Commons.Commands
         /// <returns>a list of ValidationResults. If no command is found by the given
         /// name, then the returned array of ValidationResults will contain a
         /// single entry, whose type will be ValidationResultType.Error.</returns>
-        /// See <see cref="Command"/>, <see cref="Parameters"/>, <see cref="ValidationResult"/>
+        /// See <see cref="Command"/>,
+        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(string command, Parameters args)
         {
             var cref = FindCommand(command);

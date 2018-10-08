@@ -18,13 +18,14 @@ namespace PipServices.Commons.Refer
     /// name and dependency resolvers can be reconfigured to retrieve dependencies by their name.
     /// 
     /// Configuration parameters:
+    /// 
     /// dependencies:
-    /// [dependency name 1]: [dependency 1 locator (descriptor)]
-    /// ...
-    /// [dependency name N]: [dependency N locator (descriptor)]
+    /// - [dependency name 1]: [dependency 1 locator (descriptor)]
+    /// - ...
+    /// - [dependency name N]: [dependency N locator (descriptor)]
     /// 
     /// References:
-    /// [references that match configured dependencies]
+    /// - [references that match configured dependencies]
     /// </summary>
     /// <example>
     /// <code>

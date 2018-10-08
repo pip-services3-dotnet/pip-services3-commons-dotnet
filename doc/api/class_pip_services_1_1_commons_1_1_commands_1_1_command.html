@@ -131,7 +131,7 @@ readonly ExecutableDelegate&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concrete implementation of <a class="el" href="interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html" title="An interface for Commands, which are part of the Command design pattern. Each command wraps a method ...">ICommand</a> interface. <a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html" title="Concrete implementation of ICommand interface. Command allows to call a method or function using Comm...">Command</a> allows to call a method or function using <a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html" title="Concrete implementation of ICommand interface. Command allows to call a method or function using Comm...">Command</a> pattern. </p>
-<div class="fragment"><div class="line">var command = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html#a7964817f799e1970c1bad968fa0dc1e7">Command</a>(<span class="stringliteral">&quot;add&quot;</span>, null, async(args) =&gt; {</div><div class="line">var param1 = args.getAsFloat(<span class="stringliteral">&quot;param1&quot;</span>);</div><div class="line">var param2 = args.getAsFloat(<span class="stringliteral">&quot;param2&quot;</span>);</div><div class="line"><span class="keywordflow">return</span> param1 + param2; });</div><div class="line">var result = command.ExecuteAsync(<span class="stringliteral">&quot;123&quot;</span>, Parameters.fromTuples(</div><div class="line"><span class="stringliteral">&quot;param1&quot;</span>, 2,</div><div class="line"><span class="stringliteral">&quot;param2&quot;</span>, 2 ));</div><div class="line">Console.WriteLine(result.ToString()); </div><div class="line"><span class="comment">// Console output: 4</span></div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html" title="An interface for Commands, which are part of the Command design pattern. Each command wraps a method ...">ICommand</a>, <a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command_set.html" title="Contains a set of commands and events supported by a ICommandable object. The CommandSet supports com...">CommandSet</a> </p>
+<div class="fragment"><div class="line">var command = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html#a7964817f799e1970c1bad968fa0dc1e7">Command</a>(<span class="stringliteral">&quot;add&quot;</span>, null, async(args) =&gt; {</div><div class="line">var param1 = args.GetAsFloat(<span class="stringliteral">&quot;param1&quot;</span>);</div><div class="line">var param2 = args.GetAsFloat(<span class="stringliteral">&quot;param2&quot;</span>);</div><div class="line"><span class="keywordflow">return</span> param1 + param2; });</div><div class="line">var result = command.ExecuteAsync(<span class="stringliteral">&quot;123&quot;</span>, Parameters.fromTuples(</div><div class="line"><span class="stringliteral">&quot;param1&quot;</span>, 2,</div><div class="line"><span class="stringliteral">&quot;param2&quot;</span>, 2 ));</div><div class="line">Console.WriteLine(result.ToString()); </div><div class="line"><span class="comment">// Console output: 4</span></div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html" title="An interface for Commands, which are part of the Command design pattern. Each command wraps a method ...">ICommand</a>, <a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command_set.html" title="Contains a set of commands and events supported by a ICommandable object. The CommandSet supports com...">CommandSet</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7964817f799e1970c1bad968fa0dc1e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7964817f799e1970c1bad968fa0dc1e7">&#9670;&nbsp;</a></span>Command()</h2>
@@ -170,7 +170,7 @@ readonly ExecutableDelegate&#160;</td><td class="memItemRight" valign="bottom"><
   <table class="params">
     <tr><td class="paramname">name</td><td><a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html" title="Concrete implementation of ICommand interface. Command allows to call a method or function using Comm...">Command</a> name.</td></tr>
     <tr><td class="paramname">schema</td><td><a class="el" href="class_pip_services_1_1_commons_1_1_commands_1_1_command.html" title="Concrete implementation of ICommand interface. Command allows to call a method or function using Comm...">Command</a> schema.</td></tr>
-    <tr><td class="paramname">function</td><td>Executable function.</td></tr>
+    <tr><td class="paramname">function</td><td><a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_run_1_1_i_executable.html">Executable</a> function.</td></tr>
   </table>
   </dd>
 </dl>
@@ -213,7 +213,7 @@ readonly ExecutableDelegate&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Execution result.</dd></dl>
-<p>See Parameters </p>
+<p>See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html">Parameters</a> </p>
 
 <p>Implements <a class="el" href="interface_pip_services_1_1_commons_1_1_run_1_1_i_executable.html#a14c1afa7d8269005ce21b9c40ab39ebe">PipServices.Commons.Run.IExecutable</a>.</p>
 
@@ -243,7 +243,7 @@ readonly ExecutableDelegate&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a list of ValidationResults or an empty array (if no schema is set).</dd></dl>
-<p>See Parameters, ValidationResult </p>
+<p>See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html">Parameters</a>, <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html">ValidationResult</a> </p>
 
 <p>Implements <a class="el" href="interface_pip_services_1_1_commons_1_1_commands_1_1_i_command.html#aa707025d25191523aca141720611e37e">PipServices.Commons.Commands.ICommand</a>.</p>
 

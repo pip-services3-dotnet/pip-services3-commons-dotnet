@@ -34,7 +34,7 @@ namespace PipServices.Commons.Commands
         /// <param name="command">the next command in the call chain that is to be executed.</param>
         /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
         /// <returns>execution result.</returns>
-        /// See <see cref="Parameters"/>
+        /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         Task<object> ExecuteAsync(string correlationId, ICommand command, Parameters args);
 
         /// <summary>

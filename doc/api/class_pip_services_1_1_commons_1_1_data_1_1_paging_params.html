@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="namespace_pip_services_1_1_commons_1_1_data.html">Data</a> transfer object to pass paging parameters for queries. The page is defined by two parameters. The Skip parameter defines number of items to skip. The Paging parameter sets how many items to return in a page. And the optional Total parameter tells to return total number of items in the query.  
+<p><a class="el" href="namespace_pip_services_1_1_commons_1_1_data.html">Data</a> transfer object to pass paging parameters for queries. The page is defined by two parameters. The <code>skip</code> parameter defines number of items to skip. The Paging parameter sets how many items to return in a page. And the optional <code>total</code> parameter tells to return total number of items in the query.  
  <a href="class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -131,9 +131,9 @@ Properties</h2></td></tr>
 <tr class="separator:a10b60dfadc0eb1278ef891dd8227cee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="namespace_pip_services_1_1_commons_1_1_data.html">Data</a> transfer object to pass paging parameters for queries. The page is defined by two parameters. The Skip parameter defines number of items to skip. The Paging parameter sets how many items to return in a page. And the optional Total parameter tells to return total number of items in the query. </p>
-<p>Remember: not all implementations support Total parameter because its generation may lead to severe performance implications. </p>
-<div class="fragment"><div class="line">var filter = FilterParams.fromTuples(<span class="stringliteral">&quot;type&quot;</span>, <span class="stringliteral">&quot;Type1&quot;</span>);</div><div class="line">var paging = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#ac7fb07090ba440acb42a8c59087c35da">PagingParams</a>(0, 100);</div><div class="line"></div><div class="line">myDataClient.GetDataByFilter(filter, paging);</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p><a class="el" href="namespace_pip_services_1_1_commons_1_1_data.html">Data</a> transfer object to pass paging parameters for queries. The page is defined by two parameters. The <code>skip</code> parameter defines number of items to skip. The Paging parameter sets how many items to return in a page. And the optional <code>total</code> parameter tells to return total number of items in the query. </p>
+<p>Remember: not all implementations support <code>total</code> parameter because its generation may lead to severe performance implications. </p>
+<div class="fragment"><div class="line">var filter = FilterParams.FromTuples(<span class="stringliteral">&quot;type&quot;</span>, <span class="stringliteral">&quot;Type1&quot;</span>);</div><div class="line">var paging = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_commons_1_1_data_1_1_paging_params.html#ac7fb07090ba440acb42a8c59087c35da">PagingParams</a>(0, 100);</div><div class="line"></div><div class="line">myDataClient.GetDataByFilter(filter, paging);</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac7fb07090ba440acb42a8c59087c35da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7fb07090ba440acb42a8c59087c35da">&#9670;&nbsp;</a></span>PagingParams() <span class="overload">[1/2]</span></h2>
 

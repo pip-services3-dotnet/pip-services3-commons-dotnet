@@ -1,15 +1,15 @@
 ﻿namespace PipServices.Commons.Config
 {
     /// <summary>
-    /// A helper class to parameters from "options" configuration section.
+    /// A helper class to parameters from <c>"options"</c> configuration section.
     /// </summary>
     /// <example>
     /// <code>
-    /// var config = ConfigParams.fromTuples( ...
+    /// var config = ConfigParams.FromTuples( ...
     /// "options.param1", "ABC",
     /// "options.param2", 123 );
     /// 
-    /// var options = OptionsResolver.resolve(config, false); // Result: param1=ABC;param2=123
+    /// var options = OptionsResolver.Resolve(config, false); // Result: param1=ABC;param2=123
     /// </code>
     /// </example>
     public static class OptionsResolver

@@ -13,7 +13,7 @@ namespace PipServices.Commons.Refer
     /// - Version: version of the component contract like "1.0"
     /// 
     /// The locator matching can be done by all or only few selected fields.
-    /// The fields that shall be excluded from the matching must be set to "*" or null.
+    /// The fields that shall be excluded from the matching must be set to <c>"*"</c> or <c>null</c>.
     /// That approach allows to implement many interesting scenarios. For instance:
     /// - Locate all loggers (match by type and version)
     /// - Locate persistence components for a microservice(match by group and type)

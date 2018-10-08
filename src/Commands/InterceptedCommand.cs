@@ -15,12 +15,12 @@ namespace PipServices.Commons.Commands
     /// <code>
     /// public class CommandLogger: ICommandInterceptor
     /// {
-    ///     public String getName(ICommand command) 
+    ///     public String GetName(ICommand command) 
     ///     {
-    ///         return command.getName();
+    ///         return command.GetName();
     ///     }
     ///     
-    ///     public Task<object> ExecuteAsync(String correlationId, ICommand command, Parameters args) 
+    ///     public Task<object> ExecuteAsync(string correlationId, ICommand command, Parameters args) 
     ///     {
     ///         Console.WriteLine("Executed command " + command.getName());
     ///         return command.ExecuteAsync(correlationId, args); 
@@ -70,7 +70,7 @@ namespace PipServices.Commons.Commands
         /// <param name="correlationId">unique transaction id to trace calls across components.</param>
         /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
         /// <returns>Execution result.</returns>
-        /// See <see cref="Parameters"/>
+        /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
             return _interceptor.ExecuteAsync(correlationId, _next, args);
@@ -81,7 +81,8 @@ namespace PipServices.Commons.Commands
         /// </summary>
         /// <param name="args">the parameters (arguments) to validate for the next command.</param>
         /// <returns>A list of errors or an empty list if validation was successful.</returns>
-        /// See <see cref="Parameters"/>, <see cref="ValidationResult"/>
+        /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(Parameters args)
         {
             return _interceptor.Validate(_next, args);

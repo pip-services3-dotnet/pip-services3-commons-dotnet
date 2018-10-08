@@ -4,15 +4,15 @@ namespace PipServices.Commons.Config
 {
     /// <summary>
     /// A helper class that allows to extract component name from configuration parameters.
-    /// The name can be defined in "id", "name" parameters or inside a component descriptor.
+    /// The name can be defined in <c>"id"</c>, <c>"name"</c> parameters or inside a component descriptor.
     /// </summary>
     /// <example>
     /// <code>
-    /// var config = ConfigParams.fromTuples( "descriptor", "myservice:connector:aws:connector1:1.0",
+    /// var config = ConfigParams.FromTuples( "descriptor", "myservice:connector:aws:connector1:1.0",
     /// "param1", "ABC",
     /// "param2", 123 );
     /// 
-    /// var name = NameResolver.resolve(config); // Result: connector1
+    /// var name = NameResolver.Resolve(config); // Result: connector1
     /// </code>
     /// </example>
     public static class NameResolver

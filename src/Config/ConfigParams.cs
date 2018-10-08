@@ -11,17 +11,17 @@ namespace PipServices.Commons.Config
     /// All values stored as strings and can be serialized as JSON or string forms.
     /// When retrieved the values can be automatically converted on read using GetAsXXX methods.
     /// 
-    /// The keys are case-sensitive, so it is recommended to use consistent C-style as: "my_param"
+    /// The keys are case-sensitive, so it is recommended to use consistent C-style as: <c>"my_param"</c>
     /// 
     /// Configuration parameters can be broken into sections and subsections using dot notation as:
-    /// "section1.subsection1.param1". Using GetSection method all parameters from specified section
+    /// <c>"section1.subsection1.param1"</c>. Using GetSection method all parameters from specified section
     /// can be extracted from a ConfigMap.
     /// 
     /// The ConfigParams supports serialization from/to plain strings as:
-    /// "key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"
+    /// <c>"key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"</c>
     /// ConfigParams are used to pass configurations to IConfigurable objects. 
-    /// They also serve as a basis for more concrete configurations such as ConnectionParams
-    /// or CredentialParams.
+    /// They also serve as a basis for more concrete configurations such as <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>
+    /// or <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>.
     /// </summary>
     /// <example>
     /// <code>
@@ -29,10 +29,10 @@ namespace PipServices.Commons.Config
     /// "section1.key2", 123,
     /// "section2.key1", true );
     /// 
-    /// config.getAsString("section1.key1"); // Result: AAA
-    /// config.getAsInteger("section1.key1"); // Result: 0
+    /// config.GetAsString("section1.key1"); // Result: AAA
+    /// config.GetAsInteger("section1.key1"); // Result: 0
     /// 
-    /// var section1 = config.getSection("section1");
+    /// var section1 = config.GetSection("section1");
     /// section1.ToString(); // Result: key1=AAA;key2=123
     /// </code>
     /// </example>

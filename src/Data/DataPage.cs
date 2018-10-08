@@ -8,12 +8,12 @@ namespace PipServices.Commons.Data
     /// It contains items of retrieved page and optional total number of items.
     /// 
     /// Most often this object type is used to send responses to paginated queries.
-    /// Pagination parameters are defined by [[PagingParams]] object.
-    /// The Skip parameter in the PagingParams there means how many items to skip.
-    /// The Takes parameter sets number of items to return in the page.
-    /// And the optional Total parameter tells to return total number of items in the query.
+    /// Pagination parameters are defined by PagingParams object.
+    /// The <c>skip</c> parameter in the PagingParams there means how many items to skip.
+    /// The <c>takes</c> parameter sets number of items to return in the page.
+    /// And the optional <c>total</c> parameter tells to return total number of items in the query.
     /// 
-    /// Remember: not all implementations support Total parameter
+    /// Remember: not all implementations support <c>total</c> parameter
     /// because its generation may lead to severe performance implications.
     /// </summary>
     /// <typeparam name="T">the class type</typeparam>

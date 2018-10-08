@@ -13,11 +13,13 @@ namespace PipServices.Commons.Data
     /// sent over the wire.
     /// 
     /// This class is widely used in Pip.Services as a basis for variety of classes, such as 
-    /// ConfigParams, ConnectionParams, CredentialParams and others.
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a> and others.
     /// </summary>
     /// <example>
     /// <code>
-    /// var value1 = StringValueMap.fromString("key1=1;key2=123.456;key3=2018-01-01");
+    /// var value1 = StringValueMap.FromString("key1=1;key2=123.456;key3=2018-01-01");
     /// 
     /// value1.GetAsBoolean("key1");   // Result: true
     /// value1.GetAsInteger("key2");   // Result: 123

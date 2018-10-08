@@ -7,16 +7,16 @@ namespace PipServices.Commons.Data
     /// <summary>
     /// Data transfer object to pass paging parameters for queries.
     /// The page is defined by two parameters.
-    /// The Skip parameter defines number of items to skip.
+    /// The <c>skip</c> parameter defines number of items to skip.
     /// The Paging parameter sets how many items to return in a page.
-    /// And the optional Total parameter tells to return total number of items in the query.
+    /// And the optional <c>total</c> parameter tells to return total number of items in the query.
     /// 
-    /// Remember: not all implementations support Total parameter
+    /// Remember: not all implementations support <c>total</c> parameter
     /// because its generation may lead to severe performance implications.
     /// </summary>
     /// <example>
     /// <code>
-    /// var filter = FilterParams.fromTuples("type", "Type1");
+    /// var filter = FilterParams.FromTuples("type", "Type1");
     /// var paging = new PagingParams(0, 100);
     /// 
     /// myDataClient.GetDataByFilter(filter, paging);

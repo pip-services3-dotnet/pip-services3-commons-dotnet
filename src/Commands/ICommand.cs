@@ -21,7 +21,8 @@ namespace PipServices.Commons.Commands
         /// </summary>
         /// <param name="args">the parameters (arguments) to validate.</param>
         /// <returns>List of errors or empty list if validation was successful.</returns>
-        /// See <see cref="Parameters"/>, <see cref="ValidationResult"/>
+        /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         IList<ValidationResult> Validate(Parameters args);
     }
 }
