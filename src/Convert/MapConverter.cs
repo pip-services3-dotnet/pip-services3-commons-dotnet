@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts arbitrary values into map objects using extended conversion rules:

@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Commands
+﻿namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// An interface for commandable objects, which are part of the command design pattern.

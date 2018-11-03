@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
 
 using Xunit;
 
-namespace PipServices.Commons.Test.Refer
+namespace PipServices3.Commons.Test.Refer
 {
     //[TestClass]
     public class DependencyResolverTest
@@ -15,12 +15,12 @@ namespace PipServices.Commons.Test.Refer
             var ref2 = new object();
             var refs = References.FromTuples(
                 "Reference1", ref1,
-                new Descriptor("pip-services-commons", "reference", "object", "ref2", "1.0"), ref2
+                new Descriptor("pip-services3-commons", "reference", "object", "ref2", "1.0"), ref2
             );
 
             var resolver = DependencyResolver.FromTuples(
                 "ref1", "Reference1",
-                "ref2", new Descriptor("pip-services-commons", "reference", "*", "*", "*")
+                "ref2", new Descriptor("pip-services3-commons", "reference", "*", "*", "*")
             );
             resolver.SetReferences(refs);
 
@@ -36,12 +36,12 @@ namespace PipServices.Commons.Test.Refer
             var ref2 = new object();
             var refs = References.FromTuples(
                 "Reference1", ref1,
-                new Descriptor("pip-services-commons", "reference", "object", "ref2", "1.0"), ref2
+                new Descriptor("pip-services3-commons", "reference", "object", "ref2", "1.0"), ref2
             );
 
             var config = ConfigParams.FromTuples(
                 "dependencies.ref1", "Reference1",
-                "dependencies.ref2", "pip-services-commons:reference:*:*:*",
+                "dependencies.ref2", "pip-services3-commons:reference:*:*:*",
                 "dependencies.ref3", null
             );
 

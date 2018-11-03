@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Errors;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Errors;
+using PipServices3.Commons.Refer;
 
 using Xunit;
 
-namespace PipServices.Commons.Test.Refer
+namespace PipServices3.Commons.Test.Refer
 {
     //[TestClass]
     public class DescriptorTest
@@ -32,7 +32,7 @@ namespace PipServices.Commons.Test.Refer
 
             // Check mismatch by individual fields
             Assert.False(descriptor.Match(new Descriptor(null, "cache", null, null, null)));
-            Assert.False(descriptor.Match(new Descriptor("pip-services-commons", "controller", null, null, null)));
+            Assert.False(descriptor.Match(new Descriptor("pip-services3-commons", "controller", null, null, null)));
             Assert.False(descriptor.Match(new Descriptor(null, null, "special", null, null)));
             Assert.False(descriptor.Match(new Descriptor(null, null, null, null, "2.0")));
         }

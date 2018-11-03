@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Helper class to perform property introspection and dynamic reading and writing.

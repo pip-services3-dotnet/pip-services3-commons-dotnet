@@ -1,10 +1,10 @@
 ﻿using System;
-using PipServices.Commons.Data;
+using PipServices3.Commons.Data;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using PipServices.Commons.Reflect;
+using PipServices3.Commons.Reflect;
 
-namespace PipServices.Commons.Errors
+namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Defines a base class to defive various application exceptions.

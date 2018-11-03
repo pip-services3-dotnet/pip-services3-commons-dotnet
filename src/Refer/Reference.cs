@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Contains a reference to a component and locator to find it.

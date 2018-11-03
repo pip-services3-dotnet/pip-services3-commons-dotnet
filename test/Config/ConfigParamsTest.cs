@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Data;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Data;
 using Xunit;
 
-namespace PipServices.Commons.Test.Config
+namespace PipServices3.Commons.Test.Config
 {
     //[TestClass]
     public sealed class ConfigParamsTest

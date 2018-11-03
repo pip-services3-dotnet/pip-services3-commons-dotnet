@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Helper class matches value types for equality.

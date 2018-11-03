@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Run;
-using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Run;
+using PipServices3.Commons.Config;
 using Xunit;
 
-namespace PipServices.Commons.Test.Run
+namespace PipServices3.Commons.Test.Run
 {
     //[TestClass]
     public sealed class ParametersTest

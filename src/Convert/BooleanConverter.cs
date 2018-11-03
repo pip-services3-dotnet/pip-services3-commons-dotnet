@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts arbitrary values to boolean values using extended conversion rules:

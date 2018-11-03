@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Xunit;
-using PipServices.Commons.Validate;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Validate;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Test.Validate
+namespace PipServices3.Commons.Test.Validate
 {
     //[TestClass]
     public class SchemaTest

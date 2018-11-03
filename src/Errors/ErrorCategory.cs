@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Errors
+﻿namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Defines standard error categories to application exceptions supported by PipServices toolkit.

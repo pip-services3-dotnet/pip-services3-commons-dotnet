@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Reflect;
+﻿using PipServices3.Commons.Reflect;
 using System;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Schema to validate user defined objects.

@@ -1,8 +1,8 @@
 ﻿using Xunit;
-using PipServices.Commons.Reflect;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Reflect;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Test.Reflect
+namespace PipServices3.Commons.Test.Reflect
 {
     //[TestClass]
     public sealed class RecursiveObjectReaderTest

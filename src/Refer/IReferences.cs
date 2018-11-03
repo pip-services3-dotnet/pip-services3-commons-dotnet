@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Interface for a map that holds component references and passes them to components

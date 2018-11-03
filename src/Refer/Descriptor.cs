@@ -1,12 +1,12 @@
-﻿using PipServices.Commons.Errors;
+﻿using PipServices3.Commons.Errors;
 using System.Text;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Locator type that most often used in PipServices toolkit.
     /// It locates components using several fields:
-    /// - Group: a package or just named group of components like "pip-services"
+    /// - Group: a package or just named group of components like "pip-services3"
     /// - Type: logical component type that defines it's contract like "persistence"
     /// - Kind: physical implementation type like "mongodb"
     /// - Name: unique component name like "default"

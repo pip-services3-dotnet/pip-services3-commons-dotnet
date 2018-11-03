@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 
 using System.Runtime.Serialization;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Data transfer object to pass paging parameters for queries.

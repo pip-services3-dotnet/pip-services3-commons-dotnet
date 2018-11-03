@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace PipServices.Commons.Errors
+namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Unknown or unexpected errors

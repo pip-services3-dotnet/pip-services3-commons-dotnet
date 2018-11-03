@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 using Xunit;
 
-namespace PipServices.Commons.Random
+namespace PipServices3.Commons.Random
 {
     //[TestClass]
     public class RandomDoubleTest

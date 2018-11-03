@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using PipServices.Commons.Run;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Run;
+using PipServices3.Commons.Errors;
 using System.Threading.Tasks;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// Concrete implementation of IEvent interface.

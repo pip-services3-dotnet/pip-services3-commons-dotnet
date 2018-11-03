@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Data;
+﻿using PipServices3.Commons.Data;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     //[TestClass]
     public class TypeConverterTest

@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/test/PipServices.Commons.Test/PipServices.Commons.Test.csproj"
+                "${workspaceRoot}/test/PipServices3.Commons.Test/PipServices3.Commons.Test.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

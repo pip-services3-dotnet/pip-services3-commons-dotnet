@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts arbitrary values into integer using extended conversion rules:

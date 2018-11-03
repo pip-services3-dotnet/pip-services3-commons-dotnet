@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// The most basic implementation of IReferences to store and locate component references.

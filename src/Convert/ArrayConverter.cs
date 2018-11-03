@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts arbitrary values into array objects.

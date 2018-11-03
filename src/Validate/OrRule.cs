@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Validation rule to combine rules with OR logical operation.

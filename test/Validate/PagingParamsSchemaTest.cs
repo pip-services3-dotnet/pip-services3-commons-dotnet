@@ -1,8 +1,8 @@
 ﻿using Xunit;
-using PipServices.Commons.Validate;
-using PipServices.Commons.Data;
+using PipServices3.Commons.Validate;
+using PipServices3.Commons.Data;
 
-namespace PipServices.Commons.Test.Validate
+namespace PipServices3.Commons.Test.Validate
 {
     //[TestClass]
     public class PagingParamsSchemaTest

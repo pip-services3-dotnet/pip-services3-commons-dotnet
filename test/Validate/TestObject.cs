@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PipServices.Commons.Test.Validate
+namespace PipServices3.Commons.Test.Validate
 {
     public class TestObject
     {

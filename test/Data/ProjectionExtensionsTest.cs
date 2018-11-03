@@ -1,11 +1,11 @@
-﻿using PipServices.Commons.Data;
+﻿using PipServices3.Commons.Data;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 
 using Xunit;
 
-namespace PipServices.Commons.Test.Data
+namespace PipServices3.Commons.Test.Data
 {
     public sealed class ProjectionExtensionsTest
     {

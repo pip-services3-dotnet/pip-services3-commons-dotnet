@@ -1,8 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Cross-language implementation of dynamic object what can hold value of any type.

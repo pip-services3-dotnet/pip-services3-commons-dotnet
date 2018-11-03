@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Cross-language implementation of dynamic object map (dictionary) what can hold values of any type.

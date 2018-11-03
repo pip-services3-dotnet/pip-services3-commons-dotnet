@@ -1,6 +1,6 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     public class SortFieldSchema : ObjectSchema
     {

@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Data;
-using PipServices.Commons.Reflect;
+﻿using PipServices3.Commons.Data;
+using PipServices3.Commons.Reflect;
 using Xunit;
 
-namespace PipServices.Commons.Test.Reflect
+namespace PipServices3.Commons.Test.Reflect
 {
     //[TestClass]
     public sealed class ObjectReaderTest

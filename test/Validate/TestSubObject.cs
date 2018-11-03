@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Test.Validate
+﻿namespace PipServices3.Commons.Test.Validate
 {
     public class TestSubObject
     {

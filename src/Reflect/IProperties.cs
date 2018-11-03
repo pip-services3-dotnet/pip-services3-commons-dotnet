@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     public interface IProperties
     {

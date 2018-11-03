@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Defines projection parameters with list if fields to include into query results.

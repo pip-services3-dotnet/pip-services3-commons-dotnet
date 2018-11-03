@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Reflect;
+﻿using PipServices3.Commons.Reflect;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Validation rule that check that at exactly one of the object properties is not null.

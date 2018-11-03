@@ -1,10 +1,10 @@
-﻿using PipServices.Commons.Errors;
-using PipServices.Commons.Run;
+﻿using PipServices3.Commons.Errors;
+using PipServices3.Commons.Run;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     //[TestClass]
     public sealed class CommandTest

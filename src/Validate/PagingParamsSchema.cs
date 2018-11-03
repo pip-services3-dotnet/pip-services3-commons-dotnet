@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 using System;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Schema to validate PagingParams.

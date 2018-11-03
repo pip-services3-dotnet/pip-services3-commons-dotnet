@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Commons.Run
+namespace PipServices3.Commons.Run
 {
     /// <summary>
     /// Helper class that executes components.

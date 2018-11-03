@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace PipServices.Commons.Random
+namespace PipServices3.Commons.Random
 {
    //[TestClass]
     public class RandomDateTimeTest

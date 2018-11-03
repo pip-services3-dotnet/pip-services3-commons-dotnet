@@ -1,10 +1,10 @@
-﻿using PipServices.Commons.Errors;
+﻿using PipServices3.Commons.Errors;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Errors in schema validation.

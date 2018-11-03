@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
-using PipServices.Commons.Data;
-using PipServices.Commons.Convert;
-using PipServices.Commons.Reflect;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Data;
+using PipServices3.Commons.Convert;
+using PipServices3.Commons.Reflect;
+using PipServices3.Commons.Config;
 
-namespace PipServices.Commons.Run
+namespace PipServices3.Commons.Run
 {
     /// <summary>
     /// Contains map with execution parameters.

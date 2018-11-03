@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using PipServices.Commons.Run;
+using PipServices3.Commons.Run;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// An interface for Events, which are part of the Command design pattern. 

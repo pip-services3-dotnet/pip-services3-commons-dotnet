@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Defines a field name and order used to sort query results.

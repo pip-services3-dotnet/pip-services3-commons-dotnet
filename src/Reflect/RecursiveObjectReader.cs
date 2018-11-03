@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using PipServices.Commons.Convert;
-using TypeCode = PipServices.Commons.Convert.TypeCode;
+using PipServices3.Commons.Convert;
+using TypeCode = PipServices3.Commons.Convert.TypeCode;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Helper class to perform property introspection and dynamic reading.

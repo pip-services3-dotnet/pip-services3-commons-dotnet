@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Convert;
 using System;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Helper class for resolving component dependencies.

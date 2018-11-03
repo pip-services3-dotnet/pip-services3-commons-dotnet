@@ -1,6 +1,6 @@
-﻿using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Refer;
 
-namespace PipServices.Commons.Config
+namespace PipServices3.Commons.Config
 {
     /// <summary>
     /// A helper class that allows to extract component name from configuration parameters.

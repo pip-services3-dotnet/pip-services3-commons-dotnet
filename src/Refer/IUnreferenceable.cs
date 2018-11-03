@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Refer
+﻿namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Interface for components that require explicit clearing of references to dependent components.

@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Config
+﻿namespace PipServices3.Commons.Config
 {
     /// <summary>
     /// An interface to set configuration parameters to an object.

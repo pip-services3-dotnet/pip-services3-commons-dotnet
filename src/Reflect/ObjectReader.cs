@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json.Linq;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Convert;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Helper class to perform property introspection and dynamic reading.

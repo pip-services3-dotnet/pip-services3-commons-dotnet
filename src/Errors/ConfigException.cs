@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace PipServices.Commons.Errors
+namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Errors related to mistakes in the microservice's user-defined configurations.

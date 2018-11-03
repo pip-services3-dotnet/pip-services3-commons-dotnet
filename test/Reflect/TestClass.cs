@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Test.Reflect
+namespace PipServices3.Commons.Test.Reflect
 {
     public class TestClass
     {

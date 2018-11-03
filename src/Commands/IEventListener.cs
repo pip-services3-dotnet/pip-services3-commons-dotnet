@@ -1,6 +1,6 @@
-﻿using PipServices.Commons.Run;
+﻿using PipServices3.Commons.Run;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// An interface for listener objects that receive notifications on fired events.

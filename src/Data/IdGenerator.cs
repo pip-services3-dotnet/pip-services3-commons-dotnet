@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Helper class to generate unique object IDs.

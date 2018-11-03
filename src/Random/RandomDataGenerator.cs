@@ -1,11 +1,11 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace PipServices.Commons.Random
+namespace PipServices3.Commons.Random
 {
     public abstract class RandomDataGenerator<T>
     {

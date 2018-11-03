@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Reflect;
+﻿using PipServices3.Commons.Reflect;
 using System.Collections.Generic;
 using Xunit;
 
-namespace PipServices.Commons.Test.Reflect
+namespace PipServices3.Commons.Test.Reflect
 {
     //[TestClass]
     public class PropertyReflectorTest

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace PipServices.Commons.Random
+namespace PipServices3.Commons.Random
 {
     /// <summary>
     /// Random generator for various text values like names, addresses or phone numbers.

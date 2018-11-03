@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Convert
+﻿namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Codes for the data types that can be converted using TypeConverter.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Errors
+namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Factory to create serializeable ErrorDescription from ApplicationException

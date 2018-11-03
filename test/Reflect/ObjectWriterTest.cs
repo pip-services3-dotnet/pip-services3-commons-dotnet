@@ -1,10 +1,10 @@
 ﻿using System;
 using Xunit;
-using PipServices.Commons.Reflect;
-using PipServices.Commons.Convert;
-using PipServices.Commons.Data;
+using PipServices3.Commons.Reflect;
+using PipServices3.Commons.Convert;
+using PipServices3.Commons.Data;
 
-namespace PipServices.Commons.Test.Reflect
+namespace PipServices3.Commons.Test.Reflect
 {
     //[TestClass]
     public sealed class ObjectWriterTest

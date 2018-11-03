@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Interface for data objects that can track their changes, including logical deletion. 

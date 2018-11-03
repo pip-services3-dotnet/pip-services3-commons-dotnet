@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
-using PipServices.Commons.Data;
+using PipServices3.Commons.Data;
 
-namespace PipServices.Commons.Errors
+namespace PipServices3.Commons.Errors
 {
     /// <summary>
     /// Serializeable error description. It is use to pass information about errors

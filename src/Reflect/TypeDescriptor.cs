@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Descriptor that points to specific object type by it's name

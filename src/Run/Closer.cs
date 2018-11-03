@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Threading.Tasks;
 
-namespace PipServices.Commons.Run
+namespace PipServices3.Commons.Run
 {
     /// <summary>
     /// Helper class that closes previously opened components.

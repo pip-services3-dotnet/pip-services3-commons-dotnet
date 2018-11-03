@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace PipServices.Commons.Run
+namespace PipServices3.Commons.Run
 {
     /// <summary>
     /// Timer that is triggered in equal time intervals.

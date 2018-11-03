@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Config;
 using Xunit;
 
-namespace PipServices.Commons.Test.Config
+namespace PipServices3.Commons.Test.Config
 {
     //[TestClass]
     public class NameResolverTest

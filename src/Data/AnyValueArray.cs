@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Cross-language implementation of dynamic object array what can hold values of any type.

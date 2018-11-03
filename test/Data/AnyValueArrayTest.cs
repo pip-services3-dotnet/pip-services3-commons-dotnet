@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using PipServices.Commons.Data;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Data;
+using PipServices3.Commons.Convert;
 using Xunit;
 
-namespace PipServices.Commons.Test.Data
+namespace PipServices3.Commons.Test.Data
 {
     //[TestClass]
     public sealed class AnyValueArrayTest

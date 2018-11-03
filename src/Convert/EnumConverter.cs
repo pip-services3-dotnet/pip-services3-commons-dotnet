@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts objects to Enums.

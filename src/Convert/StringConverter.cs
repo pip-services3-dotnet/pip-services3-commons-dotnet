@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using Newtonsoft.Json.Linq;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     /// <summary>
     /// Converts arbitrary values into strings using extended conversion rules:

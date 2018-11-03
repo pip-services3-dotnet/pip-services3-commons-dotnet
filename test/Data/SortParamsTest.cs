@@ -1,12 +1,12 @@
-﻿using PipServices.Commons.Convert;
-using PipServices.Commons.Data;
-using PipServices.Commons.Run;
+﻿using PipServices3.Commons.Convert;
+using PipServices3.Commons.Data;
+using PipServices3.Commons.Run;
 
 using System.Collections.Generic;
 
 using Xunit;
 
-namespace PipServices.Commons.Test.Data
+namespace PipServices3.Commons.Test.Data
 {
     public sealed class SortParamsTest
     {

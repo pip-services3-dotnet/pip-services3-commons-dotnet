@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using PipServices.Commons.Data;
-using PipServices.Commons.Reflect;
+using PipServices3.Commons.Data;
+using PipServices3.Commons.Reflect;
 
-namespace PipServices.Commons.Config
+namespace PipServices3.Commons.Config
 {
     /// <summary>
     ///Contains a key-value map with configuration parameters.
@@ -20,8 +20,8 @@ namespace PipServices.Commons.Config
     /// The ConfigParams supports serialization from/to plain strings as:
     /// <c>"key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"</c>
     /// ConfigParams are used to pass configurations to IConfigurable objects. 
-    /// They also serve as a basis for more concrete configurations such as <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>
-    /// or <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>.
+    /// They also serve as a basis for more concrete configurations such as <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>
+    /// or <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>.
     /// </summary>
     /// <example>
     /// <code>

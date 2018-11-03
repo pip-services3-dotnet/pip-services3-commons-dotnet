@@ -1,10 +1,10 @@
-﻿using PipServices.Commons.Data;
+﻿using PipServices3.Commons.Data;
 
 using System.Collections.Generic;
 
 using Xunit;
 
-namespace PipServices.Commons.Test.Data
+namespace PipServices3.Commons.Test.Data
 {
     public sealed class ProjectionParamsTest
     {

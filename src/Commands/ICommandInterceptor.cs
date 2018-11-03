@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Run;
-using PipServices.Commons.Validate;
+﻿using PipServices3.Commons.Run;
+using PipServices3.Commons.Validate;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// An interface for stackable command interceptors, which can extend
@@ -34,7 +34,7 @@ namespace PipServices.Commons.Commands
         /// <param name="command">the next command in the call chain that is to be executed.</param>
         /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
         /// <returns>execution result.</returns>
-        /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
+        /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         Task<object> ExecuteAsync(string correlationId, ICommand command, Parameters args);
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Helper class that sets and unsets references to components.

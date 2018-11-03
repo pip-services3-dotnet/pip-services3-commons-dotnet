@@ -1,7 +1,7 @@
 ﻿using System.Dynamic;
 using System.Collections.Generic;
 
-namespace PipServices.Commons.Data
+namespace PipServices3.Commons.Data
 {
     public static class ProjectionExtensions
     {

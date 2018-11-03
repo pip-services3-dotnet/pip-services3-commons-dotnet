@@ -1,7 +1,7 @@
 ﻿using System;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     /// <summary>
     /// Helper class to perform object type introspection and object instantiation.

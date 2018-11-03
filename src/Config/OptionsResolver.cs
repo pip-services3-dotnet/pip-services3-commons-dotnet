@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Config
+﻿namespace PipServices3.Commons.Config
 {
     /// <summary>
     /// A helper class to parameters from <c>"options"</c> configuration section.

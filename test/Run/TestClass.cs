@@ -1,4 +1,4 @@
-namespace PipServices.Commons.Test.Run
+namespace PipServices3.Commons.Test.Run
 {
     public class TestClass
     {

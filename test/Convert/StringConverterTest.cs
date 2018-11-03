@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace PipServices.Commons.Convert
+namespace PipServices3.Commons.Convert
 {
     //[TestClass]
     public class StringConverterTest

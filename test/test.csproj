@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>false</IsPackable>
-    <AssemblyName>PipServices.Commons.Test</AssemblyName>
-    <RootNamespace>PipServices.Commons</RootNamespace>
+    <AssemblyName>PipServices3.Commons.Test</AssemblyName>
+    <RootNamespace>PipServices3.Commons</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

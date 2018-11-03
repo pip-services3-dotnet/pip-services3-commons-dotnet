@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace PipServices.Commons.Random
+namespace PipServices3.Commons.Random
 {
     /// <summary>
     /// Random generator for string values.

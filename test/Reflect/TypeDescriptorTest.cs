@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace PipServices.Commons.Reflect
+namespace PipServices3.Commons.Reflect
 {
     //[TestClass]
     public class TypeDescriptorTest

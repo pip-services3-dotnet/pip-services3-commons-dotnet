@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 using System.Text.RegularExpressions;
 
-namespace PipServices.Commons.Validate
+namespace PipServices3.Commons.Validate
 {
     /// <summary>
     /// Helper class to perform comparison operations over arbitrary values.

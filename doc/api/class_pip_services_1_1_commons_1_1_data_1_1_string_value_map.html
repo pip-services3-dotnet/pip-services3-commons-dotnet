@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pip-Services-Commons-Dotnet: PipServices.Commons.Data.StringValueMap Class Reference</title>
+<title>Pip-Services-Commons-Dotnet: PipServices3.Commons.Data.StringValueMap Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,20 +81,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#properties">Properties</a> &#124;
 <a href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PipServices.Commons.Data.StringValueMap Class Reference</div>  </div>
+<div class="title">PipServices3.Commons.Data.StringValueMap Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Cross-language implementation of a map (dictionary) where all keys and values are strings. The stored values can be converted to different types using variety of accessor methods.  
  <a href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for PipServices.Commons.Data.StringValueMap:</div>
+Inheritance diagram for PipServices3.Commons.Data.StringValueMap:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.png" usemap="#PipServices.Commons.Data.StringValueMap_map" alt=""/>
-  <map id="PipServices.Commons.Data.StringValueMap_map" name="PipServices.Commons.Data.StringValueMap_map">
-<area href="class_pip_services_1_1_commons_1_1_config_1_1_config_params.html" title="Contains a key-value map with configuration parameters. All values stored as strings and can be seria..." alt="PipServices.Commons.Config.ConfigParams" shape="rect" coords="0,112,263,136"/>
-<area href="class_pip_services_1_1_commons_1_1_data_1_1_filter_params.html" title="Data transfer object used to pass filter parameters as simple key-value pairs. " alt="PipServices.Commons.Data.FilterParams" shape="rect" coords="273,112,536,136"/>
+  <img src="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.png" usemap="#PipServices3.Commons.Data.StringValueMap_map" alt=""/>
+  <map id="PipServices3.Commons.Data.StringValueMap_map" name="PipServices3.Commons.Data.StringValueMap_map">
+<area href="class_pip_services_1_1_commons_1_1_config_1_1_config_params.html" title="Contains a key-value map with configuration parameters. All values stored as strings and can be seria..." alt="PipServices3.Commons.Config.ConfigParams" shape="rect" coords="0,112,263,136"/>
+<area href="class_pip_services_1_1_commons_1_1_data_1_1_filter_params.html" title="Data transfer object used to pass filter parameters as simple key-value pairs. " alt="PipServices3.Commons.Data.FilterParams" shape="rect" coords="273,112,536,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -275,7 +275,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Cross-language implementation of a map (dictionary) where all keys and values are strings. The stored values can be converted to different types using variety of accessor methods. </p>
 <p>The string map is highly versatile.It can be converted into many formats, stored and sent over the wire.</p>
-<p>This class is widely used in Pip.Services as a basis for variety of classes, such as <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a> and others. </p>
+<p>This class is widely used in Pip.Services as a basis for variety of classes, such as <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a> and others. </p>
 <div class="fragment"><div class="line">var value1 = <a class="code" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html#a697c36e52d31edf9226c34894f343127">StringValueMap</a>.FromString(<span class="stringliteral">&quot;key1=1;key2=123.456;key3=2018-01-01&quot;</span>);</div><div class="line"></div><div class="line">value1.GetAsBoolean(<span class="stringliteral">&quot;key1&quot;</span>);   <span class="comment">// Result: true</span></div><div class="line">value1.GetAsInteger(<span class="stringliteral">&quot;key2&quot;</span>);   <span class="comment">// Result: 123</span></div><div class="line">value1.GetAsFloat(<span class="stringliteral">&quot;key2&quot;</span>);     <span class="comment">// Result: 123.456</span></div><div class="line">value1.GetAsDateTime(<span class="stringliteral">&quot;key3&quot;</span>);  <span class="comment">// Result: new Date(2018,0,1)</span></div></div><!-- fragment --> <p>See StringConverter, BooleanConverter, IntegerConverter, LongConverter, DoubleConverter, FloatConverter, DateTimeConverter, <a class="el" href="interface_pip_services_1_1_commons_1_1_data_1_1_i_cloneable.html" title="Interface for data objects that are able to create their full binary copy. ">ICloneable</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a697c36e52d31edf9226c34894f343127"></a>
@@ -285,7 +285,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PipServices.Commons.Data.StringValueMap.StringValueMap </td>
+          <td class="memname">PipServices3.Commons.Data.StringValueMap.StringValueMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -304,7 +304,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PipServices.Commons.Data.StringValueMap.StringValueMap </td>
+          <td class="memname">PipServices3.Commons.Data.StringValueMap.StringValueMap </td>
           <td>(</td>
           <td class="paramtype">IDictionary&lt; string, string &gt;&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -330,7 +330,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PipServices.Commons.Data.StringValueMap.StringValueMap </td>
+          <td class="memname">PipServices3.Commons.Data.StringValueMap.StringValueMap </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -357,7 +357,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Commons.Data.StringValueMap.Append </td>
+          <td class="memname">void PipServices3.Commons.Data.StringValueMap.Append </td>
           <td>(</td>
           <td class="paramtype">IDictionary&lt; string, object &gt;&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -383,7 +383,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Commons.Data.StringValueMap.Append </td>
+          <td class="memname">void PipServices3.Commons.Data.StringValueMap.Append </td>
           <td>(</td>
           <td class="paramtype">IDictionary&lt; string, string &gt;&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -409,7 +409,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">object PipServices.Commons.Data.StringValueMap.Clone </td>
+          <td class="memname">object PipServices3.Commons.Data.StringValueMap.Clone </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -432,7 +432,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices.Commons.Data.StringValueMap.FromMaps </td>
+          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices3.Commons.Data.StringValueMap.FromMaps </td>
           <td>(</td>
           <td class="paramtype">params IDictionary&lt; string, string &gt; []&#160;</td>
           <td class="paramname"><em>maps</em></td><td>)</td>
@@ -467,7 +467,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices.Commons.Data.StringValueMap.FromString </td>
+          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices3.Commons.Data.StringValueMap.FromString </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
@@ -502,7 +502,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices.Commons.Data.StringValueMap.FromTuples </td>
+          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices3.Commons.Data.StringValueMap.FromTuples </td>
           <td>(</td>
           <td class="paramtype">params object []&#160;</td>
           <td class="paramname"><em>tuples</em></td><td>)</td>
@@ -537,7 +537,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices.Commons.Data.StringValueMap.FromValue </td>
+          <td class="memname">static <a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_string_value_map.html">StringValueMap</a> PipServices3.Commons.Data.StringValueMap.FromValue </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -572,7 +572,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual string PipServices.Commons.Data.StringValueMap.Get </td>
+          <td class="memname">virtual string PipServices3.Commons.Data.StringValueMap.Get </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -604,7 +604,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices.Commons.Data.StringValueMap.GetAsArray </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices3.Commons.Data.StringValueMap.GetAsArray </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -632,7 +632,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices.Commons.Data.StringValueMap.GetAsArrayWithDefault </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices3.Commons.Data.StringValueMap.GetAsArrayWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -671,7 +671,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool PipServices.Commons.Data.StringValueMap.GetAsBoolean </td>
+          <td class="memname">bool PipServices3.Commons.Data.StringValueMap.GetAsBoolean </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -699,7 +699,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool PipServices.Commons.Data.StringValueMap.GetAsBooleanWithDefault </td>
+          <td class="memname">bool PipServices3.Commons.Data.StringValueMap.GetAsBooleanWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -738,7 +738,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime PipServices.Commons.Data.StringValueMap.GetAsDateTime </td>
+          <td class="memname">DateTime PipServices3.Commons.Data.StringValueMap.GetAsDateTime </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -766,7 +766,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime PipServices.Commons.Data.StringValueMap.GetAsDateTimeWithDefault </td>
+          <td class="memname">DateTime PipServices3.Commons.Data.StringValueMap.GetAsDateTimeWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -805,7 +805,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double PipServices.Commons.Data.StringValueMap.GetAsDouble </td>
+          <td class="memname">double PipServices3.Commons.Data.StringValueMap.GetAsDouble </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -833,7 +833,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double PipServices.Commons.Data.StringValueMap.GetAsDoubleWithDefault </td>
+          <td class="memname">double PipServices3.Commons.Data.StringValueMap.GetAsDoubleWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -872,7 +872,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float PipServices.Commons.Data.StringValueMap.GetAsFloat </td>
+          <td class="memname">float PipServices3.Commons.Data.StringValueMap.GetAsFloat </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -900,7 +900,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float PipServices.Commons.Data.StringValueMap.GetAsFloatWithDefault </td>
+          <td class="memname">float PipServices3.Commons.Data.StringValueMap.GetAsFloatWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -939,7 +939,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PipServices.Commons.Data.StringValueMap.GetAsInteger </td>
+          <td class="memname">int PipServices3.Commons.Data.StringValueMap.GetAsInteger </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -967,7 +967,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PipServices.Commons.Data.StringValueMap.GetAsIntegerWithDefault </td>
+          <td class="memname">int PipServices3.Commons.Data.StringValueMap.GetAsIntegerWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1006,7 +1006,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long PipServices.Commons.Data.StringValueMap.GetAsLong </td>
+          <td class="memname">long PipServices3.Commons.Data.StringValueMap.GetAsLong </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1034,7 +1034,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long PipServices.Commons.Data.StringValueMap.GetAsLongWithDefault </td>
+          <td class="memname">long PipServices3.Commons.Data.StringValueMap.GetAsLongWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1073,7 +1073,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices.Commons.Data.StringValueMap.GetAsMap </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices3.Commons.Data.StringValueMap.GetAsMap </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1101,7 +1101,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices.Commons.Data.StringValueMap.GetAsMapWithDefault </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices3.Commons.Data.StringValueMap.GetAsMapWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1140,7 +1140,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices.Commons.Data.StringValueMap.GetAsNullableArray </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_array.html">AnyValueArray</a> PipServices3.Commons.Data.StringValueMap.GetAsNullableArray </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1168,7 +1168,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool PipServices.Commons.Data.StringValueMap.GetAsNullableBoolean </td>
+          <td class="memname">bool PipServices3.Commons.Data.StringValueMap.GetAsNullableBoolean </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1196,7 +1196,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime PipServices.Commons.Data.StringValueMap.GetAsNullableDateTime </td>
+          <td class="memname">DateTime PipServices3.Commons.Data.StringValueMap.GetAsNullableDateTime </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1224,7 +1224,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double PipServices.Commons.Data.StringValueMap.GetAsNullableDouble </td>
+          <td class="memname">double PipServices3.Commons.Data.StringValueMap.GetAsNullableDouble </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1252,7 +1252,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float PipServices.Commons.Data.StringValueMap.GetAsNullableFloat </td>
+          <td class="memname">float PipServices3.Commons.Data.StringValueMap.GetAsNullableFloat </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1280,7 +1280,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PipServices.Commons.Data.StringValueMap.GetAsNullableInteger </td>
+          <td class="memname">int PipServices3.Commons.Data.StringValueMap.GetAsNullableInteger </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1308,7 +1308,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long PipServices.Commons.Data.StringValueMap.GetAsNullableLong </td>
+          <td class="memname">long PipServices3.Commons.Data.StringValueMap.GetAsNullableLong </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1336,7 +1336,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices.Commons.Data.StringValueMap.GetAsNullableMap </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value_map.html">AnyValueMap</a> PipServices3.Commons.Data.StringValueMap.GetAsNullableMap </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1364,7 +1364,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string PipServices.Commons.Data.StringValueMap.GetAsNullableString </td>
+          <td class="memname">string PipServices3.Commons.Data.StringValueMap.GetAsNullableString </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1392,7 +1392,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">T PipServices.Commons.Data.StringValueMap.GetAsNullableType&lt; T &gt; </td>
+          <td class="memname">T PipServices3.Commons.Data.StringValueMap.GetAsNullableType&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1434,7 +1434,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">object PipServices.Commons.Data.StringValueMap.GetAsObject </td>
+          <td class="memname">object PipServices3.Commons.Data.StringValueMap.GetAsObject </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1454,7 +1454,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">object PipServices.Commons.Data.StringValueMap.GetAsObject </td>
+          <td class="memname">object PipServices3.Commons.Data.StringValueMap.GetAsObject </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1481,7 +1481,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string PipServices.Commons.Data.StringValueMap.GetAsString </td>
+          <td class="memname">string PipServices3.Commons.Data.StringValueMap.GetAsString </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1509,7 +1509,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string PipServices.Commons.Data.StringValueMap.GetAsStringWithDefault </td>
+          <td class="memname">string PipServices3.Commons.Data.StringValueMap.GetAsStringWithDefault </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1548,7 +1548,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">T PipServices.Commons.Data.StringValueMap.GetAsType&lt; T &gt; </td>
+          <td class="memname">T PipServices3.Commons.Data.StringValueMap.GetAsType&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1590,7 +1590,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">T PipServices.Commons.Data.StringValueMap.GetAsTypeWithDefault&lt; T &gt; </td>
+          <td class="memname">T PipServices3.Commons.Data.StringValueMap.GetAsTypeWithDefault&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1643,7 +1643,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value.html">AnyValue</a> PipServices.Commons.Data.StringValueMap.GetAsValue </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_commons_1_1_data_1_1_any_value.html">AnyValue</a> PipServices3.Commons.Data.StringValueMap.GetAsValue </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -1674,7 +1674,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void PipServices.Commons.Data.StringValueMap.Set </td>
+          <td class="memname">virtual void PipServices3.Commons.Data.StringValueMap.Set </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1716,7 +1716,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Commons.Data.StringValueMap.SetAsObject </td>
+          <td class="memname">void PipServices3.Commons.Data.StringValueMap.SetAsObject </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -1742,7 +1742,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Commons.Data.StringValueMap.SetAsObject </td>
+          <td class="memname">void PipServices3.Commons.Data.StringValueMap.SetAsObject </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1779,7 +1779,7 @@ new string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string key
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override string PipServices.Commons.Data.StringValueMap.ToString </td>
+          <td class="memname">override string PipServices3.Commons.Data.StringValueMap.ToString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

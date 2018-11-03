@@ -1,10 +1,10 @@
 ﻿using System;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Errors;
 using Xunit;
 
-using ApplicationException = PipServices.Commons.Errors.ApplicationException;
+using ApplicationException = PipServices3.Commons.Errors.ApplicationException;
 
-namespace PipServices.Commons.Test.Errors
+namespace PipServices3.Commons.Test.Errors
 {
     //[TestClass]
     public class ErrorDescriptionFactoryTest

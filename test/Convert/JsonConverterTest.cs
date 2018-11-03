@@ -1,10 +1,10 @@
-﻿using PipServices.Commons.Convert;
-using PipServices.Commons.Data;
+﻿using PipServices3.Commons.Convert;
+using PipServices3.Commons.Data;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace PipServices.Commons.Test.Convert
+namespace PipServices3.Commons.Test.Convert
 {
     //[TestClass]
     public sealed class JsonConverterTest

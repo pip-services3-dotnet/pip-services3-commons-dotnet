@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using PipServices.Commons.Validate;
+using PipServices3.Commons.Validate;
 
-namespace PipServices.Commons.Test.Validate
+namespace PipServices3.Commons.Test.Validate
 {
     //[TestClass]
     public class AtLeastOneExistRuleTest

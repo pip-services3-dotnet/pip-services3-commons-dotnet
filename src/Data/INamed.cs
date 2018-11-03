@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Data
+﻿namespace PipServices3.Commons.Data
 {
     /// <summary>
     /// Interface for data objects that have human-readable name.

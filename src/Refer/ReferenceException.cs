@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Errors;
+﻿using PipServices3.Commons.Errors;
 using System;
 using System.Runtime.Serialization;
 
-namespace PipServices.Commons.Refer
+namespace PipServices3.Commons.Refer
 {
     /// <summary>
     /// Error when required component dependency cannot be found.

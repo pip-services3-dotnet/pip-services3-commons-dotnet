@@ -1,4 +1,4 @@
-﻿namespace PipServices.Commons.Run
+﻿namespace PipServices3.Commons.Run
 {
     /// <summary>
     /// Interface for components that require execution parameters.

@@ -1,11 +1,11 @@
-﻿using PipServices.Commons.Data;
-using PipServices.Commons.Errors;
-using PipServices.Commons.Run;
-using PipServices.Commons.Validate;
+﻿using PipServices3.Commons.Data;
+using PipServices3.Commons.Errors;
+using PipServices3.Commons.Run;
+using PipServices3.Commons.Validate;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Commons.Commands
+namespace PipServices3.Commons.Commands
 {
     /// <summary>
     /// Contains a set of commands and events supported by a ICommandable object.
@@ -195,7 +195,7 @@ namespace PipServices.Commons.Commands
         /// <exception cref="ValidationException"> when execution fails for validation reason.</exception>
         /// <returns>Execution result.</returns>
         /// See <see cref="ICommand"/>,
-        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
+        /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public Task<object> ExecuteAsync(string correlationId, string command, Parameters args)
         {
             var cref = FindCommand(command);
@@ -229,8 +229,8 @@ namespace PipServices.Commons.Commands
         /// name, then the returned array of ValidationResults will contain a
         /// single entry, whose type will be ValidationResultType.Error.</returns>
         /// See <see cref="Command"/>,
-        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
-        /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
+        /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(string command, Parameters args)
         {
             var cref = FindCommand(command);
