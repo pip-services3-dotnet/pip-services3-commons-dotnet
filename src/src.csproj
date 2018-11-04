@@ -6,7 +6,7 @@
     <RootNamespace>PipServices3.Commons</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.5</Version>
+    <Version>3.0.6</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2018</Copyright>
     <Description>Portable abstractions and patterns for Pip.Services in .NET</Description>
@@ -14,8 +14,8 @@
     <Product>PipServices3.Commons</Product>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/pip-services3/pip-services3/master/design/Icon.png</PackageIconUrl>
-    <PackageTags>pip-services3 microservices framework</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</PackageIconUrl>
+    <PackageTags>PipServices V3 microservices toolkit</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
