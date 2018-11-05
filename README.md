@@ -1,6 +1,6 @@
-# <img src="https://github.com/pip-services3/pip-services3/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Portable abstractions and patterns for .NET
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Portable abstractions and patterns for .NET
 
-This framework is a part of [Pip.Services](https://github.com/pip-services3/pip-services3) project.
+This framework is a part of [Pip.Services](https://github.com/pip-services/pip-services) project.
 It provides basic building blocks that can be used to implement non-trivial business logic in applications and services.
 
 The key difference of this framework is a portable implementation across variety of different languages. 

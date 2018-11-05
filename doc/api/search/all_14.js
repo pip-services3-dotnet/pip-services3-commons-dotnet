@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['warning',['Warning',['../namespace_pip_services_1_1_commons_1_1_validate.html#ae5f2b5038186a87dd7714ccf97066056a0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'PipServices::Commons::Validate']]],
-  ['withcause',['WithCause',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#ac2f432ec9d0ef9d4dbef0168c9557816',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withcode',['WithCode',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#aa219cd4996190a99944eca2a1bec3dbc',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withcorrelationid',['WithCorrelationId',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a61355a56d74e9c5d2779378f0cacf79d',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withdetails',['WithDetails',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a28a364f5436ee017d95068c1ec273d7c',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withoptionalproperty',['WithOptionalProperty',['../class_pip_services_1_1_commons_1_1_validate_1_1_object_schema.html#a58d995276d15c18095a84f126c2eff7d',1,'PipServices::Commons::Validate::ObjectSchema']]],
-  ['withproperty',['WithProperty',['../class_pip_services_1_1_commons_1_1_validate_1_1_object_schema.html#a76936223aacc448f63c595109c76fd40',1,'PipServices::Commons::Validate::ObjectSchema']]],
-  ['withrequiredproperty',['WithRequiredProperty',['../class_pip_services_1_1_commons_1_1_validate_1_1_object_schema.html#ad29247bd8692fd46fae0a6ad783ec3c7',1,'PipServices::Commons::Validate::ObjectSchema']]],
-  ['withrule',['WithRule',['../class_pip_services_1_1_commons_1_1_validate_1_1_schema.html#a69831c35973ec4b0f30914a0cf843c29',1,'PipServices::Commons::Validate::Schema']]],
-  ['withstacktrace',['WithStackTrace',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a43c81f609bf71c011ce98ea24148ca62',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['withstatus',['WithStatus',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#aa9eaf957701cca825a1254e45e7e4e26',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['word',['Word',['../class_pip_services_1_1_commons_1_1_random_1_1_random_text.html#a135c64baba6b56f62d4951ad0816cbbd',1,'PipServices::Commons::Random::RandomText']]],
-  ['words',['Words',['../class_pip_services_1_1_commons_1_1_random_1_1_random_text.html#a11de4e35c898e66c21de5cb24d662f71',1,'PipServices::Commons::Random::RandomText']]],
-  ['wrap',['Wrap',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a7f551dd43c20dcbe7f97a77eadd54dea',1,'PipServices::Commons::Errors::ApplicationException']]],
-  ['wrapexception',['WrapException',['../class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html#a1dc7534b7e2a7a2bdfe1aa60510f78d7',1,'PipServices::Commons::Errors::ApplicationException']]]
+  ['warning',['Warning',['../namespace_pip_services3_1_1_commons_1_1_validate.html#a3a6779cea93ecc073718b79e03035936a0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'PipServices3::Commons::Validate']]],
+  ['withcause',['WithCause',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#acd302c372a9ca9854dad024ad41a05fa',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['withcode',['WithCode',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a21ebda9f6c523dc0c6fb8899f28e9ab0',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['withcorrelationid',['WithCorrelationId',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a714f451f45082d74accd9fc4b5e867ea',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['withdetails',['WithDetails',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a442b0d23155bf6957e76120f24003710',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['withoptionalproperty',['WithOptionalProperty',['../class_pip_services3_1_1_commons_1_1_validate_1_1_object_schema.html#af4fd549c8e574ab46dde68cb48a8a758',1,'PipServices3::Commons::Validate::ObjectSchema']]],
+  ['withproperty',['WithProperty',['../class_pip_services3_1_1_commons_1_1_validate_1_1_object_schema.html#a1c6e2170a3829e089b6501088cbc566a',1,'PipServices3::Commons::Validate::ObjectSchema']]],
+  ['withrequiredproperty',['WithRequiredProperty',['../class_pip_services3_1_1_commons_1_1_validate_1_1_object_schema.html#a9d18fe635407d43d9d3852c2fd145405',1,'PipServices3::Commons::Validate::ObjectSchema']]],
+  ['withrule',['WithRule',['../class_pip_services3_1_1_commons_1_1_validate_1_1_schema.html#a6c51c5005972343049ab8f85f026ecea',1,'PipServices3::Commons::Validate::Schema']]],
+  ['withstacktrace',['WithStackTrace',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a3479d629771973b26a2d20c69344232e',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['withstatus',['WithStatus',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#aa758a0246770532cb0a8cb0366f78140',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['word',['Word',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_text.html#aeef23ba6576c607088c2983892c73c40',1,'PipServices3::Commons::Random::RandomText']]],
+  ['words',['Words',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_text.html#af2b1cc7d10228b707559273685a181a0',1,'PipServices3::Commons::Random::RandomText']]],
+  ['wrap',['Wrap',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a4677997119861061a37512a34adbb926',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['wrapexception',['WrapException',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#aa819031038a922b9a64cb20d6b832d7b',1,'PipServices3::Commons::Errors::ApplicationException']]]
 ];
