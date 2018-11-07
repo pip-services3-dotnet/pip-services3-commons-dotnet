@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['category',['Category',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a3d8a2cc5aec1054170e0e516196ae39f',1,'PipServices3.Commons.Errors.ApplicationException.Category()'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_error_description.html#a2e769e4ca741df974ec49e89e9313653',1,'PipServices3.Commons.Errors.ErrorDescription.Category()']]],
+  ['cause',['Cause',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a232c102b99412ef027961e15dbe105ed',1,'PipServices3.Commons.Errors.ApplicationException.Cause()'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_error_description.html#a70d6bf33ad2b2474b8bbe2c08a91e836',1,'PipServices3.Commons.Errors.ErrorDescription.Cause()']]],
+  ['code',['Code',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a099533b6de2f9aa3e9269ddea8acb6a8',1,'PipServices3.Commons.Errors.ApplicationException.Code()'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_error_description.html#a619e2f8f52f75279e2a12b4710bf08f5',1,'PipServices3.Commons.Errors.ErrorDescription.Code()']]],
+  ['commands',['Commands',['../class_pip_services3_1_1_commons_1_1_commands_1_1_command_set.html#ac2ecc0db6fe99e64ef60bfee9140b4ba',1,'PipServices3::Commons::Commands::CommandSet']]],
+  ['correlationid',['CorrelationId',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a9dc98089e5872c6f1a9bf546b4da36c6',1,'PipServices3.Commons.Errors.ApplicationException.CorrelationId()'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_error_description.html#a97f94d6575841f874fa6f9c0f3e2ba66',1,'PipServices3.Commons.Errors.ErrorDescription.CorrelationId()']]],
+  ['createdtime',['CreatedTime',['../interface_pip_services3_1_1_commons_1_1_data_1_1_i_trackable.html#a971eefe7dbf5e52e105286b84fab98f2',1,'PipServices3::Commons::Data::ITrackable']]]
+];

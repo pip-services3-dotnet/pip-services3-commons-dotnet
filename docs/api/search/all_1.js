@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['badrequest',['BadRequest',['../class_pip_services3_1_1_commons_1_1_errors_1_1_error_category.html#a879c0ed8441ca72fba8276590d194e66',1,'PipServices3::Commons::Errors::ErrorCategory']]],
+  ['badrequestexception',['BadRequestException',['../class_pip_services3_1_1_commons_1_1_errors_1_1_bad_request_exception.html',1,'PipServices3.Commons.Errors.BadRequestException'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_bad_request_exception.html#ad4dbae236d5badabdc83d0f2d10e1416',1,'PipServices3.Commons.Errors.BadRequestException.BadRequestException(string message)'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_bad_request_exception.html#a8853bd1b89d74614a796dc94959ddc42',1,'PipServices3.Commons.Errors.BadRequestException.BadRequestException(Exception innerException)'],['../class_pip_services3_1_1_commons_1_1_errors_1_1_bad_request_exception.html#ad8680a8a324f2e30f35a034d9e3c41e0',1,'PipServices3.Commons.Errors.BadRequestException.BadRequestException(string correlationId=null, string code=null, string message=null, Exception innerException=null)']]],
+  ['basemessage',['BaseMessage',['../class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html#a75ce1ad581f4a5bd7fd9a923a89d2809',1,'PipServices3::Commons::Errors::ApplicationException']]],
+  ['booleanconverter',['BooleanConverter',['../class_pip_services3_1_1_commons_1_1_convert_1_1_boolean_converter.html',1,'PipServices3::Commons::Convert']]]
+];
