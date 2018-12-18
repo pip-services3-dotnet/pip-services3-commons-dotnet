@@ -1,6 +1,6 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
-## <a name="3.0.4"></a> 3.0.4 (2018-08-20)
+## <a name="3.0.8"></a> 3.0.8 (2018-12-18)
 
 ### Breaking Changes
 * Moved components to pip-services3-components
