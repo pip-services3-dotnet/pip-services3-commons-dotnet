@@ -1,5 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
+## <a name="3.0.9"></a> 3.0.9 (2019-03-11)
+
+### Fixed bugs
+* Added supporting of dictionary type transfer in the Object Mapper
+
 ## <a name="3.0.8"></a> 3.0.8 (2018-12-18)
 
 ### Breaking Changes
