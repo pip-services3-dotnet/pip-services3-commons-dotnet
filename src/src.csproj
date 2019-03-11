@@ -6,7 +6,7 @@
     <RootNamespace>PipServices3.Commons</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.8</Version>
+    <Version>3.0.9</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2018</Copyright>
     <Description>Portable abstractions and patterns for Pip.Services in .NET</Description>
@@ -17,7 +17,6 @@
     <PackageIconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</PackageIconUrl>
     <PackageTags>PipServices V3 microservices toolkit</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageVersion>3.0.9</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
