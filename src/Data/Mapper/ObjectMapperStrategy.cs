@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Xml.Linq;
 using PipServices3.Commons.Convert;
 
 namespace PipServices3.Commons.Data.Mapper
@@ -39,86 +42,103 @@ namespace PipServices3.Commons.Data.Mapper
             if (valueSourceType != typeof(string) &&
                 (valueSourceTypeInfo.IsArray || valueSourceTypeInfo.ImplementedInterfaces.Contains(typeof(IEnumerable))))
             {
-                var source = (IEnumerable)propertyValueSource;
+                    var source = (IEnumerable) propertyValueSource;
 
-                object firstEntry = null;
-                foreach (var item in source)
-                {
-                    firstEntry = item;
-                    break;
-                }
-
-                var entrySourceType = firstEntry?.GetType();
-
-                if (entrySourceType != null)
-                {
-                    var entrySourceTypeInfo = entrySourceType.GetTypeInfo();
-                    var entryTargetType = propertyValueTarget.GetType().GetTypeInfo().GetGenericArguments()[0];
-
-                    if (entrySourceTypeInfo.IsClass)
+                    object firstEntry = null;
+                    foreach (var item in source)
                     {
-                        var methodParameters = new[]
+                        firstEntry = item;
+                        break;
+                    }
+
+                    var entrySourceType = firstEntry?.GetType();
+
+                    if (entrySourceType != null)
+                    {
+                        var entrySourceTypeInfo = entrySourceType.GetTypeInfo();
+                        var entryTargetType = propertyValueTarget.GetType().GetTypeInfo().GetGenericArguments()[0];
+
+                        if (entrySourceTypeInfo.IsClass)
                         {
-                            entryTargetType
-                        };
-
-                        var method = propertyValueTarget.GetType().GetRuntimeMethod("Add", methodParameters);
-
-                        foreach (var entrySource in source)
-                        {
-                            if (entrySource == null || method == null)
-                                continue;
-
-                            if (TypeConverter.IsPrimitiveType(entrySource))
+                            var methodParameters = new[]
                             {
-                                var parameters = new[]
-                                {
-                                    entrySource
-                                };
+                                entryTargetType
+                            };
 
-                                method.Invoke(propertyValueTarget, parameters);
+                            var method = propertyValueTarget.GetType().GetRuntimeMethod("Add", methodParameters);
+
+                            foreach (var entrySource in source)
+                            {
+                                if (entrySource == null || method == null)
+                                    continue;
+
+                                if (TypeConverter.IsPrimitiveType(entrySource))
+                                {
+                                    var parameters = new[]
+                                    {
+                                        entrySource
+                                    };
+
+                                    method.Invoke(propertyValueTarget, parameters);
+                                }
+                                else
+                                {
+                                    var methodInfo = mapper.GetType().GetTypeInfo().GetMethod(nameof(mapper.Transfer));
+                                    var genericMethodInfo =
+                                        methodInfo.MakeGenericMethod(entrySourceType, entryTargetType);
+                                    var entryTarget = genericMethodInfo.Invoke(mapper, new[] {entrySource});
+
+                                    var parameters = new[]
+                                    {
+                                        entryTarget
+                                    };
+
+                                    method.Invoke(propertyValueTarget, parameters);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var methodParameters = new List<Type>();
+                            
+                            if (valueSourceTypeInfo.ImplementedInterfaces.Contains(typeof(IDictionary)))
+                            {
+                                Type[] arguments = propertyValueSource.GetType().GetGenericArguments();
+                                
+                                methodParameters.Add(arguments[0]);
+                                methodParameters.Add(arguments[1]);
                             }
                             else
                             {
-                                var methodInfo = mapper.GetType().GetTypeInfo().GetMethod(nameof(mapper.Transfer));
-                                var genericMethodInfo = methodInfo.MakeGenericMethod(entrySourceType, entryTargetType);
-                                var entryTarget = genericMethodInfo.Invoke(mapper, new[] { entrySource });
+                                methodParameters.Add(entrySourceType);
+                            }
 
-                                var parameters = new[]
+                            var method = propertyValueTarget.GetType().GetRuntimeMethod("Add", methodParameters.ToArray());
+
+                            foreach (dynamic entrySource in source)
+                            {
+                                var parameters = new List<object>();
+                                
+                                if (valueSourceTypeInfo.ImplementedInterfaces.Contains(typeof(IDictionary)))
                                 {
-                                    entryTarget
-                                };
+                                    parameters.Add(entrySource.Key);
+                                    parameters.Add(entrySource.Value);
+                                }
+                                else
+                                {
+                                    parameters.Add(entrySource);
+                                }
 
-                                method.Invoke(propertyValueTarget, parameters);
+                                method.Invoke(propertyValueTarget, parameters.ToArray());
                             }
                         }
+
+                        return;
                     }
                     else
                     {
-                        var methodParameters = new[]
-                        {
-                            entrySourceType
-                        };
-
-                        var method = propertyValueTarget.GetType().GetRuntimeMethod("Add", methodParameters);
-
-                        foreach (var entrySource in source)
-                        {
-                            var parameters = new[]
-                            {
-                                entrySource
-                            };
-
-                            method.Invoke(propertyValueTarget, parameters);
-                        }
+                        return;
                     }
-
-                    return;
-                }
-                else
-                {
-                    return;
-                }
             }
 
             propertyInfoTarget.SetValue(objectTarget, propertyValueSource);
