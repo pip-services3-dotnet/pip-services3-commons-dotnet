@@ -17,6 +17,11 @@ namespace PipServices3.Commons.Commands
         string Name { get; }
 
         /// <summary>
+        /// Gets the command schema.
+        /// </summary>
+        Schema Schema { get; }
+
+        /// <summary>
         /// Validates command arguments before execution using defined schema.
         /// </summary>
         /// <param name="args">the parameters (arguments) to validate.</param>

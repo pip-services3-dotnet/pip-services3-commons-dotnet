@@ -30,7 +30,6 @@ namespace PipServices3.Commons.Commands
     /// See <see cref="ICommand"/>, <see cref="CommandSet"/>
     public class Command : ICommand
     {
-        private readonly Schema _schema;
         private readonly ExecutableDelegate _function;
 
         /// <summary>
@@ -47,11 +46,19 @@ namespace PipServices3.Commons.Commands
             }
 
             Name = name;
-            _schema = schema;
+            Schema = schema;
             _function = function;
         }
 
+        /// <summary>
+        /// Gets the command name.
+        /// </summary>
         public string Name { get; }
+
+        /// <summary>
+        /// Gets the command schema.
+        /// </summary>
+        public Schema Schema { get; }
 
         /// <summary>
         /// Executes the command. Before execution is validates Parameters args using
@@ -64,9 +71,9 @@ namespace PipServices3.Commons.Commands
         /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public async Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
-            if (_schema != null)
+            if (Schema != null)
             {
-                _schema.ValidateAndThrowException(correlationId, args);
+                Schema.ValidateAndThrowException(correlationId, args);
             }
 
             try
@@ -94,9 +101,9 @@ namespace PipServices3.Commons.Commands
         /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(Parameters args)
         {
-            if (_schema != null)
+            if (Schema != null)
             {
-                return _schema.Validate(args);
+                return Schema.Validate(args);
             }
 
             return new List<ValidationResult>();

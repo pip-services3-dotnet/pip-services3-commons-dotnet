@@ -1,11 +1,12 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
-## <a name="3.0.9"></a> 3.0.9 (2019-03-11)
+## <a name="3.0.0-3.0.10"></a> 3.0.0-3.0.10 (2019-03-29)
 
-### Fixed bugs
+### Features
+* **commands** Extended ICommand interface with Schema
+
+### Bug Fixes
 * Added supporting of dictionary type transfer in the Object Mapper
-
-## <a name="3.0.8"></a> 3.0.8 (2018-12-18)
 
 ### Breaking Changes
 * Moved components to pip-services3-components

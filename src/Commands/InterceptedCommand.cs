@@ -65,6 +65,11 @@ namespace PipServices3.Commons.Commands
         }
 
         /// <summary>
+        /// Gets the command schema.
+        /// </summary>
+        public Schema Schema => _next?.Schema;
+
+        /// <summary>
         /// Executes the next command in the execution chain using the given Parameters parameters(arguments).
         /// </summary>
         /// <param name="correlationId">unique transaction id to trace calls across components.</param>
