@@ -15,9 +15,11 @@ namespace PipServices3.Commons.Convert
             Assert.Equal(123, LongConverter.ToLong(123));
             Assert.Equal(123, LongConverter.ToLong((short)123));
             Assert.Equal(123, LongConverter.ToLong(123.456));
+            Assert.Equal(124, LongConverter.ToLong(123.999));
             Assert.Equal(123, LongConverter.ToLong(DoubleConverter.ToDouble(123.456)));
             Assert.Equal(123, LongConverter.ToLong("123"));
             Assert.Equal(123, LongConverter.ToLong("123.465"));
+            Assert.Equal(123, LongConverter.ToLong("123.999"));
             Assert.Equal(0, LongConverter.ToLong(null));
         }
 

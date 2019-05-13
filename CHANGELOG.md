@@ -1,6 +1,6 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
-## <a name="3.0.0-3.0.10"></a> 3.0.0-3.0.10 (2019-03-29)
+## <a name="3.0.0-3.0.11"></a> 3.0.0-3.0.11 (2019-05-13)
 
 ### Features
 * **commands** Extended ICommand interface with Schema

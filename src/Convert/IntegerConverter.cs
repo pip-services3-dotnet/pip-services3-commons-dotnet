@@ -36,7 +36,12 @@ namespace PipServices3.Commons.Convert
 
             try
             {
-                return (int)System.Convert.ToSingle(value, CultureInfo.InvariantCulture);
+                if (value is string && (value as string).Contains("."))
+                {
+                    return (int)System.Convert.ToDouble(value, CultureInfo.InvariantCulture);
+                }
+
+                return System.Convert.ToInt32(value, CultureInfo.InvariantCulture);
             }
             catch
             {
