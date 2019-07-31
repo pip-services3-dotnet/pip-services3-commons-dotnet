@@ -115,7 +115,7 @@ namespace PipServices3.Commons.Data
         {
             var skip = map.GetAsNullableLong("skip");
             var take = map.GetAsNullableLong("take");
-            var total = map.GetAsBooleanWithDefault("total", true);
+            var total = map.GetAsBooleanWithDefault("total", false);
             return new PagingParams(skip, take, total);
         }
        
