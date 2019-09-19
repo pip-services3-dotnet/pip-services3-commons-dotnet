@@ -26,7 +26,7 @@
         {
             var options = config.GetSection("options");
             if (options.Count == 0)
-                options = config;
+                options = configAsDefault ? config : null;
             return options;
         }
     }
