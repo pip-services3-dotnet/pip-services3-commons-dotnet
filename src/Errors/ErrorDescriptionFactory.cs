@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PipServices3.Commons.Errors
 {
@@ -50,8 +51,25 @@ namespace PipServices3.Commons.Errors
                 Code = "UNKNOWN",
                 Message = ex.Message,
                 StackTrace = ex.StackTrace,
-                CorrelationId = correlationId
+                CorrelationId = correlationId,
+                Cause = ex.InnerException != null ? ComposeCause(ex.InnerException) : null
             };
+        }
+
+        private static string ComposeCause(Exception error)
+        {
+            var builder = new StringBuilder();
+
+            while (error != null)
+            {
+                builder.Append(error.Message)
+                    .Append(" StackTrace: ")
+                    .Append(error.StackTrace);
+
+                error = error.InnerException;
+            }
+
+            return builder.ToString();
         }
     }
 }

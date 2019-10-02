@@ -1,11 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
-## <a name="3.0.12"></a> 3.0.12 (2019-05-13)
+## <a name="3.0.0-3.0.13"></a> 3.0.0-3.0.13 (2019-10-02)
 
 ### Bug Fixes
+* Extended error description with details about inner exceptions
 * Added supporting of fetching null results from OptionsResolver in case if options are not specified
-
-## <a name="3.0.0-3.0.11"></a> 3.0.0-3.0.11 (2019-05-13)
 
 ### Features
 * **commands** Extended ICommand interface with Schema
