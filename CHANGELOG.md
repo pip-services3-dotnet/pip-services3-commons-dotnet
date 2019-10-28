@@ -1,5 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
+## <a name="3.0.14"></a> 3.0.14 (2019-10-29)
+
+### Features
+* **data** Added tag processor
+
 ## <a name="3.0.0-3.0.13"></a> 3.0.0-3.0.13 (2019-10-02)
 
 ### Bug Fixes
