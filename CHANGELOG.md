@@ -1,5 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
+## <a name="3.0.15"></a> 3.0.15 (2019-11-01)
+
+### Features
+* **data** Added ability parse list of objects to the tag processor
+
 ## <a name="3.0.14"></a> 3.0.14 (2019-10-29)
 
 ### Features
