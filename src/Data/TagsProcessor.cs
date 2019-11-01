@@ -1,4 +1,5 @@
-﻿using PipServices3.Commons.Reflect;
+﻿using System.Collections;
+using PipServices3.Commons.Reflect;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -145,19 +146,30 @@ namespace PipServices3.Commons.Data
 
 		private static string ExtractString(dynamic field)
 		{
-			if (field == null) return "";
-
-			if (field is string) return field.ToString();
-
 			var result = "";
-			if (field is Dictionary<string, string>)
-			{
-				foreach (string prop in field.Keys)
-				{
-					result += " " + ExtractString(field[prop]);
-				}
 
-				return result;
+			switch (field)
+			{
+				case null:
+					return result;
+				case string _:
+					return field.ToString();
+				case IDictionary _:
+				{
+					foreach (var prop in field.Keys)
+					{
+						result += " " + ExtractString(field[prop]);
+					}
+					return result;
+				}
+				case IEnumerable _:
+				{
+					foreach (var prop in field)
+					{
+						result += " " + ExtractString(prop);
+					}
+					return result;
+				}
 			}
 
 			var properties = PropertyReflector.GetProperties(field);

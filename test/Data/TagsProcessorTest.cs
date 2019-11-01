@@ -87,8 +87,11 @@ namespace PipServices3.Commons.Data
 			public List<string> Name = new List<string> { "Text with tag1", "#Tag1" };
 			public List<string> Description = new List<string> { "Text with #tag_2,#tag3-#tag4", " and #TAG__5" };
 		}
-
-
+		public class Test5
+		{
+			public List<string> Tags = new List<string> { "Tag 1", "tag_2", "TAG3" };
+			public List<Test3> Pages = new List<Test3>() {new Test3(), new Test3()};
+		}
 
 		[Fact]
 		public void TestExtractHashTagsFromValue()
@@ -125,7 +128,18 @@ namespace PipServices3.Commons.Data
 		[Fact]
 		public void TestExtractHashTagsFromList()
 		{
-			var tags = TagsProcessor.ExtractHashTagsFromValue(new TagsProcessorTest.Test3(), "Name", "Description");
+			var tags = TagsProcessor.ExtractHashTagsFromValue(new TagsProcessorTest.Test4(), "Name", "Description");
+
+			var exp = new[] { "tag1", "tag2", "tag3", "tag4", "tag5" };
+			Assert.Equal(exp.Length, tags.Length);
+			for (int i = 0; i < exp.Length; i++) Assert.Equal(exp[i], tags[i]);
+
+		}
+
+		[Fact]
+		public void TestExtractHashTagsFromListObjects()
+		{
+			var tags = TagsProcessor.ExtractHashTagsFromValue(new TagsProcessorTest.Test5(), "Pages");
 
 			var exp = new[] { "tag1", "tag2", "tag3", "tag4", "tag5" };
 			Assert.Equal(exp.Length, tags.Length);
