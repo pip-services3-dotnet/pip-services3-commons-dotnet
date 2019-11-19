@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,7 +6,7 @@
     <RootNamespace>PipServices3.Commons</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.0.15</Version>
+    <Version>3.0.16</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur, Alexey Dvoykin</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2019</Copyright>
     <Description>Portable abstractions and patterns for Pip.Services in .NET</Description>
