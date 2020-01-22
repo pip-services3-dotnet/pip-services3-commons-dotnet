@@ -30,7 +30,7 @@ namespace PipServices3.Commons.Test.Validate
             var schema = new ObjectSchema();
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(8, results.Count);
+            Assert.Equal(10, results.Count);
         }
 
         [Fact]
@@ -44,7 +44,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithOptionalProperty("StringListProperty", null)
                 .WithOptionalProperty("MapProperty", null)
                 .WithOptionalProperty("SubObjectProperty", null)
-                .WithOptionalProperty("SubArrayProperty", null);
+                .WithOptionalProperty("SubArrayProperty", null)
+                .WithOptionalProperty("EnumIntProperty", null)
+                .WithOptionalProperty("EnumStringProperty", null);
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
@@ -62,7 +64,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", null)
                 .WithRequiredProperty("MapProperty", null)
                 .WithRequiredProperty("SubObjectProperty", null)
-                .WithRequiredProperty("SubArrayProperty", null);
+                .WithRequiredProperty("SubArrayProperty", null)
+                .WithRequiredProperty("EnumIntProperty", null)
+                .WithRequiredProperty("EnumStringProperty", null);
 
             var obj = new TestObject {SubArrayProperty = null};
 
@@ -81,7 +85,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", typeof(List<string>))
                 .WithRequiredProperty("MapProperty", typeof(Dictionary<string, int>))
                 .WithRequiredProperty("SubObjectProperty", typeof(TestSubObject))
-                .WithRequiredProperty("SubArrayProperty", typeof(TestSubObject[]));
+                .WithRequiredProperty("SubArrayProperty", typeof(TestSubObject[]))
+                .WithRequiredProperty("EnumIntProperty", typeof(TestEnumInt))
+                .WithRequiredProperty("EnumStringProperty", typeof(TestEnumString));
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
@@ -99,7 +105,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", "List`1")
                 .WithRequiredProperty("MapProperty", "Dictionary`2")
                 .WithRequiredProperty("SubObjectProperty", "TestSubObject")
-                .WithRequiredProperty("SubArrayProperty", "TestSubObject[]");
+                .WithRequiredProperty("SubArrayProperty", "TestSubObject[]")
+                .WithRequiredProperty("EnumIntProperty", "TestEnumInt")
+                .WithRequiredProperty("EnumStringProperty", "TestEnumString");
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
@@ -122,7 +130,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", "List`1")
                 .WithRequiredProperty("MapProperty", "Dictionary`2")
                 .WithRequiredProperty("SubObjectProperty", subSchema)
-                .WithRequiredProperty("SubArrayProperty", "TestSubObject[]");
+                .WithRequiredProperty("SubArrayProperty", "TestSubObject[]")
+                .WithRequiredProperty("EnumIntProperty", "TestEnumInt")
+                .WithRequiredProperty("EnumStringProperty", "TestEnumString");
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
@@ -145,7 +155,9 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", new ArraySchema("String"))
                 .WithRequiredProperty("MapProperty", new MapSchema("String", "Int32"))
                 .WithRequiredProperty("SubObjectProperty", subSchema)
-                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema));
+                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema))
+                .WithRequiredProperty("EnumIntProperty", "TestEnumInt")
+                .WithRequiredProperty("EnumStringProperty", "TestEnumString");
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
@@ -168,12 +180,14 @@ namespace PipServices3.Commons.Test.Validate
                 .WithRequiredProperty("StringListProperty", new ArraySchema("string"))
                 .WithRequiredProperty("MapProperty", new MapSchema("string", "int"))
                 .WithRequiredProperty("SubObjectProperty", subSchema)
-                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema));
+                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema))
+                .WithRequiredProperty("EnumIntProperty", typeof(TestEnumInt))
+                .WithRequiredProperty("EnumStringProperty", typeof(TestEnumString));
 
             var obj = new TestObject();
             var json = JsonConverter.ToJson(obj);
             var jsonObj = JsonConverter.FromJson(json);
-
+            
             var results = schema.Validate(jsonObj);
             Assert.Equal(0, results.Count);
         }

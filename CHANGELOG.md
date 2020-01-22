@@ -1,5 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
+## <a name="3.0.16"></a> 3.0.16 (2020-01-22)
+
+### Bug Fixes
+* Fixed schema enum validation
+
 ## <a name="3.0.15"></a> 3.0.15 (2019-11-01)
 
 ### Features
