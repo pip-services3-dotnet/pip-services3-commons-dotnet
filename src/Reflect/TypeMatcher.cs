@@ -30,7 +30,7 @@ namespace PipServices3.Commons.Reflect
             if (actualValue == null)
                 throw new ArgumentNullException(nameof(actualValue), "Actual value cannot be null");
 
-            return MatchType(expectedType, actualValue.GetType());
+            return MatchType(expectedType, actualValue.GetType(), actualValue);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace PipServices3.Commons.Reflect
         /// <param name="actualType">an actual type to match.</param>
         /// <returns>true if types are matching and false if they don't.</returns>
         /// See <see cref="MatchTypeByName(string, Type)"/>
-        public static bool MatchType(object expectedType, Type actualType)
+        public static bool MatchType(object expectedType, Type actualType, object actualValue = null)
         {
             if (expectedType == null)
                 return true;
@@ -66,7 +66,33 @@ namespace PipServices3.Commons.Reflect
 
             var type = expectedType as Type;
             if (type != null)
-                return type.GetTypeInfo().IsAssignableFrom(actualType);
+            {
+                if (type.GetTypeInfo().IsAssignableFrom(actualType))
+                    return true;
+                // Special provisions for dynamic data
+                if ((type == typeof(int) || type == typeof(int?))
+                    && (actualType == typeof(int) || actualType == typeof(int?)
+                    || actualType == typeof(long) || actualType == typeof(long?)))
+                    return true;
+                if ((type == typeof(long) || type == typeof(long?))
+                    && (actualType == typeof(int) || actualType == typeof(int?)
+                    || actualType == typeof(long) || actualType == typeof(long?)))
+                    return true;
+                if ((type == typeof(float) || type == typeof(float?))
+                    && (actualType == typeof(float) || actualType == typeof(float?)
+                    || actualType == typeof(double) || actualType == typeof(double?)
+                    || actualType == typeof(decimal) || actualType == typeof(decimal?)))
+                    return true;
+                if ((type == typeof(double) || type == typeof(double?))
+                    && (actualType == typeof(float) || actualType == typeof(float?)
+                    || actualType == typeof(double) || actualType == typeof(double?)
+                    || actualType == typeof(decimal) || actualType == typeof(decimal?)))
+                    return true;
+                if ((type == typeof(DateTime) || type == typeof(DateTime?))
+                    && (actualType == typeof(DateTime) || actualType == typeof(DateTime?))
+                    && (actualType == typeof(string) && DateTimeConverter.ToNullableDateTime(actualValue) != null))
+                    return true;
+            }
 
             if (expectedType.Equals(actualType))
                 return true;
@@ -134,7 +160,7 @@ namespace PipServices3.Commons.Reflect
 
             if (expectedType.Equals("bool") || expectedType.Equals("boolean"))
                 return actualType == typeof(bool)
-                    || actualType == typeof(bool);
+                    || actualType == typeof(bool?);
 
             if (expectedType.Equals("date") || expectedType.Equals("datetime"))
                 return actualType == typeof(DateTime) 

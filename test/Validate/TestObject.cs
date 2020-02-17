@@ -10,6 +10,9 @@ namespace PipServices3.Commons.Test.Validate
         private string PrivateProperty { get; set; } = "XYZ";
         
         public int IntField = 12345;
+        public long LongField = 12345;
+        public float FloatField = 123.45f;
+        public double DoubleField = 123.45;
         public string StringProperty { get; set; } = "ABC";
         public object NullProperty { get; set; } = null;
         public int[] IntArrayProperty { get; set; } = new int[] { 1, 2, 3 };

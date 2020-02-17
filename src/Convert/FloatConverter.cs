@@ -36,7 +36,11 @@ namespace PipServices3.Commons.Convert
 
             try
             {
-                return System.Convert.ToSingle(value, CultureInfo.InvariantCulture);
+                var result = System.Convert.ToSingle(value, CultureInfo.InvariantCulture);
+                if (!float.IsInfinity(result))
+                    return result;
+                else
+                    return null;
             }
             catch
             {

@@ -30,7 +30,7 @@ namespace PipServices3.Commons.Test.Validate
             var schema = new ObjectSchema();
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(10, results.Count);
+            Assert.Equal(13, results.Count);
         }
 
         [Fact]
@@ -38,6 +38,9 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new ObjectSchema()
                 .WithOptionalProperty("intField", null)
+                .WithOptionalProperty("longField", null)
+                .WithRequiredProperty("floatField", null)
+                .WithRequiredProperty("doubleField", null)
                 .WithOptionalProperty("StringProperty", null)
                 .WithOptionalProperty("NullProperty", null)
                 .WithOptionalProperty("IntArrayProperty", null)
@@ -58,6 +61,9 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", null)
+                .WithRequiredProperty("longField", null)
+                .WithRequiredProperty("floatField", null)
+                .WithRequiredProperty("doubleField", null)
                 .WithRequiredProperty("StringProperty", null)
                 .WithRequiredProperty("NullProperty", null)
                 .WithRequiredProperty("IntArrayProperty", null)
@@ -79,6 +85,9 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", typeof(int))
+                .WithRequiredProperty("longField", typeof(long))
+                .WithRequiredProperty("floatField", typeof(float))
+                .WithRequiredProperty("doubleField", typeof(double))
                 .WithRequiredProperty("StringProperty", typeof(string))
                 .WithOptionalProperty("NullProperty", typeof(object))
                 .WithRequiredProperty("IntArrayProperty", typeof(int[]))
@@ -99,6 +108,9 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", "Int32")
+                .WithRequiredProperty("longField", "Int64")
+                .WithRequiredProperty("floatField", "Float")
+                .WithRequiredProperty("doubleField", "Double")
                 .WithRequiredProperty("StringProperty", "String")
                 .WithOptionalProperty("NullProperty", "Object")
                 .WithRequiredProperty("IntArrayProperty", "Int32[]")
@@ -124,6 +136,9 @@ namespace PipServices3.Commons.Test.Validate
 
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", "Int32")
+                .WithRequiredProperty("longField", "Int64")
+                .WithRequiredProperty("floatField", "Float")
+                .WithRequiredProperty("doubleField", "Double")
                 .WithRequiredProperty("StringProperty", "String")
                 .WithOptionalProperty("NullProperty", "Object")
                 .WithRequiredProperty("IntArrayProperty", "Int32[]")
@@ -149,6 +164,9 @@ namespace PipServices3.Commons.Test.Validate
 
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", "Int32")
+                .WithRequiredProperty("longField", "Int64")
+                .WithRequiredProperty("floatField", "Float")
+                .WithRequiredProperty("doubleField", "Double")
                 .WithRequiredProperty("StringProperty", "String")
                 .WithOptionalProperty("NullProperty", "Object")
                 .WithRequiredProperty("IntArrayProperty", new ArraySchema("Int32"))
@@ -174,6 +192,9 @@ namespace PipServices3.Commons.Test.Validate
 
             var schema = new ObjectSchema()
                 .WithRequiredProperty("intField", "int")
+                .WithRequiredProperty("longField", "long")
+                .WithRequiredProperty("floatField", "float")
+                .WithRequiredProperty("doubleField", "double")
                 .WithRequiredProperty("StringProperty", "string")
                 .WithOptionalProperty("NullProperty", "object")
                 .WithRequiredProperty("IntArrayProperty", new ArraySchema("int"))
@@ -189,6 +210,29 @@ namespace PipServices3.Commons.Test.Validate
             var jsonObj = JsonConverter.FromJson(json);
             
             var results = schema.Validate(jsonObj);
+            Assert.Equal(0, results.Count);
+        }
+
+        [Fact]
+        public void TestDynamicTypes()
+        {
+            var schema = new ObjectSchema()
+                .WithRequiredProperty("intField", typeof(long))
+                .WithRequiredProperty("longField", typeof(int?))
+                .WithRequiredProperty("floatField", typeof(double))
+                .WithRequiredProperty("doubleField", typeof(float?))
+                .WithRequiredProperty("StringProperty", typeof(string))
+                .WithOptionalProperty("NullProperty", typeof(object))
+                .WithRequiredProperty("IntArrayProperty", typeof(int[]))
+                .WithRequiredProperty("StringListProperty", typeof(List<string>))
+                .WithRequiredProperty("MapProperty", typeof(Dictionary<string, int>))
+                .WithRequiredProperty("SubObjectProperty", typeof(TestSubObject))
+                .WithRequiredProperty("SubArrayProperty", typeof(TestSubObject[]))
+                .WithRequiredProperty("EnumIntProperty", typeof(TestEnumInt))
+                .WithRequiredProperty("EnumStringProperty", typeof(TestEnumString));
+
+            var obj = new TestObject();
+            var results = schema.Validate(obj);
             Assert.Equal(0, results.Count);
         }
     }
