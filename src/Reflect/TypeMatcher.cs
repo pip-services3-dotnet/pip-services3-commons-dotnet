@@ -102,7 +102,9 @@ namespace PipServices3.Commons.Reflect
                 return MatchTypeByName(str, actualType);
 
             if (expectedType is Convert.TypeCode)
-                return TypeConverter.ToTypeCode(actualType).Equals(expectedType);
+                if (TypeConverter.ToTypeCode(actualType).Equals(expectedType))
+                    return true;
+            return MatchTypeByName(expectedType.ToString(), actualType);
 
             return false;
         }
@@ -142,7 +144,7 @@ namespace PipServices3.Commons.Reflect
                     || actualType == typeof(long?);
 
             if (expectedType.Equals("float"))
-                return actualType == typeof(float) 
+                return actualType == typeof(float)
                     || actualType == typeof(float?)
                     || actualType == typeof(double)
                     || actualType == typeof(double?)
@@ -150,7 +152,9 @@ namespace PipServices3.Commons.Reflect
                     || actualType == typeof(decimal?);
 
             if (expectedType.Equals("double"))
-                return actualType == typeof(double)
+                return actualType == typeof(float)
+                    || actualType == typeof(float?)
+                    || actualType == typeof(double)
                     || actualType == typeof(double?)
                     || actualType == typeof(decimal)
                     || actualType == typeof(decimal?);

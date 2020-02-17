@@ -235,5 +235,61 @@ namespace PipServices3.Commons.Test.Validate
             var results = schema.Validate(obj);
             Assert.Equal(0, results.Count);
         }
+
+        [Fact]
+        public void TestTypeCodeTypes()
+        {
+            var subSchema = new ObjectSchema()
+               .WithRequiredProperty("Id", TypeCode.String)
+               .WithRequiredProperty("FLOATFIELD", TypeCode.Float)
+               .WithOptionalProperty("nullproperty", TypeCode.Object);
+
+            var schema = new ObjectSchema()
+                .WithRequiredProperty("intField", TypeCode.Integer)
+                .WithRequiredProperty("longField", TypeCode.Long)
+                .WithRequiredProperty("floatField", TypeCode.Float)
+                .WithRequiredProperty("doubleField", TypeCode.Double)
+                .WithRequiredProperty("StringProperty", TypeCode.String)
+                .WithOptionalProperty("NullProperty", TypeCode.Object)
+                .WithRequiredProperty("IntArrayProperty", new ArraySchema(TypeCode.Integer))
+                .WithRequiredProperty("StringListProperty", new ArraySchema(TypeCode.String))
+                .WithRequiredProperty("MapProperty", new MapSchema(TypeCode.String, TypeCode.Integer))
+                .WithRequiredProperty("SubObjectProperty", subSchema)
+                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema))
+                .WithRequiredProperty("EnumIntProperty", typeof(TestEnumInt))
+                .WithRequiredProperty("EnumStringProperty", typeof(TestEnumString));
+
+            var obj = new TestObject();
+            var results = schema.Validate(obj);
+            Assert.Equal(0, results.Count);
+        }
+
+        [Fact]
+        public void TestDynamicTypeCodeTypes()
+        {
+            var subSchema = new ObjectSchema()
+               .WithRequiredProperty("Id", TypeCode.String)
+               .WithRequiredProperty("FLOATFIELD", TypeCode.Double)
+               .WithOptionalProperty("nullproperty", TypeCode.Object);
+
+            var schema = new ObjectSchema()
+                .WithRequiredProperty("intField", TypeCode.Integer)
+                .WithRequiredProperty("longField", TypeCode.Integer)
+                .WithRequiredProperty("floatField", TypeCode.Double)
+                .WithRequiredProperty("doubleField", TypeCode.Float)
+                .WithRequiredProperty("StringProperty", TypeCode.String)
+                .WithOptionalProperty("NullProperty", TypeCode.Object)
+                .WithRequiredProperty("IntArrayProperty", new ArraySchema(TypeCode.Integer))
+                .WithRequiredProperty("StringListProperty", new ArraySchema(TypeCode.String))
+                .WithRequiredProperty("MapProperty", new MapSchema(TypeCode.String, TypeCode.Integer))
+                .WithRequiredProperty("SubObjectProperty", subSchema)
+                .WithRequiredProperty("SubArrayProperty", new ArraySchema(subSchema))
+                .WithRequiredProperty("EnumIntProperty", typeof(TestEnumInt))
+                .WithRequiredProperty("EnumStringProperty", typeof(TestEnumString));
+
+            var obj = new TestObject();
+            var results = schema.Validate(obj);
+            Assert.Equal(0, results.Count);
+        }
     }
 }
