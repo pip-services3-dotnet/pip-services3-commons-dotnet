@@ -18,6 +18,11 @@ namespace PipServices3.Commons.Convert
             Assert.Equal(123, IntegerConverter.ToIntegerWithDefault(null, 123));
             Assert.Equal(0, IntegerConverter.ToIntegerWithDefault(false, 123));
             Assert.Equal(123, IntegerConverter.ToIntegerWithDefault("ABC", 123));
+
+            long longValue = int.MaxValue;
+            Assert.Equal(int.MaxValue, IntegerConverter.ToInteger(longValue));
+            longValue = long.MaxValue;
+            Assert.Equal(0, IntegerConverter.ToInteger(longValue));
         }
     }
 }

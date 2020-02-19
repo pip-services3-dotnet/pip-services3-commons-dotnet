@@ -138,7 +138,11 @@ namespace PipServices3.Commons.Validate
             if (value == null) return;
 
             // Match types
-            if (TypeMatcher.MatchType(type, value.GetType()))
+            if (TypeMatcher.MatchType(type, value.GetType(), value))
+                return;
+
+            // Match enum
+            if (TypeMatcher.MatchEnum(type, value))
                 return;
 
             var name = path ?? "value";
