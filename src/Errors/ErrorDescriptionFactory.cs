@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using PipServices3.Commons.Data;
 
 namespace PipServices3.Commons.Errors
 {
@@ -50,6 +51,7 @@ namespace PipServices3.Commons.Errors
                 Status = 500,
                 Code = "UNKNOWN",
                 Message = ex.Message,
+                Details = new StringValueMap(ex.Data),
                 StackTrace = ex.StackTrace,
                 CorrelationId = correlationId,
                 Cause = ex.InnerException != null ? ComposeCause(ex.InnerException) : null

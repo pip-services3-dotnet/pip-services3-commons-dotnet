@@ -52,6 +52,7 @@ namespace PipServices3.Commons.Test.Errors
             Assert.Null(descr.CorrelationId);
 
             ex = new Exception("message");
+            ex.Data.Add("key", "value");
             const string correlation = "correlation1234";
             var withCorrelation = ErrorDescriptionFactory.Create(ex, correlation);
 
@@ -62,6 +63,7 @@ namespace PipServices3.Commons.Test.Errors
             Assert.Equal(500, withCorrelation.Status);
             Assert.Equal(ex.StackTrace, withCorrelation.StackTrace);
             Assert.Equal(correlation, withCorrelation.CorrelationId);
+            Assert.Equal(ex.Data, withCorrelation.Details);
         }
     }
 }

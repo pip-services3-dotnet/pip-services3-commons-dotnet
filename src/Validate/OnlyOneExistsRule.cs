@@ -55,7 +55,7 @@ namespace PipServices3.Commons.Validate
                         path,
                         ValidationResultType.Error,
                         "VALUE_NULL",
-                        name + " must hae at least one property from " + _properties,
+                        name + " must have at least one property from " + _properties,
                         _properties,
                         null
                     )
