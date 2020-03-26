@@ -104,9 +104,8 @@ namespace PipServices3.Commons.Reflect
             if (expectedType is Convert.TypeCode)
                 if (TypeConverter.ToTypeCode(actualType).Equals(expectedType))
                     return true;
-            return MatchTypeByName(expectedType.ToString(), actualType);
 
-            return false;
+            return MatchTypeByName(expectedType.ToString(), actualType);
         }
 
         /// <summary>
