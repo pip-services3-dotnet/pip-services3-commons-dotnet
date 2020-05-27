@@ -1,5 +1,10 @@
 # Portable abstractions and patterns for Pip.Services in .NET Changelog
 
+## <a name="3.1.0"></a> 3.1.0 (2020-05-26)
+
+### Breaking Changes
+* Migrated to .NET Core 3.1
+
 ## <a name="3.0.17"></a> 3.0.17 (2020-02-17)
 
 ### Features

@@ -37,7 +37,7 @@ namespace PipServices3.Commons.Commands
             map.Add(11, "title 11");
             Parameters param = new Parameters(map);
 
-            Assert.Equal(command.ExecuteAsync("a", param).Result, 0);
+            Assert.Equal(0, command.ExecuteAsync("a", param).Result);
 
             //try
             //{

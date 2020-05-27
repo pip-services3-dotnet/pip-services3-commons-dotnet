@@ -14,7 +14,7 @@ namespace PipServices3.Commons.Test.Validate
             var pagingParams = new PagingParams();
 
             var results = schema.Validate(pagingParams);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace PipServices3.Commons.Test.Validate
             var pagingParams = new PagingParams(1, 1, true);
 
             var results = schema.Validate(pagingParams);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace PipServices3.Commons.Test.Validate
             };
 
             var results = schema.Validate(pagingParams);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
     }
 }

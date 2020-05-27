@@ -13,7 +13,7 @@ namespace PipServices3.Commons.Test.Data
         public void TestCreateValueArray()
         {
             var array = new AnyValueArray();
-            Assert.Equal(0, array.Count);
+            Assert.Empty(array);
 
             array = new AnyValueArray(new [] { 1, 2, 3 });
             Assert.Equal("1,2,3", array.ToString());

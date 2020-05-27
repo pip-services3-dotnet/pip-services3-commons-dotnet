@@ -11,14 +11,14 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ValueComparisonRule("EQ", 123));
             var results = schema.Validate(123);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             results = schema.Validate(432);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
 
             schema = new Schema().WithRule(new ValueComparisonRule("EQ", "ABC"));
             results = schema.Validate("ABC");
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -26,14 +26,14 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ValueComparisonRule("NE", 123));
             var results = schema.Validate(123);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
 
             results = schema.Validate(432);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             schema = new Schema().WithRule(new ValueComparisonRule("NE", "ABC"));
             results = schema.Validate("XYZ");
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -41,14 +41,14 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ValueComparisonRule("LE", 123));
             var results = schema.Validate(123);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             results = schema.Validate(432);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
 
             schema = new Schema().WithRule(new ValueComparisonRule("LT", 123));
             results = schema.Validate(123);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
 
         [Fact]
@@ -56,14 +56,14 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ValueComparisonRule("GE", 123));
             var results = schema.Validate(123);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             results = schema.Validate(432);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             schema = new Schema().WithRule(new ValueComparisonRule("GT", 123));
             results = schema.Validate(123);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
 
         [Fact]
@@ -71,10 +71,10 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ValueComparisonRule("LIKE", "A.*"));
             var results = schema.Validate("ABC");
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             results = schema.Validate("XYZ");
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
     }
 }

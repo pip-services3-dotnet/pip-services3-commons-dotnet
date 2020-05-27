@@ -28,8 +28,8 @@ namespace PipServices3.Commons.Test.Reflect
             TestClass obj = new TestClass();
             List<string> names = PropertyReflector.GetPropertyNames(obj);
             Assert.Equal(3, names.Count);
-            Assert.True(names.Contains("PublicField"));
-            Assert.True(names.Contains("PublicProp"));
+            Assert.Contains("PublicField", names);
+            Assert.Contains("PublicProp", names);
 
             Dictionary<string, object> map = PropertyReflector.GetProperties(obj);
             Assert.Equal(3, map.Count);

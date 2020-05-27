@@ -13,7 +13,7 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new ObjectSchema();
             var results = schema.Validate(null);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -21,7 +21,7 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().MakeRequired();
             var results = schema.Validate(null);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -123,7 +123,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -151,7 +151,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -179,7 +179,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -210,7 +210,7 @@ namespace PipServices3.Commons.Test.Validate
             var jsonObj = JsonConverter.FromJson(json);
             
             var results = schema.Validate(jsonObj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -233,7 +233,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -261,7 +261,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -289,7 +289,7 @@ namespace PipServices3.Commons.Test.Validate
 
             var obj = new TestObject();
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
     }
 }

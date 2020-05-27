@@ -12,11 +12,11 @@ namespace PipServices3.Commons.Test.Validate
             var obj = new TestObject();
             var schema = new Schema().WithRule(new OnlyOneExistsRule("MissingProperty", "StringProperty", "NullProperty"));
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             schema = new Schema().WithRule(new OnlyOneExistsRule("StringProperty", "NullProperty", "intField"));
             results = schema.Validate(obj);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
     }
 }

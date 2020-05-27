@@ -15,7 +15,7 @@ namespace PipServices3.Commons.Test.Validate
             var filterParams = new FilterParams();
 
             var results = schema.Validate(filterParams);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace PipServices3.Commons.Test.Validate
             };
 
             var results = schema.Validate(filterParams);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
     }
 }

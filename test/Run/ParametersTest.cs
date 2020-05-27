@@ -147,10 +147,10 @@ namespace PipServices3.Commons.Test.Run
             var config = new Parameters();
 
             config.Set(null, 123);
-            Assert.Equal(0, config.Count);
+            Assert.Empty(config);
 
             config.Set("field1", 123);
-            Assert.Equal(1, config.Count);
+            Assert.Single(config);
             Assert.Equal(123, (int)config.Get("field1"));
 
             config.Set("field2", "ABC");

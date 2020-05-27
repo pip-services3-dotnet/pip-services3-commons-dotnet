@@ -11,10 +11,10 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new IncludedRule("AAA", "BBB", "CCC", null));
             var results = schema.Validate("AAA");
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             results = schema.Validate("ABC");
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
 
         [Fact]
@@ -22,10 +22,10 @@ namespace PipServices3.Commons.Test.Validate
         {
             var schema = new Schema().WithRule(new ExcludedRule("AAA", "BBB", "CCC", null));
             var results = schema.Validate("AAA");
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
 
             results = schema.Validate("ABC");
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
         }
     }
 }

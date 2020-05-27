@@ -15,11 +15,11 @@ namespace PipServices3.Commons.Test.Validate
             obj.StringProperty = "ABC";
             obj.NullProperty = "ABC";
             var results = schema.Validate(obj);
-            Assert.Equal(0, results.Count);
+            Assert.Empty(results);
 
             obj.NullProperty = "XYZ";
             results = schema.Validate(obj);
-            Assert.Equal(1, results.Count);
+            Assert.Single(results);
         }
     }
 }

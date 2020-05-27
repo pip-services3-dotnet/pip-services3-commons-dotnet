@@ -72,8 +72,8 @@ namespace PipServices3.Commons.Test.Reflect
             var obj = new TestClass();
             var names = ObjectReader.GetPropertyNames(obj);
             Assert.Equal(3, names.Count);
-            Assert.True(names.Contains("PublicField"));
-            Assert.True(names.Contains("PublicProp"));
+            Assert.Contains("PublicField", names);
+            Assert.Contains("PublicProp", names);
 
             var map = ObjectReader.GetProperties(obj);
             Assert.Equal(3, map.Count);
@@ -90,8 +90,8 @@ namespace PipServices3.Commons.Test.Reflect
             );
             var names = ObjectReader.GetPropertyNames(map);
             Assert.Equal(2, names.Count);
-            Assert.True(names.Contains("key1"));
-            Assert.True(names.Contains("key2"));
+            Assert.Contains("key1", names);
+            Assert.Contains("key2", names);
 
             var values = ObjectReader.GetProperties(map);
             Assert.Equal(2, values.Count);
@@ -106,8 +106,8 @@ namespace PipServices3.Commons.Test.Reflect
 
             var names = ObjectReader.GetPropertyNames(list);
             Assert.Equal(2, names.Count);
-            Assert.True(names.Contains("0"));
-            Assert.True(names.Contains("1"));
+            Assert.Contains("0", names);
+            Assert.Contains("1", names);
 
             var values = ObjectReader.GetProperties(list);
             Assert.Equal(2, values.Count);
@@ -118,8 +118,8 @@ namespace PipServices3.Commons.Test.Reflect
 
             names = ObjectReader.GetPropertyNames(array);
             Assert.Equal(2, names.Count);
-            Assert.True(names.Contains("0"));
-            Assert.True(names.Contains("1"));
+            Assert.Contains("0", names);
+            Assert.Contains("1", names);
 
             values = ObjectReader.GetProperties(array);
             Assert.Equal(2, values.Count);

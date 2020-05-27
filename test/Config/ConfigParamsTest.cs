@@ -65,7 +65,7 @@ namespace PipServices3.Commons.Test.Config
             Assert.Equal("ABC", config.GetAsString("field2.1"));
             Assert.Equal(543, config.GetAsInteger("field2.2.field21"));
             Assert.Equal("XYZ", config.GetAsString("field2.2.field22"));
-            Assert.Equal(true, config.GetAsBoolean("field3"));
+            Assert.True(config.GetAsBoolean("field3"));
         }
     }
 }

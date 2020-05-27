@@ -19,7 +19,7 @@ namespace PipServices3.Commons.Test.Validate
             Assert.Equal(2, result.Count);
 
             result = schema.Validate(1);
-            Assert.Equal(0, result.Count);
+            Assert.Empty(result);
 
             result = schema.Validate(200);
             Assert.Equal(2, result.Count);
@@ -35,13 +35,13 @@ namespace PipServices3.Commons.Test.Validate
                 )
             );
             var result = schema.Validate(-100);
-            Assert.Equal(1, result.Count);
+            Assert.Single(result);
 
             result = schema.Validate(100);
-            Assert.Equal(0, result.Count);
+            Assert.Empty(result);
 
             result = schema.Validate(200);
-            Assert.Equal(1, result.Count);
+            Assert.Single(result);
         }
     }
 }

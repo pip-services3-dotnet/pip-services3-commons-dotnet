@@ -15,7 +15,7 @@ if ($component.version -ne $version) {
 dotnet build src/src.csproj -c Release
 dotnet pack src/src.csproj -c Release -o ../dist
 
-$package = (Get-ChildItem -Path "dist/*.$version.nupkg").FullName
+$package = (Get-ChildItem -Path "../dist/*.$version.nupkg").FullName
 
 # Push to nuget repo
 if ($env:NUGET_KEY -ne $null) {
