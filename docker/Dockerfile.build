@@ -14,5 +14,5 @@ RUN dotnet restore test/test.csproj
 COPY . .
 
 # Publish
-RUN dotnet publish src/src.csproj -o /obj
+RUN dotnet publish src/src.csproj -o /obj -f netstandard2.1
 
