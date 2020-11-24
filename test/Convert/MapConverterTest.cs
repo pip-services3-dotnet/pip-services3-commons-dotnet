@@ -53,6 +53,38 @@ namespace PipServices3.Commons.Convert
         }
 
         [Fact]
+        public void TestToMapRecursive()
+        {
+            dynamic dummy = new
+            {
+                Id = 1,
+                Name = "name",
+                Dummy = new
+                {
+                    Type = "dummy type",
+                    ArrayOfDouble = new double[] { 10.3, 10.2 }
+                }
+            };
+
+            IDictionary<string, object> map = MapConverter.ToMap(dummy);
+            Assert.Equal(3, map.Keys.Count);
+            Assert.True(map.ContainsKey("Id"));
+            Assert.True(map.ContainsKey("Name"));
+            Assert.True(map.ContainsKey("Dummy"));
+            Assert.Equal(dummy.Id, map["Id"]);
+            Assert.Equal(dummy.Name, map["Name"]);
+            Assert.NotNull(map["Dummy"]);
+
+            IDictionary<string, object> mapDummy = map["Dummy"] as IDictionary<string, object>;
+            Assert.NotNull(mapDummy);
+            Assert.Equal(2, mapDummy.Keys.Count);
+            Assert.True(mapDummy.ContainsKey("Type"));
+            Assert.True(mapDummy.ContainsKey("ArrayOfDouble"));
+            Assert.Equal(dummy.Dummy.Type, mapDummy["Type"]);
+            Assert.Equal(dummy.Dummy.ArrayOfDouble, mapDummy["ArrayOfDouble"]);
+        }
+
+        [Fact]
         public void TestToMapWithDefault()
         {
             Dictionary<string, object> map = new Dictionary<string, object>();

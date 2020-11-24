@@ -186,6 +186,8 @@ public class RecursiveMapConverter
                 return ObjectMapToMap((IDictionary<object, object>)value);
 
             // Convert arrays
+            if (valueType.IsArray)
+                return value;
             if (value is IEnumerable<object> && valueType.Name != "JObject")
                 return ArrayToMap((IEnumerable<object>)value);
 
