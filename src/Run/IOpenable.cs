@@ -6,7 +6,7 @@ namespace PipServices3.Commons.Run
     /// Interface for components that require explicit opening and closing.
     /// 
     /// For components that perform opening on demand consider using
-    /// ICloseable interface instead.
+    /// IClosable interface instead.
     /// </summary>
     /// <example>
     /// <code>

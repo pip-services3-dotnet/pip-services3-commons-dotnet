@@ -10,7 +10,7 @@ namespace PipServices3.Commons.Run
     /// </summary>
     /// <example>
     /// <code>
-    /// class MyConnector: ICloseable 
+    /// class MyConnector: IClosable 
     /// {
     ///     private object _client = null;
     ///     
