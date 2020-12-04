@@ -6,6 +6,7 @@ var searchData=
   ['convert',['Convert',['../namespace_pip_services3_1_1_commons_1_1_convert.html',1,'PipServices3::Commons']]],
   ['data',['Data',['../namespace_pip_services3_1_1_commons_1_1_data.html',1,'PipServices3::Commons']]],
   ['errors',['Errors',['../namespace_pip_services3_1_1_commons_1_1_errors.html',1,'PipServices3::Commons']]],
+  ['mapper',['Mapper',['../namespace_pip_services3_1_1_commons_1_1_data_1_1_mapper.html',1,'PipServices3::Commons::Data']]],
   ['pipservices3',['PipServices3',['../namespace_pip_services3.html',1,'']]],
   ['random',['Random',['../namespace_pip_services3_1_1_commons_1_1_random.html',1,'PipServices3::Commons']]],
   ['refer',['Refer',['../namespace_pip_services3_1_1_commons_1_1_refer.html',1,'PipServices3::Commons']]],

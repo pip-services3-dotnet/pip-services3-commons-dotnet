@@ -21,6 +21,7 @@ var searchData=
   ['internalexception',['InternalException',['../class_pip_services3_1_1_commons_1_1_errors_1_1_internal_exception.html',1,'PipServices3::Commons::Errors']]],
   ['invalidstateexception',['InvalidStateException',['../class_pip_services3_1_1_commons_1_1_errors_1_1_invalid_state_exception.html',1,'PipServices3::Commons::Errors']]],
   ['invocationexception',['InvocationException',['../class_pip_services3_1_1_commons_1_1_errors_1_1_invocation_exception.html',1,'PipServices3::Commons::Errors']]],
+  ['iobjectmapper',['IObjectMapper',['../interface_pip_services3_1_1_commons_1_1_data_1_1_mapper_1_1_i_object_mapper.html',1,'PipServices3::Commons::Data::Mapper']]],
   ['iopenable',['IOpenable',['../interface_pip_services3_1_1_commons_1_1_run_1_1_i_openable.html',1,'PipServices3::Commons::Run']]],
   ['iparameterized',['IParameterized',['../interface_pip_services3_1_1_commons_1_1_run_1_1_i_parameterized.html',1,'PipServices3::Commons::Run']]],
   ['iproperties',['IProperties',['../interface_pip_services3_1_1_commons_1_1_reflect_1_1_i_properties.html',1,'PipServices3::Commons::Reflect']]],
