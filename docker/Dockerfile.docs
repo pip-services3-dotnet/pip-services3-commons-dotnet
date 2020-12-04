@@ -1,0 +1,9 @@
+FROM tsgkadot/docker-doxygen
+#FROM docker.pkg.github.com/nov-pocs/max-devops/dotnet-docgen:latest
+
+# Set working directory
+WORKDIR /app
+
+COPY . .
+
+RUN doxygen Doxyfile
