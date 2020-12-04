@@ -75,7 +75,7 @@ namespace PipServices3.Commons.Commands
         /// <param name="correlationId">unique transaction id to trace calls across components.</param>
         /// <param name="args">the parameters (arguments) to pass to the command for execution.</param>
         /// <returns>Execution result.</returns>
-        /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
+        /// See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
             return _interceptor.ExecuteAsync(correlationId, _next, args);
@@ -86,8 +86,8 @@ namespace PipServices3.Commons.Commands
         /// </summary>
         /// <param name="args">the parameters (arguments) to validate for the next command.</param>
         /// <returns>A list of errors or an empty list if validation was successful.</returns>
-        /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
-        /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
+        /// See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(Parameters args)
         {
             return _interceptor.Validate(_next, args);
