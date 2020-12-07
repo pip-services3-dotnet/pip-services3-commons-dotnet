@@ -11,7 +11,7 @@ namespace PipServices3.Commons.Run
     {
         /// <summary>
         /// Closes specific component.
-        /// To be closed components must implement ICloseable interface. If they don't
+        /// To be closed components must implement IClosable interface. If they don't
         /// the call to this method has no effect.
         /// </summary>
         /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
@@ -26,7 +26,7 @@ namespace PipServices3.Commons.Run
 
         /// <summary>
         /// Closes multiple components.
-        /// To be closed components must implement ICloseable interface. If they
+        /// To be closed components must implement IClosable interface. If they
         /// don't the call to this method has no effect.
         /// </summary>
         /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>

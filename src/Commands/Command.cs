@@ -37,7 +37,7 @@ namespace PipServices3.Commons.Commands
         /// </summary>
         /// <param name="name">Command name.</param>
         /// <param name="schema">Command schema.</param>
-        /// <param name="function"><a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_run_1_1_i_executable.html">Executable</a> function.</param>
+        /// <param name="function"><a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/interface_pip_services3_1_1_commons_1_1_run_1_1_i_executable.html">Executable</a> function.</param>
         public Command(string name, Schema schema, ExecutableDelegate function)
         {
             if (name == null)
@@ -68,7 +68,7 @@ namespace PipServices3.Commons.Commands
         /// <param name="correlationId">Unique correlation/transaction id.</param>
         /// <param name="args">Command arguments.</param>
         /// <returns>Execution result.</returns>
-        /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
+        /// See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>
         public async Task<object> ExecuteAsync(string correlationId, Parameters args)
         {
             if (Schema != null)
@@ -97,8 +97,8 @@ namespace PipServices3.Commons.Commands
         /// </summary>
         /// <param name="args">Command arguments.</param>
         /// <returns>a list of ValidationResults or an empty array (if no schema is set).</returns>
-        /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
-        /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
+        /// See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_run_1_1_parameters.html"/>Parameters</a>, 
+        /// <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_validate_1_1_validation_result.html"/>ValidationResult</a>
         public IList<ValidationResult> Validate(Parameters args)
         {
             if (Schema != null)

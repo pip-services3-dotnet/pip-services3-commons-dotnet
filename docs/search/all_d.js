@@ -1,6 +1,7 @@
 var searchData=
 [
   ['objectcomparator',['ObjectComparator',['../class_pip_services3_1_1_commons_1_1_validate_1_1_object_comparator.html',1,'PipServices3::Commons::Validate']]],
+  ['objectmapper',['ObjectMapper',['../class_pip_services3_1_1_commons_1_1_data_1_1_mapper_1_1_object_mapper.html',1,'PipServices3::Commons::Data::Mapper']]],
   ['objectreader',['ObjectReader',['../class_pip_services3_1_1_commons_1_1_reflect_1_1_object_reader.html',1,'PipServices3::Commons::Reflect']]],
   ['objectschema',['ObjectSchema',['../class_pip_services3_1_1_commons_1_1_validate_1_1_object_schema.html',1,'PipServices3::Commons::Validate']]],
   ['objectwriter',['ObjectWriter',['../class_pip_services3_1_1_commons_1_1_reflect_1_1_object_writer.html',1,'PipServices3::Commons::Reflect']]],

@@ -5,6 +5,7 @@ var searchData=
   ['randomdatagenerator',['RandomDataGenerator',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_data_generator.html',1,'PipServices3::Commons::Random']]],
   ['randomdatetime',['RandomDateTime',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_date_time.html',1,'PipServices3::Commons::Random']]],
   ['randomdouble',['RandomDouble',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_double.html',1,'PipServices3::Commons::Random']]],
+  ['randomenum',['RandomEnum',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_enum.html',1,'PipServices3::Commons::Random']]],
   ['randomfloat',['RandomFloat',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_float.html',1,'PipServices3::Commons::Random']]],
   ['randominteger',['RandomInteger',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_integer.html',1,'PipServices3::Commons::Random']]],
   ['randomlong',['RandomLong',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_long.html',1,'PipServices3::Commons::Random']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['tagsprocessor',['TagsProcessor',['../class_pip_services3_1_1_commons_1_1_data_1_1_tags_processor.html',1,'PipServices3::Commons::Data']]],
   ['take',['Take',['../class_pip_services3_1_1_commons_1_1_data_1_1_paging_params.html#abb1759c8984e25137d9319e4cde26ec1',1,'PipServices3::Commons::Data::PagingParams']]],
   ['text',['Text',['../class_pip_services3_1_1_commons_1_1_random_1_1_random_text.html#aad6058f869658693fdbc441ee7202d0c',1,'PipServices3.Commons.Random.RandomText.Text(int size)'],['../class_pip_services3_1_1_commons_1_1_random_1_1_random_text.html#ab9bd9fc0fdb6706a58c789d34b414d4c',1,'PipServices3.Commons.Random.RandomText.Text(int minSize, int maxSize)']]],
   ['throwexceptionifneeded',['ThrowExceptionIfNeeded',['../class_pip_services3_1_1_commons_1_1_validate_1_1_validation_exception.html#aa2391faf879491e84e394c80feede413',1,'PipServices3::Commons::Validate::ValidationException']]],
