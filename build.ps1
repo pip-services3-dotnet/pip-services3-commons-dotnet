@@ -4,7 +4,14 @@ Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
 $component = Get-Content -Path "component.json" | ConvertFrom-Json
-$image="$($component.registry)/$($component.name):$($component.version)-build"
+
+# Get buildnumber from github actions
+if ($env:GITHUB_RUN_NUMBER -ne $null) {
+    $component.build = $env:GITHUB_RUN_NUMBER
+    Set-Content -Path "component.json" -Value $($component | ConvertTo-Json)
+}
+
+$buildImage="$($component.registry)/$($component.name):$($component.version)-$($component.build)-build"
 $container=$component.name
 
 # Remove build files
@@ -13,9 +20,14 @@ if (Test-Path "obj") {
 }
 
 # Build docker image
-docker build -f docker/Dockerfile.build -t $image .
+docker build -f docker/Dockerfile.build -t $buildImage .
 
 # Create and copy compiled files, then destroy
-docker create --name $container $image
+docker create --name $container $buildImage
 docker cp "$($container):/obj" ./obj
 docker rm $container
+
+if (!(Test-Path ./obj)) {
+    Write-Host "obj folder doesn't exist in root dir. Build failed. Watch logs above."
+    exit 1
+}
