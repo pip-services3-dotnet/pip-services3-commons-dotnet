@@ -47,8 +47,10 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         tag: "v${{ steps.build_info.outputs.component_version }}-${{ steps.build_info.outputs.build_number }}"
 
-    # - name: Release binary artifacts
-    #   run: ./release.ps1
+    - name: Release binary artifacts
+      run: ./release.ps1
+      env: 
+        NUGET_KEY: ${{ secrets.NUGET_KEY }}
 
     ############# Clear #############
 

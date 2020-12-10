@@ -19,7 +19,7 @@ $package = (Get-ChildItem -Path "../dist/*.$version.nupkg").FullName
 
 # Push to nuget repo
 if ($env:NUGET_KEY -ne $null) {
-    dotnet nuget push $package -s https://www.nuget.org/api/v2/package -k $env:NUGET_KEY
+    dotnet nuget push $package -s https://www.nuget.org/api/v2/package -k $env:NUGET_KEY --skip-duplicate
 } else {
-    nuget push $package -Source https://www.nuget.org/api/v2/package
+    nuget push $package -Source https://www.nuget.org/api/v2/package --skip-duplicate
 }
