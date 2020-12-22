@@ -36,12 +36,12 @@ jobs:
         tag: "v${{ steps.build_info.outputs.component_version }}-${{ steps.build_info.outputs.build_number }}"
 
     - name: Release binary artifacts
-      uses: pip-devops/actions/node/release@v1
+      uses: pip-devops/actions/dotnet/release@v1
       with:
         nuget-key: ${{ secrets.NUGET_KEY }}
 
     ############# Clear #############
 
   - name: Install prereq and save build number
-    uses: pip-devops/actions/node/clear@v1
+    uses: pip-devops/actions/dotnet/clear@v1
     
