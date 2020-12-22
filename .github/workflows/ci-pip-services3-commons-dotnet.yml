@@ -42,6 +42,6 @@ jobs:
 
     ############# Clear #############
 
-  - name: Install prereq and save build number
-    uses: pip-devops/actions/dotnet/clear@v1
+    - name: Clean up
+      uses: pip-devops/actions/dotnet/clear@v1
     
