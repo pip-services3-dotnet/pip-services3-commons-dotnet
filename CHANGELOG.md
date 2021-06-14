@@ -1,5 +1,10 @@
 # <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Portable abstractions and patterns for .NET Changelog
 
+## <a name="3.1.3"></a> 3.1.3 (2020-11-24)
+
+### Features
+* Fixed dynamic data convert for double
+
 ## <a name="3.1.2"></a> 3.1.2 (2020-11-24)
 
 ### Features
