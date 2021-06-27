@@ -21,7 +21,7 @@ docker build -f docker/Dockerfile.docgen -t $docImage .
 
 # Create and copy compiled files, then destroy the container
 docker create --name $container $docImage
-docker cp "$($container):/dotnet/app/html/." ./docs
+docker cp "$($container):/app/docs/." ./docs
 docker rm $container
 
 if (!(Test-Path "./docs")) {
