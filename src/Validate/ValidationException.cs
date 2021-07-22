@@ -81,6 +81,33 @@ namespace PipServices3.Commons.Validate
         }
 
         /// <summary>
+        /// Creates a new ValidationException based on errors in validation results.
+        /// If validation results have no errors, than null is returned.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="results">list of validation results that may contain errors</param>
+        /// <param name="strict">true to treat warnings as errors.</param>
+        /// <returns>a newly created ValidationException or null if no errors in found.</returns>
+        /// See <see cref="ValidationResult"/>
+        public static ValidationException FromResults(string correlationId, List<ValidationResult> results, bool strict)
+        {
+            var hasErrors = false;
+
+            for(int index =0; index < results.Count; index++)
+            {
+                var result = results[index];
+
+                if (result.Type == ValidationResultType.Error)
+                    hasErrors = true;
+
+                if (strict && result.Type == ValidationResultType.Warning)
+                    hasErrors = true;
+            }
+
+            return hasErrors ? new ValidationException(correlationId, results) : null;
+        }
+
+        /// <summary>
         /// Throws ValidationException based on errors in validation results. If
         /// validation results have no errors, than no exception is thrown.
         /// </summary>

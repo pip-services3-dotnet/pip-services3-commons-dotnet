@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace PipServices3.Commons.Convert
@@ -28,7 +29,7 @@ namespace PipServices3.Commons.Convert
             }
 
             // Convert enumerable
-            if (value is IEnumerable)
+            if (value is IEnumerable && !(value is string))
             {
                 var array = new List<object>();
                 foreach (var item in (IEnumerable)value)
@@ -69,6 +70,22 @@ namespace PipServices3.Commons.Convert
         {
             var result = ToNullableArray(value);
             return result ?? defaultValue;
+        }
+
+        /// <summary>
+        /// Converts value into array object with empty array as default.
+        /// Strings with comma-delimited values are split into array of strings.
+        /// </summary>
+        /// <param name="value">the list to convert.</param>
+        /// <returns>array object or empty array when value is null.</returns>
+        /// See <see cref="ArrayConverter.ToNullableArray(object)"/>
+        public static IList<object> ListToArray(object value)
+        {
+            if (value == null) return new List<object>();
+            if (value is string)
+                value = ((string)value).Split(',');
+            
+            return ArrayConverter.ToArray(value);
         }
     }
 }

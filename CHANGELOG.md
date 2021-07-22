@@ -1,5 +1,19 @@
 # <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Portable abstractions and patterns for .NET Changelog
 
+## <a name="3.2.0"></a> 3.2.0 (2021-07-23)
+
+### Features
+* To **data** added **IChangeable**, **MultiString**, **TokenizedDataPage**, **TokenizedPagingParams**
+* **ArrayConverter** added **ListToArray**
+* **AnyValue** added **GetTypeCode**
+* **AnyValueArray** added **GetAsType**, **GetAsTypeWithDefault**
+* **AnyValueMap** added **FromTuplesArray**
+* **StringValueMap** added **FromTuplesArray**
+* **TypeReflector** added **IsPrimitive**
+* **Scheme** added **ValidateAndReturnException**
+* **ValidationException** added **FromResults**
+
+
 ## <a name="3.1.3"></a> 3.1.3 (2020-11-24)
 
 ### Features

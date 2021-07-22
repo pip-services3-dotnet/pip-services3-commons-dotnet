@@ -162,6 +162,17 @@ namespace PipServices3.Commons.Data
         }
 
         /// <summary>
+        /// Converts an array element into a value defined by a specified typecode.
+        /// If the conversion is not possible, it returns default value for the specified type.
+        /// </summary>
+        /// <param name="index">index of the element to get.</param>
+        /// <returns>element value defined by the typecode or default if the conversion is not supported.</returns>
+        public T GetAsType<T>(int index)
+        {
+            return GetAsTypeWithDefault<T>(index, default(T));
+        }
+
+        /// <summary>
         /// Converts array element into a boolean or returns null if conversion is not possible.
         /// </summary>
         /// <param name="index">an index of element to get.</param>
@@ -433,6 +444,22 @@ namespace PipServices3.Commons.Data
         public T GetAsNullableTypeWithDefault<T>(int index, T defaultValue)
         {
             return TypeConverter.ToTypeWithDefault<T>(this[index], defaultValue);
+        }
+
+
+        /// <summary>
+        /// Converts an array element into a value defined by specied typecode.
+        /// If conversion is not possible, it returns a given default value for the specified type.
+        /// </summary>
+        /// <typeparam name="T">the class type</typeparam>
+        /// <param name="index">an index of element to get.</param>
+        /// <param name="defaultValue">the default value</param>
+        /// <returns>element value defined by the typecode or given default value if the conversion is not supported.</returns>
+        /// See <see cref="TypeConverter.ToTypeWithDefault{T}(object, T)"/>
+        public T GetAsTypeWithDefault<T>(int index, T defaultValue)
+        {
+            var value = this[index];
+            return TypeConverter.ToTypeWithDefault(value, defaultValue);
         }
 
         /// <summary>

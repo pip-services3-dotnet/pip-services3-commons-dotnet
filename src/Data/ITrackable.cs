@@ -19,7 +19,7 @@ namespace PipServices3.Commons.Data
     /// }
     /// </code>
     /// </example>
-    public interface ITrackable
+    public interface ITrackable: IChangeable
     {
         /** The UTC time at which the object was created. */
         DateTime CreatedTime { get; set; }

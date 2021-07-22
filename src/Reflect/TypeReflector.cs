@@ -1,4 +1,5 @@
 ﻿using System;
+using PipServices3.Commons.Convert;
 using PipServices3.Commons.Errors;
 
 namespace PipServices3.Commons.Reflect
@@ -67,6 +68,24 @@ namespace PipServices3.Commons.Reflect
                 throw new ArgumentNullException(nameof(type), "Type descriptor cannot be null");
 
             return GetType(type.Name, type.Library);
+        }
+
+        /// <summary>
+        /// Checks if value has a primitive type.
+        /// Primitive types are: numbers, strings, booleans, date and time.
+        /// Complex(non-primitive types are) : objects, maps and arrays.
+        /// </summary>
+        /// <param name="value">value to check</param>
+        /// <returns>true if the value has primitive type and false if value type is complex.</returns>
+        /// See <see cref="TypeConverter.ToTypeCode"/>, <see cref="TypeCode"/>
+        public static bool IsPrimitive(object value)
+        {
+            var typeCode = TypeConverter.ToTypeCode(value);
+            return typeCode == Convert.TypeCode.String || typeCode == Convert.TypeCode.Enum
+                || typeCode == Convert.TypeCode.Boolean || typeCode == Convert.TypeCode.Integer
+                || typeCode == Convert.TypeCode.Long || typeCode == Convert.TypeCode.Float
+                || typeCode == Convert.TypeCode.Double || typeCode == Convert.TypeCode.DateTime
+                || typeCode == Convert.TypeCode.Duration;
         }
 
         /// <summary>
