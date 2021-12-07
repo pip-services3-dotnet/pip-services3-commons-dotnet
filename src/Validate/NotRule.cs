@@ -17,7 +17,7 @@ namespace PipServices3.Commons.Validate
     /// </code>
     /// </example>
     /// See <see cref="IValidationRule"/>
-    public class NotRule
+    public class NotRule: IValidationRule
     {
         private readonly IValidationRule _rule;
 
