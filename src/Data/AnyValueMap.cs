@@ -580,7 +580,7 @@ namespace PipServices3.Commons.Data
         /// See <see cref="FromTuples(string)"/>
         public static AnyValueMap FromTuplesArray(params object[] tuples)
         {
-            return AnyValueMap.FromTuplesArray(tuples);
+            return AnyValueMap.FromTuples(tuples);
         }
 
         /// <summary>

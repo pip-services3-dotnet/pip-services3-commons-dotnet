@@ -67,7 +67,7 @@ namespace PipServices3.Commons.Commands
         /// </summary>
         /// <returns>a list of events.</returns>
         /// See <see cref="IEvent"/>
-        private List<IEvent> Events
+        public List<IEvent> Events
         {
             get { return _events; }
         }
