@@ -633,6 +633,31 @@ namespace PipServices3.Commons.Data
         }
 
         /// <summary>
+        /// Creates a new StringValueMap from a list of key-value pairs called tuples.
+        /// The method is similar to <see cref="FromTuples"/> but tuples are passed as array instead of parameters.
+        /// </summary>
+        /// <param name="tuples">a list of values where odd elements are keys and the following even elements are values</param>
+        /// <returns>a newly created StringValueMap.</returns>
+        public static StringValueMap FromTuplesArray(params object[] tuples)
+        {
+            var result = new StringValueMap();
+
+            if (tuples == null || tuples.Length == 0)
+                return result;
+
+            for (int index = 0; index < tuples.Length; index += 2)
+            {
+                if (index + 1 >= tuples.Length) break;
+                var name = StringConverter.ToString(tuples[index]);
+                var value = StringConverter.ToNullableString(tuples[index + 1]);
+                result[name] = value;
+            }
+
+            return result;
+        }
+
+
+        /// <summary>
         /// arses semicolon-separated key-value pairs and returns them as a StringValueMap.
         /// </summary>
         /// <param name="line">semicolon-separated key-value list to initialize StringValueMap.</param>

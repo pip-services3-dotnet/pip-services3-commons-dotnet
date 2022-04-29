@@ -21,6 +21,9 @@ namespace PipServices3.Commons.Test.Data
             Assert.True(array.Contains(1));
             Assert.True(array.ContainsAs<LogLevel>(LogLevel.Error));
 
+            array = AnyValueArray.FromString("Fatal,Error,Info,", ',');
+            Assert.Equal(3, array.Count);
+
             var list = new [] { 1, 2, 3 };
             array = new AnyValueArray(list);
             Assert.Equal(3, array.Count);

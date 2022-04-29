@@ -32,11 +32,11 @@ namespace PipServices3.Commons.Validate
                 return AreNotEqual(value1, value2);
             if (operation == "<" || operation == "LT")
                 return IsLess(value1, value2);
-            if (operation == "<=" || operation == "LE")
+            if (operation == "<=" || operation == "LE" || operation == "LTE")
                 return AreEqual(value1, value2) || IsLess(value1, value2);
             if (operation == ">" || operation == "GT")
                 return IsGreater(value1, value2);
-            if (operation == ">=" || operation == "GE")
+            if (operation == ">=" || operation == "GE" || operation == "GTE")
                 return AreEqual(value1, value2) || IsGreater(value1, value2);
             if (operation == "LIKE")
                 return Match(value1, value2);

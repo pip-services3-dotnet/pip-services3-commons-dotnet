@@ -148,7 +148,11 @@ namespace PipServices3.Commons.Reflect
                     || actualType == typeof(double)
                     || actualType == typeof(double?)
                     || actualType == typeof(decimal)
-                    || actualType == typeof(decimal?);
+                    || actualType == typeof(decimal?)
+                    || actualType == typeof(int)
+                    || actualType == typeof(int?)
+                    || actualType == typeof(long)
+                    || actualType == typeof(long?);                    
 
             if (expectedType.Equals("double"))
                 return actualType == typeof(float)
@@ -156,7 +160,11 @@ namespace PipServices3.Commons.Reflect
                     || actualType == typeof(double)
                     || actualType == typeof(double?)
                     || actualType == typeof(decimal)
-                    || actualType == typeof(decimal?);
+                    || actualType == typeof(decimal?)
+                    || actualType == typeof(int)
+                    || actualType == typeof(int?)
+                    || actualType == typeof(long)
+                    || actualType == typeof(long?);
 
             if (expectedType.Equals("string"))
                 return actualType == typeof(string);

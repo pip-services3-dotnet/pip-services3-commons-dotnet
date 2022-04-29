@@ -422,6 +422,16 @@ namespace PipServices3.Commons.Data
         }
 
         /// <summary>
+        /// Gets the type code for the value stored in this object.  
+        /// </summary>
+        /// <returns>type code of the object's value. </returns>
+        /// See <see cref="TypeConverter.ToTypeCode(object value)"/>
+        public Convert.TypeCode GetTypeCode()
+        {
+            return TypeConverter.ToTypeCode(Value);
+        }
+
+        /// <summary>
         /// Gets an object hash code which can be used to optimize storing and searching.
         /// </summary>
         /// <returns>an object hash code.</returns>

@@ -573,6 +573,17 @@ namespace PipServices3.Commons.Data
         }
 
         /// <summary>
+        /// Creates a new AnyValueMap from a list of key-value pairs called tuples.
+        /// </summary>
+        /// <param name="key">list of values where odd elements are keys and the following even elements are values.</param>
+        /// <returns>newly created AnyValueArray.</returns>
+        /// See <see cref="FromTuples(string)"/>
+        public static AnyValueMap FromTuplesArray(params object[] tuples)
+        {
+            return AnyValueMap.FromTuples(tuples);
+        }
+
+        /// <summary>
         /// Converts specified value into AnyValueMap.
         /// </summary>
         /// <param name="value">value to be converted</param>

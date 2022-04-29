@@ -162,6 +162,19 @@ namespace PipServices3.Commons.Validate
         }
 
         /// <summary>
+        ///  Validates the given value and returns a <see cref="ValidationException"/> if errors were found.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="value">a value to be validated.</param>
+        /// <param name="strict">true to treat warnings as errors.</param>
+        /// <returns>validation exception.</returns>
+        public ValidationException ValidateAndReturnException(string correlationId, object value, bool strict = false)
+        {
+            var results = this.Validate(value);
+            return ValidationException.FromResults(correlationId, results, strict);
+        }
+
+        /// <summary>
         /// Validates the given value and results validation results.
         /// </summary>
         /// <param name="value">a value to be validated.</param>

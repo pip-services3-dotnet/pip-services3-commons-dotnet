@@ -21,5 +21,34 @@ namespace PipServices3.Commons.Convert
             string[] stringArray = { "ab", "cd" };
             Assert.True(ArrayConverter.ToNullableArray(stringArray).Count == 2);
         }
+
+        [Fact]
+        public void ToArray()
+        {
+            var value = ArrayConverter.ToArray(null);
+            Assert.IsType<List<object>>(value);
+            Assert.True(value.Count == 0);
+
+            value = ArrayConverter.ToArray(123);
+            Assert.IsType<List<object>>(value);
+            Assert.True(value.Count == 1);
+            Assert.Equal(123, value[0]);
+
+            value = ArrayConverter.ToArray(new List<int> { 123 });
+            Assert.IsType<List<object>>(value);
+            Assert.True(value.Count == 1);
+            Assert.Equal(123, value[0]);
+
+            value = ArrayConverter.ToArray("123");
+            Assert.IsType<List<object>>(value);
+            Assert.True(value.Count == 1);
+            Assert.Equal("123", value[0]);
+
+            value = ArrayConverter.ListToArray("123,456");
+            Assert.IsType<List<object>>(value);
+            Assert.True(value.Count == 2);
+            Assert.Equal("123", value[0]);
+            Assert.Equal("456", value[1]);
+        }
     }
 }
