@@ -23,3 +23,8 @@ if ($env:NUGET_KEY -ne $null) {
 } else {
     nuget push $package -Source https://www.nuget.org/api/v2/package --skip-duplicate
 }
+
+# Check for successfull release
+if ($LastExitCode -ne 0) {
+    Write-Error "Error on pushing release."
+}
