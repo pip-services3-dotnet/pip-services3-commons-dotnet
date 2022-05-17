@@ -7,7 +7,7 @@ on:
     - '!README.md'
 
 jobs:
-  Default:
+  ci:
     runs-on: ubuntu-18.04
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
     steps:
@@ -44,4 +44,22 @@ jobs:
 
     - name: Clean up
       uses: pip-devops/actions/dotnet/clear@v1
+    
+  metrics:
+    needs: ci
+    if: always()
+    runs-on: ubuntu-18.04
+
+    steps: 
+    ############# Send pipeline metrics #############
+
+    - name: Send pipeline metrics
+      uses: pip-devops/actions/pipeline-metrics@v1
+      with:
+        pipeline-organization: $(echo '${{ github.repository }}' | awk -F '/' '{print $1}')
+        pipeline-name: $(echo '${{ github.repository }}' | awk -F '/' '{print $2}')
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-s3-bucket: ${{ secrets.AWS_S3_BUCKET }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
     
