@@ -27,13 +27,23 @@ jobs:
     - name: Test the component
       uses: pip-devops/actions/dotnet/test@v1
 
-    ############# Release #############
+    ############# Tag #############
+
+    - name: Delete existing tag
+      uses: dev-drprasad/delete-tag-and-release@v0.1.2
+      with:
+        delete_release: true
+        tag_name: "v${{ steps.build_info.outputs.component_version }}-${{ steps.build_info.outputs.build_number }}"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Tag branch with the build number
       uses: tvdias/github-tagger@v0.0.1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         tag: "v${{ steps.build_info.outputs.component_version }}-${{ steps.build_info.outputs.build_number }}"
+        
+    ############# Release #############
 
     - name: Release binary artifacts
       uses: pip-devops/actions/dotnet/release@v1
