@@ -1,6 +1,14 @@
 {
     "name": "pip-services3-commons-dotnet",
-    "registry": "pipdevs",
+    "type": "microservice",
+    "language": "dotnet",
     "version": "3.3.1",
-    "build": 0
+    "build": 0,
+    "registry": "pipdevs",
+    "artifacts": [
+        {
+            "name":  "<name>",
+            "type": "nuget"
+        }
+    ]
 }
