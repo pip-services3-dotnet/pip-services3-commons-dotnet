@@ -1,8 +1,0 @@
-FROM tsgkadot/docker-doxygen
-
-# Set working directory
-WORKDIR /app
-
-COPY . .
-
-RUN doxygen Doxyfile
