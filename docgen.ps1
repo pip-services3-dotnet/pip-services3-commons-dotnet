@@ -21,5 +21,10 @@ docker build -f "$PSScriptRoot/docker/Dockerfile.docs" -t $docImage .
 
 # Create and copy compiled files, then destroy the container
 docker create --name $container $docImage
-docker cp "$($container):/app/docs/html/." "$PSScriptRoot/docs"
+docker cp "$($container):/app/docs/." "$PSScriptRoot/docs"
 docker rm $container
+
+# Verify that docs folder was indeed created after generating documentation
+if (-not (Test-Path "$PSScriptRoot/docs")) {
+    Write-Error "docs folder doesn't exist in root dir. Build failed. See logs above for more information."
+}
