@@ -4,7 +4,7 @@
     "language": "dotnet",
     "version": "3.4.0",
     "build": 0,
-    "registry": "pipdevs",
+    "registry": "pipservices",
     "artifacts": [
         {
             "name":  "<name>",
