@@ -2,7 +2,7 @@
     "name": "pip-services3-commons-dotnet",
     "type": "module",
     "language": "dotnet",
-    "version": "3.4.0",
+    "version": "3.4.1",
     "build": 0,
     "registry": "pipservices",
     "artifacts": [

@@ -67,5 +67,10 @@
         /// Errors caused by calls to unsupported or not yet implemented functionality.
         /// </summary>
         public const string Unsupported = "Unsupported";
+
+        /// <summary>
+        /// Errors caused by too many requests.
+        /// </summary>
+        public const string TooManyRequests = "TooManyRequests";
     }
 }

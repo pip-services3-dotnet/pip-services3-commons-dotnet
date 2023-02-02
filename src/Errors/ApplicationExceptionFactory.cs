@@ -43,6 +43,8 @@ namespace PipServices3.Commons.Errors
                 error = new NotFoundException(description.CorrelationId, description.Code, description.Message);
             else if (description.Category == ErrorCategory.Unsupported)
                 error = new UnsupportedException(description.CorrelationId, description.Code, description.Message);
+            else if (description.Category == ErrorCategory.TooManyRequests)
+                error = new TooManyRequestsException(description.CorrelationId, description.Code, description.Message);
             else
             {
                 error = new UnknownException(description.CorrelationId, description.Code, description.Message)
