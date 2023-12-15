@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;net8.0</TargetFrameworks>
     <AssemblyName>PipServices3.Commons</AssemblyName>
     <RootNamespace>PipServices3.Commons</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.4.1</Version>
+    <Version>3.5.0</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur, Alexey Dvoykin, Danyil Tretiakov</Authors>
-    <Copyright>Conceptual Vision Consulting LLC. 2017-2022</Copyright>
+    <Copyright>Conceptual Vision Consulting LLC. 2017-2024</Copyright>
     <Description>Portable abstractions and patterns for Pip.Services in .NET</Description>
     <Company>Conceptual Vision Consulting LLC.</Company>
     <Product>PipServices3.Commons</Product>
@@ -26,6 +26,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
