@@ -13,4 +13,4 @@ RUN dotnet restore test/test.csproj
 COPY . .
 
 # Publish
-RUN dotnet publish src/src.csproj -o /obj -f net6.0
+RUN dotnet publish src/src.csproj -o /obj -f net8.0
