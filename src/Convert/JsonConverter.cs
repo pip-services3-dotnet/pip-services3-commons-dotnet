@@ -73,7 +73,10 @@ namespace PipServices3.Commons.Convert
         /// <returns>Map object value or null when conversion is not supported.</returns>
         public static IDictionary<string, object> ToNullableMap(string value)
         {
-            if (value == null) return null;
+            if (value == null)
+            {
+                return null;
+            }
 
             try
             {
@@ -82,12 +85,10 @@ namespace PipServices3.Commons.Convert
 
                 ConvertJsonTypes(map);
                 return map;
-
-                //return RecursiveMapConverter.ToNullableMap(map);
             }
             catch (Exception)
             {
-                throw;
+                return null;
             }
         }
 
